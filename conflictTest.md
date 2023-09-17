@@ -1,1 +1,1 @@
-I'm a cow! MOO! MOO!
+I'm a cow! MOO!
