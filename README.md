@@ -6,11 +6,13 @@
 
 Are you bored, incredibly immature, or someone who enjoys instant gratification? Introducing the Instant Fart Button, because why the heck not! Its a button that you press, and when you do, it makes a fart noise. That's all there is to it! Just press for instant flatulent fun! Unlike other instant noise buttons you may find on the internet, this one has the added bonus of recording the number of times you press the button (for no good reason other than to show how much you love pressing this button), is a secured website (you have to log in in order to press the button so we can record how many times you press the button and only you and you alone will know how many times you have pressed it), and, best of all, NO ANNOYING ADS! No monetization of any sort! Just you pressing a button to make a fart noise for as long as you want! Its THAT SIMPLE! 
 
-![FartButton](InstantFartButtonConcept.jpg)
+![FartButton](![InstantFartButtonConcept](https://github.com/Humperdink618/startup/assets/144961325/3b023f58-223d-480d-8451-48fb52aa149c)
+)
 
 Here is how the login screen will look (or at least something similar to it).
 
-![FartLogin](InstantFartButtonLoginConcept.jpg)
+![FartLogin](![InstantFartButtonLoginConcept](https://github.com/Humperdink618/startup/assets/144961325/a76c5d0e-48f4-4f77-b193-fd919ebd85ce)
+)
 
 ### Key features
 
