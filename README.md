@@ -11,7 +11,8 @@ Are you bored, incredibly immature, or someone who enjoys instant gratification?
 
 Here is how the login screen will look (or at least something similar to it).
 
-![InstantFartButtonLoginConcept](https://github.com/Humperdink618/startup/assets/144961325/a76c5d0e-48f4-4f77-b193-fd919ebd85ce)
+![InstantFartButtonLoginConcept](https://github.com/Humperdink618/startup/assets/144961325/381175cb-c1d0-45f9-a0a4-9c91e6e20eb4)
+
 
 
 ### Key features
