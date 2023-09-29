@@ -12,28 +12,23 @@
     <!-- Use header, main, and footer elements to give semantic structure -->
     <header>
       <h1>Instant Fart Button</h1>
-
-      <!-- Navigation elements -->
-      <nav>
-        <!-- Menu is a semantic alternative to <ul> that represents an interaction -->
-        <menu>
-          <li><a href="startup.html">Home</a></li>
-          <li><a href="play.html">Play</a></li>
-          <li><a href="about.html">About</a></li>
-        </menu>
-      </nav>
-
+        <!-- web socket ? add high score??? -->
       <!-- Since we don't have the ability to style we use old style HTML to give some visual formatting -->
       <hr />
     </header>
 
     <main>
-        <div class="players"> Player: <span class="player-name">Joe Shlabotnik</span>
-            </div>
+        <div>
+            <p>Player:</p>
+            <!--use id player-name to get the name of the player from the database-->
+            <p id="player-name">No NAME</p>
+        </div>
         <br>
         <div>
             <label for="count">You pressed the button this many times: </label>
-            <input type="text" id="count" value="--" readonly>
+             <!--use id count to get the number of times the player presses the button from the database-->
+            <p id="count">0</p>
+
         </div>
         <br>
         <div><button>Reset</button>
@@ -45,6 +40,11 @@
         <div><button>Press for Flatulent Fun!</button></div> 
         <!--This is a placeholder for the actual button. Will edit appearance later.-->
         <h3>Because I'm Incredibly Immature!</h3>
+
+        <form method="get" action="startup.html">
+            <!-- use id to save data to database -->
+            <button type="submit" id="logout">Logout</button>
+          </form>
       </main>
 
     <footer>

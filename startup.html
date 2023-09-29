@@ -18,7 +18,7 @@
         <!-- Menu is a semantic alternative to <ul> that represents an interaction -->
         <menu>
           <li><a href="startup.html">Home</a></li>
-          <li><a href="play.html">Play</a></li>
+          <!-- to access play.html, need to hit login button-->
           <li><a href="about.html">About</a></li>
         </menu>
       </nav>
@@ -32,9 +32,12 @@
       <p>Login to play</p>
       <form method="get" action="play.html">
         <label for="name">Name</label>
+        <!-- id is to grab this html item and use text in javascript-->
         <input type="text" id="name" placeholder="Your name here" />
         <input type="text" id="password" placeholder="Your pass here" />
-        <button type="submit">Login</button>
+        <!-- Check if new player -> add to database
+        if existing player -> load from database -->
+        <button type="submit" id="login">Login</button>
       </form>
     </main>
 
