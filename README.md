@@ -42,3 +42,15 @@ I am going to use the required technologies in the following ways.
 - **Login** - Register and login users. Credentials securely stored in database. Can't press the button for flatulent fun unless authenticated.
 - **WebSocket** - As each user presses the button, the number of times they pressed the button is broadcast to that user and that user alone.
 - **React** - Application ported to use the React web framework.
+
+## HTML deliverable
+
+For this deliverable I built out the structure of my application using HTML.
+
+- **HTML pages** - Three HTML pages that represent the ability to login, play, and see the about screen. Formatted in a way that you access them through clicking buttons for better organization.
+- **Links** - The login page automatically links to the play page. The play page contains a link to the home page whenever the user wants to logout. Home has a link to the about page.
+- **Text** - Textual descriptions for the about page, button pressing, player names and scores, and high score.
+- **Images** - I added an image for the play screen, as well as a changeable random 3rd party rest api image for the about page.
+- **Login** - Input box and submit button for login. Also a logout feature on the play page.
+- **Database** - The player names, high scores, and number of times players press the button represent data pulled from the database.
+- **WebSocket** - The player who has pressed the button the most times and their associated "high score" are displayed to all players in realtime.
