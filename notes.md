@@ -43,3 +43,6 @@ drwxrwxr-x 4 ubuntu ubuntu 4096 Apr 13 16:48 services
 The Caddyfile is the configuration file for your web service gateway. The public_html directory contains all of the static files that you are serving up directly through Caddy when using it as a web service. We will cover Caddy configuration in a later instruction. The services directory is the place where you are going to install all of your web services once you build them.
 
 Once you are done poking around on your server, you can exit the remote shell by running the exit command. That is everything. You will only change a few configuration settings on your server in the future. Usually, changes to the server are always done using an automated continuous integration process.
+
+
+for simon.css, I deployed it to my domain, mostly the same as the original simon.css file, except that I made the color for the .event in the play.css file a little darker to make it more visible.
