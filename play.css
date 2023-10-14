@@ -118,6 +118,8 @@
   transform: translateX(-50%) translateY(-50%);
 }
 
+
+
 .nobutton {
   position: relative;
   width: 100%;
@@ -156,9 +158,24 @@
   background-color: #E92E35;
   box-shadow: 0 13px #A51D22;
   transform: translate(-90px, -70px);
-  
-  
 }
+
+#reset:hover{
+  color: #404040;
+  background-color : #C0C0C0 !important;
+}
+
+#logout:hover{
+  color: #C0C0C0;
+}
+
+.picture-box {
+  height: calc(228px + 1em);
+  margin-bottom: 1em;
+  padding: 0.5em;
+  background: rgb(86, 89, 93);
+  border-radius: 5px;
+} 
 
 /*
 .darthvadernobutton {

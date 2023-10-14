@@ -27,7 +27,7 @@ menu {
   display: flex;
   /*  overwrite Bootstrap so the menu does not wrap */
   flex-direction: row !important;
-  list-style: none;
+  list-style: none;  
 }
 
 .navbar-brand {
@@ -36,12 +36,17 @@ menu {
 }
 
 menu .nav-item {
-  padding: 0 0.3em;
+  padding: 0 0.5em;
+}
+
+.navbar {
+  background-color: #212529;
 }
 
 footer a {
   float: right;
 }
+
 
 @media (max-height: 600px) {
   header {

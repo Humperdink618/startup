@@ -30,19 +30,25 @@
         <menu class="navbar-nav">
           <!-- to access play.html, need to hit login button-->
           <li class="nav-item">
-            <a class="nav-link active" href="about.html">About</a>
+            <a class="nav-link" href="about.html">About</a>
           </li>
         </menu>
       </nav>
 
       <!-- Since we don't have the ability to style we use old style HTML to give some visual formatting -->
-      <hr />
+     
     </header>
 
     <main class="container-fluid bg-secondary text-center">
-      <h1>Welcome</h1>
+      <h1 id="welcome">Welcome</h1>
+      
+      <div id="darthcat" class="picture-box">
+        <img width="400px" src="alltooeasy.jpg" 
+        alt="https://shirtigo.co/wp-content/uploads/2016/02/alltooeasy.jpg">
+       
       <p>Login to play</p>
-      <form method="get" action="play.html">
+      
+      <form method="get" action="play.html" class="login-enter">
         <label for="name">Name</label>
         <!-- id is to grab this html item and use text in javascript-->
         <input type="text" id="name" placeholder="Your name here" />
