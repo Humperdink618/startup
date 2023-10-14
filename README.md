@@ -7,6 +7,7 @@
 Are you bored, stressed, or someone who enjoys instant gratification? Introducing the Instant NOOOOO! Button, because why the heck not! Its a button that you press, and when you do, it plays an audio clip of Darth Vader yelling NOOOOO! That's all there is to it! Just press in case of dire emergencies! Unlike other instant noise buttons you may find on the internet, this one has the added bonus of recording the number of times you press the button (for no good reason other than to show how much you love pressing this button), is a secured website (you have to log in in order to press the button so we can record how many times you press the button and only you and you alone will know how many times you have pressed it), and, best of all, NO ANNOYING ADS! No monetization of any sort! Just you pressing a button to make Darth Vader scream NOOOOO! for as long as you want! Its THAT SIMPLE! 
 
 ![InstantFartButtonConcept](https://github.com/Humperdink618/startup/assets/144961325/3b023f58-223d-480d-8451-48fb52aa149c)
+(note: my previous idea was to do an instant fart button, but later decided to do something more mature and presentable, though it still shows off the basic concept of what I was going for)
 
 
 Here is how the login screen will look (or at least something similar to it).
@@ -54,3 +55,14 @@ For this deliverable I built out the structure of my application using HTML.
 - **Login** - Input box and submit button for login. Also a logout feature on the play page.
 - **Database** - The player names, high scores, and number of times players press the button represent data pulled from the database.
 - **WebSocket** - The player who has pressed the button the most times and their associated "high score" are displayed to all players in realtime.
+
+## CSS deliverable
+
+For this deliverable I properly styled the application into its final appearance.
+
+- **Header, footer, and main content body** - Used css to stylize them a lot more and rearranged the format of the play.html to make it more appealing and manageable. May still do some minor adjustments at some point, but for now, I'd say its serviceable.
+- **Navigation elements** - I added nav elements into my code so that the css can really make my page look good.
+- **Responsive to window resizing** - My app looks great on all window sizes and devices
+- **Application elements** - Used good contrast and whitespace. Also did a major update to the actual nooo button in its appearance and functionality, as well as rearranged my page a little to make it more manageable and appealing to look at. May need to update the reset button at some point though.
+- **Application text content** - Consistent fonts
+- **Application images** - Updated placement of main image on play.html, as well as updated in a big way the look and functionality of the nooo button (which is now an animated button superimposed on an image more closely resembling the one in my initial design).
