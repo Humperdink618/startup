@@ -18,6 +18,14 @@ main {
   justify-content: space-around;
 }
 
+/* #darthcat {
+  width: 27em;
+  margin-bottom: 1em;
+  padding: 0.5em;
+  background: rgb(86, 89, 93);
+  border-radius: 5px;
+} */
+
 footer {
   flex: 0 30px;
 }
