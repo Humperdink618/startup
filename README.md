@@ -7,6 +7,7 @@
 Are you bored, stressed, or someone who enjoys instant gratification? Introducing the Instant NOOOOO! Button, because why the heck not! Its a button that you press, and when you do, it plays an audio clip of Darth Vader yelling NOOOOO! That's all there is to it! Just press in case of dire emergencies! Unlike other instant noise buttons you may find on the internet, this one has the added bonus of recording the number of times you press the button (for no good reason other than to show how much you love pressing this button), is a secured website (you have to log in in order to press the button so we can record how many times you press the button and only you and you alone will know how many times you have pressed it), and, best of all, NO ANNOYING ADS! No monetization of any sort! Just you pressing a button to make Darth Vader scream NOOOOO! for as long as you want! Its THAT SIMPLE! 
 
 ![InstantFartButtonConcept](https://github.com/Humperdink618/startup/assets/144961325/3b023f58-223d-480d-8451-48fb52aa149c)
+(note: my previous idea was to do an instant fart button, but later decided to do something more mature and presentable, though it still shows off the basic concept of what I was going for)
 
 
 Here is how the login screen will look (or at least something similar to it).
