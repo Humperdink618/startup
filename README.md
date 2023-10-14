@@ -54,3 +54,14 @@ For this deliverable I built out the structure of my application using HTML.
 - **Login** - Input box and submit button for login. Also a logout feature on the play page.
 - **Database** - The player names, high scores, and number of times players press the button represent data pulled from the database.
 - **WebSocket** - The player who has pressed the button the most times and their associated "high score" are displayed to all players in realtime.
+
+## CSS deliverable
+
+For this deliverable I properly styled the application into its final appearance.
+
+- **Header, footer, and main content body** - Used css to stylize them a lot more and rearranged the format of the play.html to make it more appealing and manageable. May still do some minor adjustments at some point, but for now, I'd say its serviceable.
+- **Navigation elements** - I added nav elements into my code so that the css can really make my page look good.
+- **Responsive to window resizing** - My app looks great on all window sizes and devices
+- **Application elements** - Used good contrast and whitespace. Also did a major update to the actual nooo button in its appearance and functionality, as well as rearranged my page a little to make it more manageable and appealing to look at. May need to update the reset button at some point though.
+- **Application text content** - Consistent fonts
+- **Application images** - Updated placement of main image on play.html, as well as updated in a big way the look and functionality of the nooo button (which is now an animated button superimposed on an image more closely resembling the one in my initial design).
