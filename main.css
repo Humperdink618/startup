@@ -55,9 +55,9 @@ footer a {
   float: right;
 }
 
-
-@media (max-height: 600px) {
-  header {
+/*if the screen is smaller than 400 px do this */ 
+@media (max-height: 200px) {
+  #darthcat {
     display: none;
   }
   footer {
@@ -66,4 +66,8 @@ footer a {
   main {
     flex: 1 100vh;
   }
+  /*Tablet size (between 400 and 960
+  @media only screen and (min-width 401px) and (max-height: 600px)
+  @media gives new css for screens of a specfic size. If they are between/less/greater 
+  than a specific height/width, there is new css rules for that instance*/ 
 }
