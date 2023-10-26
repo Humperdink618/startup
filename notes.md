@@ -182,6 +182,8 @@
 - nano  text editor
 - vim  another text editor
 - cat  prints contents of a file (cat filename)
+- chmod  Unix-like operating system command used to change access permissions and the special mode flags of file system objects
+- wget   Linux command used to retrieve content and files from various web servers.
 - ~/  home directory
 - ssh  sign into other computer (ssh netID@schizo.cs.byu.edu)
 - git add  adds a file (git add .  adds all changed files) (git add filename  adds specific file)
