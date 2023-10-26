@@ -234,6 +234,8 @@ to display an image with a hyperlink in HTML, add the < 'img' > tag inside an < 
 
 < 'a' > tag  a link
 
+getElementByID()  returns an element with a specified value (returns null if element does not exist). One of the most common methods in the HTML DOM; used almost every time you want to read or edit an HTML element.
+
 
 # IP address and SSH into server
 
