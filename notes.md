@@ -214,7 +214,7 @@ the interpreter for html is in the browser
 
 console.log() is the debug/print statement for JavaScript
 
-"<pre>" tag: preserves what's put in it
+< 'pre' > tag: preserves what's put in it
 
 cookies help authenticate you, they can put in tracking cookies, they are a strategy to establish a session
 
