@@ -200,6 +200,28 @@ From the GitHub assignment, I learned how to use git, including push, pull, sett
 
 for simon.css, I deployed it to my domain, mostly the same as the original simon.css file, except that I made the color for the .event in the play.css file a little darker to make it more visible.
 
+IP - internet protocol
+
+IP address is like your internet mailbox/post office
+
+TCP: transition control protocol (like your phone)
+
+localhost: your local machine
+
+any subdomain uses an *
+
+the interpreter for html is in the browser
+
+console.log() is the debug/print statement for JavaScript
+
+"<pre>" tag: preserves what's put in it
+
+cookies help authenticate you, they can put in tracking cookies, they are a strategy to establish a session
+
+curl to debug APIs use it a lot
+
+- curl -v "url"
+
 
 # IP address and SSH into server
 
