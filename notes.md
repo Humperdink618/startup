@@ -238,6 +238,16 @@ getElementByID()  returns an element with a specified value (returns null if ele
 
 to add a background color in HTML, use the CSS background-color property. Set it to the color name or code you want and place it inside a style attribute. Then add this style attribute to an HTML element, like a table, heading, div, or span tag.
 
+to change color of one p tag without changing the others, use this code:
+
+<h1 style="color: red">Yo</h1>
+
+to change one word without changing the others, use <span style="your style">WORD</span>. This way, you don't have to style the whole paragraph.
+
+Ex: <p> The quick brown <span style="color: brown">fox</span> jumps over... </p>
+
+
+
 
 # IP address and SSH into server
 
