@@ -236,6 +236,8 @@ to display an image with a hyperlink in HTML, add the < 'img' > tag inside an < 
 
 getElementByID()  returns an element with a specified value (returns null if element does not exist). One of the most common methods in the HTML DOM; used almost every time you want to read or edit an HTML element.
 
+to create a JavaScript object, either create it directly using var objectname = new Object(); or use Object Literal/Initializer syntax.
+
 to add a background color in HTML, use the CSS background-color property. Set it to the color name or code you want and place it inside a style attribute. Then add this style attribute to an HTML element, like a table, heading, div, or span tag.
 
 to change color of one p tag without changing the others, use this code:
@@ -254,7 +256,7 @@ document.getElementById("span_name_here").style.color = "green";
 
 
 
-JavaScript switch statement:
+### JavaScript switch statement:
 
 used to perform different actions based on different conditions.
 
