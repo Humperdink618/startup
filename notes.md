@@ -230,6 +230,10 @@ port 443: default port for HTTPS (secure version of HTTP)
 
 port 22: used for SSH communication and allows remote administration access to the VM
 
+to display an image with a hyperlink in HTML, add the < 'img' > tag inside an < 'a' > tag.
+
+< 'a' > tag  a link
+
 
 # IP address and SSH into server
 
