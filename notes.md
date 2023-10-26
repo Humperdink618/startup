@@ -1,27 +1,49 @@
 # Table of Contents
+
 <a id="top"></a>Top
+
 [go to command line commands](#command-line-commands)
+
 Development Essentials:
+
 [go to AWS Account](#aws-account)
+
 [go to intro to web programming](#intro-to-web-programming)
+
 [go to demo](#essentials-demo)
+
 [go to history](#history)
+
 [go to asking questions](#asking-questions)
+
 [go to discord](#discord)
+
 [go to Startup application](#startup-application)
+
 [go to let's play Simon](#simon-overview)
+
 [go to technology stack](#technology-stack)
+
 [go to the console](#the-console)
+
 [go to editors](#editors)
+
 [go to Git](#git)
+
 [go to GitHub](#github)
+
 [go to development and production environments](#dev-and-prod)
+
 [go to CodePen](#codepen)
+
 [go to startup specification](#startup-spec)
+
 
 [go to Markdown Cheat Sheet](#markdown-cheat-sheet)
 
+
 Web Servers:
+
 
 
 
