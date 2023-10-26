@@ -224,6 +224,12 @@ curl to debug APIs use it a lot
 
 - curl -v "url"
 
+port 80: default port for HTTP
+
+port 443: default port for HTTPS (secure version of HTTP)
+
+port 22: used for SSH communication and allows remote administration access to the VM
+
 
 # IP address and SSH into server
 
