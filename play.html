@@ -45,7 +45,11 @@
       <h3>PRESS IN CASE OF DIRE EMERGENCIES!</h3>
       <div class="nobutton">
         <img src="button.jpg" alt="NoButton" style="width: 100%;">
-        <button class="btn"></button>
+        <button class="btn" onclick="audio.play();"></button>
+        <script>
+          const audio = new Audio();
+          audio.src = "74_VADER_NOOO.mp3";
+        </script>
         
       </div> 
       <!--This is a placeholder for the actual button. Will edit appearance later.-->
