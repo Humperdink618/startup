@@ -7,6 +7,7 @@
     <title>Startup HTML</title>
     <link rel="icon" href="favicon.ico" /> <!--will change this icon later-->
 
+    <script src="login.js"></script>
     <link rel="stylesheet" href="main.css" />
 
     <!-- Include bootstrap CSS framework -->
@@ -48,14 +49,15 @@
       
       <p>Login to play</p>
       
-      <form method="get" action="play.html" class="login-enter">
+      <!--action="play.html" you only want to go to play if login successful-->
+      <form method="get"  class="login-enter">
         <label for="name">Name</label>
         <!-- id is to grab this html item and use text in javascript-->
         <input type="text" id="name" placeholder="Your name here" />
         <input type="text" id="password" placeholder="Your pass here" />
         <!-- Check if new player -> add to database
         if existing player -> load from database -->
-        <button type="submit" id="login">Login</button>
+        <button type="submit" id="login" onclick="mylogin()">Login</button>
       </form>
     </div>
     </main>
@@ -68,6 +70,7 @@
         <a class="text-reset" href="https://github.com/Humperdink618/startup">GitHub</a>
       </div>
     </footer>
+    
   </body>
 </html>
 

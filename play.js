@@ -205,6 +205,15 @@ setInterval(() => {
     `<div class="event"><span class="player-event">Eich</span> scored ${score}</div>` + chatText.innerHTML;
 }, 5000);
 
+// Play 
+// on create change name to something (perhaps have it pushed from main?/login)
+//  on create needs to set name, count, high score 
+//  name passed from main
+// button functionality (make sound)
+// update count
+// update high score (everytime count increase to check if count is greater than high score)
+//   if is greater, call update high score
+// reset count
 
 // Main page
 // login in function
