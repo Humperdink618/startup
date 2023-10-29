@@ -17,7 +17,9 @@ function loginGood(userName) {
   //alert("login success");
   // how you pass the username (probably)
   localStorage.setItem("userName", userName.value);
-  window.open('PLAY.HTML');
+  window.location.href = "PLAY.HTML";
+  //n This opens a new tab with play.html
+  // window.open('PLAY.HTML');
   return false;
 }
 
