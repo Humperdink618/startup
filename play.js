@@ -1,7 +1,7 @@
 function mylogout() {
   // placeholder for logout information
   // push count number to database
-  alert("logout successful");
+  //alert("logout successful");
   localStorage.setItem("userName", "");
 }
 

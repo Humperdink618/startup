@@ -14,7 +14,7 @@ function mylogin() {
 }
 
 function loginGood(userName) {
-  alert("login success");
+  //alert("login success");
   // how you pass the username (probably)
   localStorage.setItem("userName", userName.value);
   window.open('PLAY.HTML');
@@ -22,5 +22,5 @@ function loginGood(userName) {
 }
 
 function loginFail() {
-  alert("login failed");
+  //alert("login failed");
 }
