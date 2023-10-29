@@ -45,11 +45,7 @@
       <h3>PRESS IN CASE OF DIRE EMERGENCIES!</h3>
       <div class="nobutton">
         <img src="button.jpg" alt="NoButton" style="width: 100%;">
-        <button class="btn" onclick="audio.play();"></button>
-        <script type="text/javascript">
-          const audio = new Audio();
-          audio.src = "74_VADER_NOOO.mp3";
-        </script>
+        <button class="btn"></button>
         
       </div> 
       <!--This is a placeholder for the actual button. Will edit appearance later.-->
@@ -83,5 +79,8 @@
         <a  class="text-reset" href="https://github.com/Humperdink618/startup">GitHub</a>
       </div>
     </footer>
+
+    <!-- Script is located at the bottom because it references HTML elements during initialization -->
+    <script src="play.js"></script>
   </body>
 </html>

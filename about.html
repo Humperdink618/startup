@@ -18,7 +18,7 @@
       crossorigin="anonymous"
     />
   </head>
-  <body class="bg-dark text-light">
+  <body class="bg-dark text-light" onload="load()">
     <!-- Use header, main, and footer elements to give semantic structure -->
     <header class="container-fluid">
       <!--<h1>Instant NOOOOO! Button</h1>-->
@@ -46,7 +46,7 @@
             plan to randomly generate sizes within a specific range 
             need to find min max range 300 - 1200? keep square?
             (changing size generates new picture)-->
-            <img width="400px" src="https://placekitten.com/400/400" alt="https://placekitten.com/600/600">
+            <img width="400px" id="catpicture" src="https://placekitten.com/400/400" alt="https://placekitten.com/600/600">
         <!-- Might change this free rest api with one of the following:
         https://apimeme.com/
         
@@ -68,6 +68,8 @@
           <a class="text-reset" href="https://github.com/Humperdink618/startup">GitHub</a>
         </div>  
       </footer>
+       <!-- Script is located at the bottom because it references HTML elements during initialization -->
+      <script src="about.js"></script>
     </body>
   </html>
 
