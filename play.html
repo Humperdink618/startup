@@ -19,7 +19,7 @@
     />
     
   </head>
-  <body class="bg-dark text-light">
+  <body class="bg-dark text-light" onload="getPlayerName()">
     <!-- Use header, main, and footer elements to give semantic structure -->
     <header class="container-fluid">
       <nav class="navbar fixed-top navbar-dark">
@@ -45,7 +45,7 @@
       <h3>PRESS IN CASE OF DIRE EMERGENCIES!</h3>
       <div class="nobutton">
         <img src="button.jpg" alt="NoButton" style="width: 100%;">
-        <button class="btn"></button>
+        <button class="btn" onclick="pushNoooButton()"></button>
         
       </div> 
       <!--This is a placeholder for the actual button. Will edit appearance later.-->
@@ -60,7 +60,7 @@
              <!--use id count to get the number of times the player presses the button from the database-->
             <p id="count">0</p>
         </div>
-        <button class="btn bg-light" id="reset">Reset</button>
+        <button class="btn bg-light" id="reSet" onclick="reset()">Reset</button>
         <!--note: may want to create a new button type for this-->
         <br>
         <!--<div><button>Reset</button>
@@ -68,7 +68,7 @@
 
         <form method="get" action="index.html">
             <!-- use id to save data to database -->
-            <button type="submit" class="btn btn-primary" id="logout">Logout</button>
+            <button type="submit" class="btn btn-primary" id="logout" onclick="mylogout()">Logout</button>
         </form>
         <br>
     </main>
