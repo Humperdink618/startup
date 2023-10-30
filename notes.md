@@ -240,6 +240,8 @@ to create a JavaScript object, either create it directly using var objectname = 
 
 to add a background color in HTML, use the CSS background-color property. Set it to the color name or code you want and place it inside a style attribute. Then add this style attribute to an HTML element, like a table, heading, div, or span tag.
 
+to exit console for node.js on windows powershell, hit cntrl d
+
 to change color of one p tag without changing the others, use this code:
 
 <h1 style="color: red">Yo</h1>
