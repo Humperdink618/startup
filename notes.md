@@ -4,6 +4,8 @@
 
 [go to command line commands](#command-line-commands)
 
+[go to instructions on testing back end server](#back-end-testing)
+
 [go to general class notes](#class-notes)
 
 [go to my IP address and how to SSH into a server](#my-ip-and-how-to-ssh)
@@ -192,7 +194,28 @@
 - git pull  pulls stuff from internet to computer
 - git status  tells you if you need to add or commit or push or general status
 
-  
+## Back end testing
+
+<a id="back-end-testing"></a>Back End Testing
+[go to top](#top)
+
+- run your back end server in the terminal using
+  node <filename>.js
+- use this terminal to:
+  	- check what port it is listening on
+  	- check console.log prints
+  	- check error messages when something goes wrong
+- test the api calls using curl
+- You need to open a different terminal to do this
+  - to test a get request: use curl <url path>
+  	 - $ curl http://localhost:4000/api/highscore
+  - to test a post request without a body (only url path):
+  	 - $ curl -X POST localhost:4000/api/count/200
+  - to test a post request with a body
+  	 - $ curl -X POST localhost:4000/api/highscore -H "Content-Type: application/json" -d '{"newHighscore" : 54}'
+  - to test any other method other than post or get use the format shown in post but replacing post with the method
+  - replace the url path in the examples with the path you are using
+
 ## class notes
 
 <a id="class-notes"></a>General Class Notes:
