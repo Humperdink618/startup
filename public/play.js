@@ -55,8 +55,8 @@ async function getHighScore() {
     // Get the latest high score from the service
     const response = await fetch('/api/highscore');
     hjson = await response.json();
-    h = parseInt(hjson.highScore);
-    document.getElementById("high-score").innerHTML = h;
+    //h = parseInt(hjson.highScore);
+    document.getElementById("high-score").innerHTML = hjson;
   } catch {
     console.log("Error when trying to get highscore");
   }
