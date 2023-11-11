@@ -42,7 +42,7 @@ async function postCount(newCount) {
     const response = await fetch('/api/count/' + newCount, {
       method: 'POST',
       headers: {'content-type': 'application/json'},
-      body: {'newCount' : newHighscore }, //JSON.stringify(newCount),
+      body: "{'newCount' : newHighscore }", //JSON.stringify(newCount),
     });
   } catch {
     console.log("Error when trying to post count");
@@ -68,7 +68,7 @@ async function postHighScore(newHighscore) {
     const response = await fetch('/api/highscore', {
       method: 'POST',
       headers: {'content-type': 'application/json'},
-      body: {'newHighscore': newHighscore}, //JSON.stringify(newHighscore),
+      body: "{'newHighscore': newHighscore}", //JSON.stringify(newHighscore),
     });
   } catch {
     console.log("Error when trying to post highscore");
