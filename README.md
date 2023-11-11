@@ -66,3 +66,13 @@ For this deliverable I properly styled the application into its final appearance
 - **Application elements** - Used good contrast and whitespace. Also did a major update to the actual nooo button in its appearance and functionality, as well as rearranged my page a little to make it more manageable and appealing to look at. May need to update the reset button at some point though.
 - **Application text content** - Consistent fonts
 - **Application images** - Updated placement of main image on play.html, as well as updated in a big way the look and functionality of the nooo button (which is now an animated button superimposed on an image more closely resembling the one in my initial design).
+
+
+## JavaScript deliverable
+
+For this deliverable I implemented by JavaScript so that the application works for a single user. I also added placeholders for future technology.
+
+- **login** - When you press the login button it takes you to the play page. Clicking the logout button also takes you back to the login page.
+- **database** - Displayed the counts for number of times button is pressed. Currently this is stored and retrieved from local storage, but it will be replaced with the database data later. Also updates the high score over time as well. Will update it with database later.
+- **WebSocket** - The high score updates with number of times button is pressed, but does not change when score count is reset. When the database is enabled, this should save the high score and ensure that it doesn't change after logging out. This will be replaced with WebSocket messages later.
+- **application logic** - The button now makes sound whenever pressed. It also records number of times it is pressed and updates high score accordingly as well. Name of user is also displayed according to the name the user logged in as. Rest API kitten pic generator now generates a random cat picture based off of a random number generator. Will need to eventually update the login to make sure that empty credentials or incorrect credentials prohibit access to play page, but other than that, everything else should be working.
