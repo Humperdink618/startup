@@ -39,11 +39,13 @@ async function getCounter() {
 
 async function postCount(newCount) {
   try {
+    alert("in postCount " + newCount);
     const response = await fetch('/api/count/' + newCount, {
       method: 'POST',
       headers: {'content-type': 'application/json'},
       body: JSON.stringify({'newCount' : newHighscore }),
     });
+   
   } catch {
     console.log("Error when trying to post count");
   }
@@ -65,11 +67,13 @@ async function getHighScore() {
 
 async function postHighScore(newHighscore) {
   try {
+    alert("before postHighscore " + newHighscore);
     const response = await fetch('/api/highscore', {
       method: 'POST',
       headers: {'content-type': 'application/json'},
-      body: "{'newHighscore': newHighscore}", //JSON.stringify(newHighscore),
+      body: JSON.stringify({ "newHighscore" : newHighscore}),
     });
+    alert("after postHighscore");
   } catch {
     console.log("Error when trying to post highscore");
   }
