@@ -1,8 +1,8 @@
 function mylogout() {
   // placeholder for logout information
   // push count number to database
-  postCount(document.getElementById("count").innerHTML);
-  postHighScore(document.getElementById("high-score").innerHTML)
+  //postCount(document.getElementById("count").innerHTML);
+  //postHighScore(document.getElementById("high-score").innerHTML)
   //alert("logout successful");
   localStorage.setItem("userName", "");
 }
@@ -39,11 +39,11 @@ async function getCounter() {
 
 async function postCount(newCount) {
   try {
-    alert("in postCount " + newCount);
+   // alert("in postCount " + newCount);
     const response = await fetch('/api/count/' + newCount, {
       method: 'POST',
       headers: {'content-type': 'application/json'},
-      body: JSON.stringify({'newCount' : newHighscore }),
+      body: JSON.stringify({'newCount' : newCount }),
     });
    
   } catch {
@@ -67,13 +67,13 @@ async function getHighScore() {
 
 async function postHighScore(newHighscore) {
   try {
-    alert("before postHighscore " + newHighscore);
+    //alert("before postHighscore " + newHighscore);
     const response = await fetch('/api/highscore', {
       method: 'POST',
       headers: {'content-type': 'application/json'},
       body: JSON.stringify({ "newHighscore" : newHighscore}),
     });
-    alert("after postHighscore");
+    //alert("after postHighscore");
   } catch {
     console.log("Error when trying to post highscore");
   }
