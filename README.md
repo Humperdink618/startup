@@ -76,3 +76,13 @@ For this deliverable I implemented by JavaScript so that the application works f
 - **database** - Displayed the counts for number of times button is pressed. Currently this is stored and retrieved from local storage, but it will be replaced with the database data later. Also updates the high score over time as well. Will update it with database later.
 - **WebSocket** - The high score updates with number of times button is pressed, but does not change when score count is reset. When the database is enabled, this should save the high score and ensure that it doesn't change after logging out. This will be replaced with WebSocket messages later.
 - **application logic** - The button now makes sound whenever pressed. It also records number of times it is pressed and updates high score accordingly as well. Name of user is also displayed according to the name the user logged in as. Rest API kitten pic generator now generates a random cat picture based off of a random number generator. Will need to eventually update the login to make sure that empty credentials or incorrect credentials prohibit access to play page, but other than that, everything else should be working.
+
+## Service deliverable
+
+For this deliverable I added backend endpoints that receives counts and the highscore and returns them.
+
+- **Node.js/Express HTTP service** - done!
+- **Static middleware for frontend** - done!
+- **Calls to third party endpoints** - done!
+- **Backend service endpoints** - Placeholders for login that stores the current user on the server. Endpoints for counts and highscores.
+- **Frontend calls service endpoints** - I did this using the fetch function.
