@@ -1,6 +1,8 @@
 function mylogout() {
   // placeholder for logout information
   // push count number to database
+  postCount(document.getElementById("count").innerHTML);
+  postHighScore(document.getElementById("high-score").innerHTML)
   //alert("logout successful");
   localStorage.setItem("userName", "");
 }
@@ -13,14 +15,13 @@ function getPlayerName() {
   // if you want to save count else intialize to zero 
   // get /count
   // once get a user, might become get /<username>/count
-  let counter = getCounter();
+  getCounter();
   // get /highscore
   // might be easier to have a highscore per user
-  let highScore = 10;
+  getHighScore();
   // set the values in the html
   document.getElementById("player-name").innerHTML = name;
-  document.getElementById("count").innerHTML = counter;
-  document.getElementById("high-score").innerHTML = highScore;
+
 }
 
 async function getCounter() {
@@ -29,11 +30,11 @@ async function getCounter() {
     // Get the latest count from the service
     const response = await fetch('/api/count');
     c = await response.json();
-
+    document.getElementById("count").innerHTML = c;
   } catch {
     console.log("Error when trying to get count");
   }
-  return c;
+  
 }
 
 async function postCount(newCount) {
@@ -55,11 +56,11 @@ async function getHighScore() {
     const response = await fetch('/api/highscore');
     hjson = await response.json();
     h = parseInt(hjson.highScore);
-
+    document.getElementById("high-score").innerHTML = h;
   } catch {
     console.log("Error when trying to get highscore");
   }
-  return h;
+
 }
 
 async function postHighScore(newHighscore) {
