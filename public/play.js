@@ -42,7 +42,7 @@ async function postCount(newCount) {
     const response = await fetch('/api/count/' + newCount, {
       method: 'POST',
       headers: {'content-type': 'application/json'},
-      body: "{'newCount' : newHighscore }", //JSON.stringify(newCount),
+      body: JSON.stringify({'newCount' : newHighscore }),
     });
   } catch {
     console.log("Error when trying to post count");
