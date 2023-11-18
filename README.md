@@ -86,3 +86,11 @@ For this deliverable I added backend endpoints that receives counts and the high
 - **Calls to third party endpoints** - done!
 - **Backend service endpoints** - Placeholders for login that stores the current user on the server. Endpoints for counts and highscores.
 - **Frontend calls service endpoints** - I did this using the fetch function.
+
+## DB deliverable
+
+For this deliverable I stored the votes in the database.
+
+- **MongoDB Atlas database created** - done!
+- **Endpoints for data** - My stubbed out endpoints now process the data and send it to Mongo.
+- **Stores data in MongoDB** - done!
