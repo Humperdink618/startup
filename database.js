@@ -14,7 +14,52 @@ const userCollection = db.collection('users');
   console.log(`Unable to connect to database with ${url} because ${ex.message}`);
   process.exit(1);
 });
+async function getCount(username) {
+  // assuming usernames are unique, you can fetch a specific document using the username
+  const query = {"username": username};
+  result = userCollection.find(query);
+  //let results = await result.toArray;
+  return result.toArray();
+}
 
+async function updateCount(username, count) {
+  // assuming usernames are unique, you can fetch a specific document using the username
+  // once you get it, you can modify it
+  const filter = { "username": username };
+// update the value of the 'quantity' field to 5
+const updateDocument = {
+   $set: {
+      count: count,
+   },
+};
+const result = await userCollection.updateOne(filter, updateDocument);
+}
+
+async function getHighScore(username) {
+  // assuming usernames are unique, you can fetch a specific document using the username
+  const query = {"username": username};
+  result = userCollection.find(query);
+  //let results = await result.toArray;
+  return result.toArray();
+}
+
+async function updateHighscore(username, highscore) {
+  // assuming usernames are unique, you can fetch a specific document using the username
+  // once you get it, you can modify it
+  const filter = { "username": username };
+// update the value of the 'quantity' field to 5
+const updateDocument = {
+   $set: {
+      highscore: highscore,
+   },
+};
+const result = await userCollection.updateOne(filter, updateDocument);
+}
+
+
+
+module.exports = {updateCount, getCount, getHighScore, updateHighscore };
+/*
 async function addScore(score) {
   const result = await userCollection.insertOne(score);
   return result;
@@ -32,3 +77,4 @@ function getHighScores() {
 }
 
 module.exports = { addScore, getHighScores };
+*/

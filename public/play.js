@@ -15,32 +15,32 @@ function getPlayerName() {
   // if you want to save count else intialize to zero 
   // get /count
   // once get a user, might become get /<username>/count
-  getCounter();
+  getCounter(name);
   // get /highscore
   // might be easier to have a highscore per user
-  getHighScore();
+  getHighScore(name);
   // set the values in the html
   document.getElementById("player-name").innerHTML = name;
 
 }
 
-async function getCounter() {
+async function getCounter(name) {
   let c = 0;
   try {
     // Get the latest count from the service
-    const response = await fetch('/api/count');
+    const response = await fetch(`/api/count/${name}`);
     c = await response.json();
-    document.getElementById("count").innerHTML = c;
+    document.getElementById("count").innerHTML = c[0].count;
   } catch {
     console.log("Error when trying to get count");
   }
   
 }
 
-async function postCount(newCount) {
+async function postCount(name, newCount) {
   try {
    // alert("in postCount " + newCount);
-    const response = await fetch('/api/count/' + newCount, {
+    const response = await fetch(`/api/count/${name}/` + newCount, {
       method: 'POST',
       headers: {'content-type': 'application/json'},
       body: JSON.stringify({'newCount' : newCount }),
@@ -51,11 +51,11 @@ async function postCount(newCount) {
   }
 }
 
-async function getHighScore() {
+async function getHighScore(name) {
   let h = 0;
   try {
     // Get the latest high score from the service
-    const response = await fetch('/api/highscore');
+    const response = await fetch(`/api/highscore/${name}`);
     hjson = await response.json();
     //h = parseInt(hjson.highScore);
     document.getElementById("high-score").innerHTML = hjson;
@@ -65,10 +65,10 @@ async function getHighScore() {
 
 }
 
-async function postHighScore(newHighscore) {
+async function postHighScore(name, newHighscore) {
   try {
     //alert("before postHighscore " + newHighscore);
-    const response = await fetch('/api/highscore', {
+    const response = await fetch(`/api/highscore/${name}`, {
       method: 'POST',
       headers: {'content-type': 'application/json'},
       body: JSON.stringify({ "newHighscore" : newHighscore}),
@@ -82,7 +82,7 @@ async function postHighScore(newHighscore) {
 function reset() {
   // if want to save count 
   // post /count ?
-  postCount(0);
+  postCount(localStorage.getItem("userName"), 0);
   document.getElementById("count").innerHTML = 0;
 }
 
@@ -92,7 +92,7 @@ function pushNoooButton() {
   document.getElementById("count").innerHTML = newCount;
     // -> if you want this to be save when you log out
   // -> post /count
-  postCount(newCount);
+  postCount(localStorage.getItem("userName"), newCount);
   // check if count is greater than high score
   if (newCount > document.getElementById("high-score").innerHTML) {
     // if greater than high score, update high score
@@ -106,7 +106,7 @@ function pushNoooButton() {
 function updateHighScore(newCount) {
   // update database  -> post to /highscore
   // set high score to count
-  postHighScore(newCount);
+  postHighScore(localStorage.getItem("userName"), newCount);
   document.getElementById("high-score").innerHTML = newCount;
 }
 

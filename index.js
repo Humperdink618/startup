@@ -26,36 +26,60 @@ app.listen(port, () => {
 });
 
 // get/post /count
-apiRouter.get('/count', (_req, res) => {
-  console.log("Counts " + counts);
-  res.send(JSON.stringify(counts));
+apiRouter.get('/count/:username', async (_req, res) => {
+  //counts = 5;
+  counts = await DB.getCount(_req.params.username);
+  //console.log("Counts " + counts);
+  //console.log("Username " + _req.params.username);
+  res.send(counts);
+  //res.send(JSON.stringify(counts));
 });
 
-apiRouter.post('/count/:id', (req, res) => {
+apiRouter.post('/count/:username/:id', (req, res) => {
   // for front end:  
   // XXXX.post('/count/' + newCount)
   let newCount = parseInt(req.params.id);
-  counts = newCount;
-  console.log("Counts " + counts);
+  let username = req.params.username;
+  DB.updateCount(username, newCount);
+  console.log("Counts " + newCount);
+  console.log("Username " + username);
   res.sendStatus(200);
 });
 
 
 // get/post /highscore
-apiRouter.get('/highscore', (_req, res) => {
-  console.log("High score " + highscore);
-  res.send(JSON.stringify(highscore));
+apiRouter.get('/highscore/:username', async (_req, res) => {
+  highscore = await DB.getHighScore(_req.params.username);
+  //console.log("High score " + highscore);
+  //console.log("Username " + _req.params.username);
+  //res.send(JSON.stringify(highscore));
+  res.send(highscore);
 });
 
-apiRouter.post('/highscore', (req, res) => {
+apiRouter.post('/highscore/:username', (req, res) => {
+
   highscore = parseInt(req.body.newHighscore);
+  DB.updateHighscore(req.params.username, highscore);
   console.log("High score " + highscore);
+  console.log("Username " + req.params.username);
   res.sendStatus(200);
 });
 
 // Helper functions and stored variables:
-let counts = 0; // initial value
-let highscore = 0; // initial value
+//let counts = 0; // initial value
+//let highscore = 0; // initial value
+//let username = ""; // initial value
+
+
+apiRouter.get('/login', (req, res) => {
+  username = String(req.body.username);
+  password = String(req.body.password);
+  // check password
+  console.log("Username " + username);
+  console.log("Password " + password);
+  res.send(JSON.stringify(true));
+  // change to false if it fails. Might want an if() statement
+});
 /*
 // GetScores
 apiRouter.get('/scores', (_req, res) => {
