@@ -4,3 +4,4 @@ node_modules/
 dist/
 dbkeys.sh
 dbConfig.json
+cookie.txt

@@ -58,8 +58,21 @@
         <!-- Check if new player -> add to database
         if existing player -> load from database -->
         <button type="submit" id="login" onclick="mylogin()">Login</button>
+        <button type="submit" id="create" onclick="create()">Create Account</button>
       </form>
-    </div>
+      </div>
+
+      <!-- Error dialog -->
+      <div class="modal fade" id="msgModal" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-dark">
+              <div class="modal-body">error message here</div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
     </main>
 
     <footer class="bg-dark text-white-50">
