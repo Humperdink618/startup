@@ -89,8 +89,19 @@ For this deliverable I added backend endpoints that receives counts and the high
 
 ## DB deliverable
 
-For this deliverable I stored the votes in the database.
+For this deliverable I stored the counts and highscores in the database with the associated user.
 
 - **MongoDB Atlas database created** - done!
 - **Endpoints for data** - My stubbed out endpoints now process the data and send it to Mongo.
 - **Stores data in MongoDB** - done!
+
+## Login deliverable
+
+For this deliverable I associate the counts and highscores with the logged in user.
+
+- **User registration** - Creates a new account in the database.
+- **existing user** - Stores the scores and highscores under the same user if the user already exists. Also prevents new user creation if user already exists.
+- **Use MongoDB to store credentials** - Stores both user and their credentials. Also creates separate collection for counts and highscores associated with the same user.
+- **Restricts functionality** - You cannot play until you have logged in. This is restricted on the frontend and the backend prevents outsiders from tampering with other players' counts and highscores (though this does make back end testing a little tougher. Can still test functionality on front end).
+
+
