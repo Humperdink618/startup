@@ -1,4 +1,6 @@
 const { MongoClient } = require('mongodb');
+const bcrypt = require('bcrypt');
+const uuid = require('uuid');
 const config = require('./dbConfig.json');
 
 const url = `mongodb+srv://${config.userName}:${config.password}@${config.hostname}`;
@@ -16,12 +18,14 @@ const userCollection = db.collection('users');
   process.exit(1);
 });
 
-function getUser(username) {
-  return loginCollection.findOne({ username: username });
+async function getUser(username) {
+  //console.log("get user");
+  return await loginCollection.findOne({ username: username });
 }
 
-function getUserByToken(token) {
-  return loginCollection.findOne({ token: token });
+async function getUserByToken(token) {
+  //console.log("get user by token");
+  return await loginCollection.findOne({ token: token });
 }
 
 async function createUser(username, password) {
@@ -47,8 +51,8 @@ async function createUser(username, password) {
     count: 0,
   };
   await userCollection.insertOne(userScores);
-
-
+  //console.log("user created");
+ 
   return user;
 }
 
@@ -96,7 +100,7 @@ const result = await userCollection.updateOne(filter, updateDocument);
 
 
 
-module.exports = {getUser, getUserByToken, createUser,updateCount, 
+module.exports = {getUser, getUserByToken, createUser, updateCount, 
   getCount, getHighScore, updateHighscore };
 /*
 async function addScore(score) {

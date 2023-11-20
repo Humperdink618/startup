@@ -4,7 +4,11 @@ function mylogout() {
   //postCount(document.getElementById("count").innerHTML);
   //postHighScore(document.getElementById("high-score").innerHTML)
   //alert("logout successful");
-  localStorage.setItem("userName", "");
+  //localStorage.setItem("userName", "");
+  localStorage.removeItem('userName');
+  fetch(`/api/auth/logout`, {
+    method: 'delete',
+  }).then(() => (window.location.href = '/'));
 }
 
 //alert("This runs I hope");

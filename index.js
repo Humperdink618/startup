@@ -27,30 +27,49 @@ app.use(`/api`, apiRouter);
 
 // CreateAuth token for a new user
 apiRouter.post('/auth/create', async (req, res) => {
-  if (await DB.getUser(req.body.username)) {
+  //console.log("cheese");
+  let username = req.body.username;
+  let password = req.body.password;
+  //console.log(username);
+  //console.log(req.body);
+  //console.log(password);
+  if (await DB.getUser(username)) {
+    console.log("user exists!");
     res.status(409).send({ msg: 'Existing user' });
   } else {
-    const user = await DB.createUser(req.body.username, req.body.password);
+    //console.log("create new user");
+    const user = await DB.createUser(username, password);
+    
 
     // Set the cookie
     setAuthCookie(res, user.token);
+    //console.log("we have cookies!");
 
     res.send({
       id: user._id,
+      success:true
     });
+   // console.log("sent");
   }
 });
 
 // GetAuth token for the provided credentials
 apiRouter.post('/auth/login', async (req, res) => {
+  //console.log("get the user");
   const user = await DB.getUser(req.body.username);
+  //console.log(req.body.username);
+  //console.log(req.body.password);
+  //console.log(user);
   if (user) {
     if (await bcrypt.compare(req.body.password, user.password)) {
+      //console.log(user.password);
       setAuthCookie(res, user.token);
       res.send({ id: user._id });
+      //console.log("sent again");
       return;
     }
   }
+  console.log("unauthorized");
   res.status(401).send({ msg: 'Unauthorized' });
 });
 
@@ -62,6 +81,7 @@ apiRouter.delete('/auth/logout', (_req, res) => {
 
 // GetUser returns information about a user
 apiRouter.get('/user/:username', async (req, res) => {
+  //console.log("please work!");
   const user = await DB.getUser(req.params.username);
   if (user) {
     const token = req?.cookies.token;
@@ -76,27 +96,34 @@ var secureApiRouter = express.Router();
 apiRouter.use(secureApiRouter);
 
 secureApiRouter.use(async (req, res, next) => {
+  //console.log("about to call authToken");
   authToken = req.cookies[authCookieName];
+  //console.log("got authToken", authToken);
   const user = await DB.getUserByToken(authToken);
   if (user) {
+    //console.log("working probably");
     next();
   } else {
+    console.log("unauthorized");
     res.status(401).send({ msg: 'Unauthorized' });
   }
 });
 
 // Default error handler
 app.use(function (err, req, res, next) {
+  console.log("error");
   res.status(500).send({ type: err.name, message: err.message });
 });
 
 // setAuthCookie in the HTTP response
 function setAuthCookie(res, authToken) {
+  //console.log("setAuthCookie");
   res.cookie(authCookieName, authToken, {
     secure: true,
     httpOnly: true,
     sameSite: 'strict',
   });
+  //console.log("cookie set");
 }
 
 
@@ -110,7 +137,7 @@ app.listen(port, () => {
 });
 
 // get/post /count
-apiRouter.get('/count/:username', async (_req, res) => {
+secureApiRouter.get('/count/:username', async (_req, res) => {
   //counts = 5;
   counts = await DB.getCount(_req.params.username);
   //console.log("Counts " + counts);
@@ -119,7 +146,7 @@ apiRouter.get('/count/:username', async (_req, res) => {
   //res.send(JSON.stringify(counts));
 });
 
-apiRouter.post('/count/:username/:id', (req, res) => {
+secureApiRouter.post('/count/:username/:id', (req, res) => {
   // for front end:  
   // XXXX.post('/count/' + newCount)
   let newCount = parseInt(req.params.id);
@@ -132,7 +159,7 @@ apiRouter.post('/count/:username/:id', (req, res) => {
 
 
 // get/post /highscore
-apiRouter.get('/highscore/:username', async (_req, res) => {
+secureApiRouter.get('/highscore/:username', async (_req, res) => {
   highscore = await DB.getHighScore(_req.params.username);
   //console.log("High score " + highscore);
   //console.log("Username " + _req.params.username);
@@ -140,7 +167,7 @@ apiRouter.get('/highscore/:username', async (_req, res) => {
   res.send(highscore);
 });
 
-apiRouter.post('/highscore/:username', (req, res) => {
+secureApiRouter.post('/highscore/:username', (req, res) => {
 
   highscore = parseInt(req.body.newHighscore);
   DB.updateHighscore(req.params.username, highscore);
@@ -149,55 +176,3 @@ apiRouter.post('/highscore/:username', (req, res) => {
   res.sendStatus(200);
 });
 
-// Helper functions and stored variables:
-//let counts = 0; // initial value
-//let highscore = 0; // initial value
-//let username = ""; // initial value
-
-
-apiRouter.get('/login', (req, res) => {
-  username = String(req.body.username);
-  password = String(req.body.password);
-  // check password
-  console.log("Username " + username);
-  console.log("Password " + password);
-  res.send(JSON.stringify(true));
-  // change to false if it fails. Might want an if() statement
-});
-/*
-// GetScores
-apiRouter.get('/scores', (_req, res) => {
-  res.send(scores);
-});
-
-// SubmitScore
-apiRouter.post('/score', (req, res) => {
-  scores = updateScores(req.body, scores);
-  res.send(scores);
-});
-
-
-// updateScores considers a new score for inclusion in the high scores.
-// The high scores are saved in memory and disappear whenever the service is restarted.
-let scores = [];
-function updateScores(newScore, scores) {
-  let found = false;
-  for (const [i, prevScore] of scores.entries()) {
-    if (newScore.score > prevScore.score) {
-      scores.splice(i, 0, newScore);
-      found = true;
-      break;
-    }
-  }
-
-  if (!found) {
-    scores.push(newScore);
-  }
-
-  if (scores.length > 10) {
-    scores.length = 10;
-  }
-
-  return scores;
-}
-*/
