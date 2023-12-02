@@ -1,3 +1,13 @@
+// const socket = null;
+var socket = null;
+
+// Event messages
+const LogoutEvent = 'loggedOut';
+const LoginEvent = 'loggedIn';
+
+var wsisconfig = false;
+
+
 function mylogout() {
   // placeholder for logout information
   // push count number to database
@@ -5,6 +15,9 @@ function mylogout() {
   //postHighScore(document.getElementById("high-score").innerHTML)
   //alert("logout successful");
   //localStorage.setItem("userName", "");
+
+   // Let other players know the game has concluded
+  broadcastEvent(localStorage.getItem("userName"), LogoutEvent);
   localStorage.removeItem('userName');
   fetch(`/api/auth/logout`, {
     method: 'delete',
@@ -26,7 +39,19 @@ function getPlayerName() {
   // set the values in the html
   document.getElementById("player-name").innerHTML = name;
 
+  if (socket == null) {
+    configureWebSocket();
+    
+  }
+  
+ // if (wsisconfig == true) {
+    // Let other players know a new game has started
+ //   broadcastEvent(name, LoginEvent);
+//}
+
+  
 }
+
 
 async function getCounter(name) {
   let c = 0;
@@ -88,6 +113,8 @@ function reset() {
   // post /count ?
   postCount(localStorage.getItem("userName"), 0);
   document.getElementById("count").innerHTML = 0;
+   // Let other players know a new game has started
+  broadcastEvent(localStorage.getItem("userName"), LoginEvent);
 }
 
 function pushNoooButton() {
@@ -123,3 +150,42 @@ function playVader() {
 function loadSound(filename) {
   return new Audio('assets/' + filename);
 }
+
+  // Functionality for peer communication using WebSocket
+
+function configureWebSocket() {
+    const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+    socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+    socket.onopen = (event) => {
+      displayMsg('system', 'game', 'connected');
+    };
+    socket.onclose = (event) => {
+      displayMsg('system', 'game', 'disconnected');
+    };
+    
+    socket.onmessage = async (event) => {
+      const msg = JSON.parse(await event.data.text());
+      if (msg.type === LogoutEvent) {
+        displayMsg('player', msg.from, `logged out`);
+      } else if (msg.type === LoginEvent) {
+        displayMsg('player', msg.from, `started a new game`);
+      }
+      
+    };
+    
+  }
+
+function displayMsg(cls, from, msg) {
+    const chatText = document.querySelector('#player-messages');
+    chatText.innerHTML =
+      `<div class="event"><span class="${cls}-event">${from}</span> ${msg}</div>` + chatText.innerHTML;
+  }
+
+function  broadcastEvent(from, type) {
+    const event = {
+      from: from,
+      type: type,
+      
+    };
+    socket.send(JSON.stringify(event));
+  }

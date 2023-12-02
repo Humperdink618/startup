@@ -75,6 +75,8 @@ const updateDocument = {
    },
 };
 const result = await userCollection.updateOne(filter, updateDocument);
+console.log(result);
+return result;
 }
 
 async function getHighScore(username) {
@@ -96,6 +98,8 @@ const updateDocument = {
    },
 };
 const result = await userCollection.updateOne(filter, updateDocument);
+console.log(result);
+return result;
 }
 
 
