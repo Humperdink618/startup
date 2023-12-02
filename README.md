@@ -104,4 +104,13 @@ For this deliverable I associate the counts and highscores with the logged in us
 - **Use MongoDB to store credentials** - Stores both user and their credentials. Also creates separate collection for counts and highscores associated with the same user.
 - **Restricts functionality** - You cannot play until you have logged in. This is restricted on the frontend and the backend prevents outsiders from tampering with other players' counts and highscores (though this does make back end testing a little tougher. Can still test functionality on front end).
 
+## WebSocket deliverable
+
+For this deliverable I used webSocket to display user logouts and users starting new games on the frontend in realtime.
+
+- **Backend listens for WebSocket connection** - done!
+- **Frontend makes WebSocket connection** - done!
+- **Data sent over WebSocket connection** - done!
+- **WebSocket data displayed** - All user logouts and starting new games display in realtime. I'm really proud that this is working. I hope at some point to show players log in in real time as well, though I have no idea how to do that as of yet. What I have right now is sufficient for me right now.
+
 
