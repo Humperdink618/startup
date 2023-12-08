@@ -1,0 +1,73 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  min-width: 375px;
+  /* background-color:#fff; */
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+header {
+  flex: 0 80px;
+}
+
+main {
+  flex: 1 calc(100vh - 110px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/* #darthcat {
+  width: 27em;
+  margin-bottom: 1em;
+  padding: 0.5em;
+  background: rgb(86, 89, 93);
+  border-radius: 5px;
+} */
+
+footer {
+  flex: 0 30px;
+}
+
+menu {
+  flex: 1;
+  display: flex;
+  /*  overwrite Bootstrap so the menu does not wrap */
+  flex-direction: row !important;
+  list-style: none;  
+}
+
+.navbar-brand {
+  padding-left: 0.3em;
+  border-bottom: solid rgb(182, 182, 182) thin;
+}
+
+menu .nav-item {
+  padding: 0 0.5em;
+}
+
+.navbar {
+  background-color: #212529;
+}
+
+footer a {
+  float: right;
+}
+
+/*if the screen is smaller than 400 px do this */ 
+@media (max-height: 200px) {
+  #darthcat {
+    display: none;
+  }
+  footer {
+    display: none;
+  }
+  main {
+    flex: 1 100vh;
+  }
+  /*Tablet size (between 400 and 960
+  @media only screen and (min-width 401px) and (max-height: 600px)
+  @media gives new css for screens of a specfic size. If they are between/less/greater 
+  than a specific height/width, there is new css rules for that instance*/ 
+}
