@@ -1,8 +1,8 @@
 import React from 'react';
-import './about.css';
+// import './about.css';
 
 
-export function About(props) {
+export function About() {
 /*  const [imageUrl, setImageUrl] = React.useState('');
   const [quote, setQuote] = React.useState('Loading...');
   const [quoteAuthor, setQuoteAuthor] = React.useState('unknown');
@@ -62,6 +62,7 @@ export function About(props) {
     </main>
     */
     <main className='container-fluid bg-secondary text-center'>
+        <div>about displayed here</div>
    </main>
   );
 }
