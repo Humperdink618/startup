@@ -1,16 +1,19 @@
 import React from 'react';
-// import './about.css';
+import './about.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-export function About() {
-/*  const [imageUrl, setImageUrl] = React.useState('');
-  const [quote, setQuote] = React.useState('Loading...');
-  const [quoteAuthor, setQuoteAuthor] = React.useState('unknown');
+export function About(props) {
+  const [imageUrl, setImageUrl] = React.useState('');
+//  const [quote, setQuote] = React.useState('Loading...');
+//  const [quoteAuthor, setQuoteAuthor] = React.useState('unknown');
 
   // We only want this to render the first time the component is created and so we provide an empty dependency list.
   React.useEffect(() => {
-    const random = Math.floor(Math.random() * 1000);
-    fetch(`https://picsum.photos/v2/list?page=${random}&limit=1`)
+    const size = Math.floor(Math.random() *900) + 300;
+    const apiUrl = `https://placekitten.com/${size}/${size}`;
+    setImageUrl(apiUrl);
+/*    fetch(`https://picsum.photos/v2/list?page=${random}&limit=1`)
       .then((response) => response.json())
       .then((data) => {
         const containerEl = document.querySelector('#picture');
@@ -28,41 +31,28 @@ export function About() {
         setQuote(data.content);
         setQuoteAuthor(data.author);
       })
-      .catch();
-  }, []);
+      .catch(); 
+  }, []); */
+    }, []);
 
   let imgEl = '';
 
   if (imageUrl) {
-    imgEl = <img src={imageUrl} alt='stock background' />;
+    imgEl = <img width="400px" src={imageUrl} alt="https://placekitten.com/600/600"/>
   }
-*/
+
   return (
- /*   <main className='container-fluid bg-secondary text-center'>
-      <div>
+    <main className='container-fluid bg-secondary text-center'>
+      <div className='custom-container'>
         <div id='picture' className='picture-box'>
-          {imgEl}
+            {imgEl}
         </div>
 
-        <p>
-          Simon is a repetitive memory game where you follow the demonstrated color sequence until you make a mistake.
-          The longer the sequence you repeat, the greater your score.
-        </p>
-
-        <p>
-          The name Simon is a registered trademark of Milton-Bradley. Our use of the name and the game is for non-profit
-          educational use only. No part of this code or application may be used outside of that definition.
-        </p>
-
-        <div className='quote-box bg-light text-dark'>
-          <p className='quote'>{quote}</p>
-          <p className='author'>{quoteAuthor}</p>
-        </div>
+        <p>Are you bored, stressed, or someone who enjoys instant gratification?</p>
+        <h4>Introducing the Instant NOOOOO! Button, because why the heck not!</h4>
+        <p> Its a button that you press, and when you do, it plays an audio clip of Darth Vader screaming NOOOOO! That's all there is to it!</p> 
+        <p>Just press in case of Dire Emergencies!</p>
       </div>
     </main>
-    */
-    <main className='container-fluid bg-secondary text-center'>
-        <div>about displayed here</div>
-   </main>
   );
 }

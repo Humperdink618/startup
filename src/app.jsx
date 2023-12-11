@@ -13,25 +13,25 @@ export default function App() {
   return (
     <BrowserRouter>
       <div className='body bg-dark text-light'>
-        <header className="container-fluid">
-          <nav className="navbar fixed-top navbar-dark">
-            <div className="navbar-brand">
+        <header className='container-fluid'>
+          <nav className='navbar fixed-top navbar-dark'>
+            <div className='navbar-brand'>
               Instant NOOOOO! Button
             </div>
-            <menu className="navbar-nav">
-              <li className="nav-item">
-                <NavLink className="nav-link" to="">
+            <menu className='navbar-nav'>
+              <li className='nav-item'>
+                <NavLink className='nav-link' to=''>
                   Home
                 </NavLink>
               </li>
               
-              <li className="nav-item">
-                <NavLink className="nav-link" to="play">
+              <li className='nav-item'>
+                <NavLink className='nav-link' to='play'>
                   // Play-ceholder 
                 </NavLink>
               </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="about">
+              <li className='nav-item'>
+                <NavLink className='nav-link' to='about'>
                   About
                 </NavLink>
               </li>
@@ -42,16 +42,16 @@ export default function App() {
 
 
         <Routes>
-            <Route path="/" element={<Login />} exact />
-            <Route path="/play" element={<Play />} />
-            <Route path="/about" element={<About />} />
-            <Route path="*" element={<NotFound />} />
+            <Route path='/' element={<Login />} exact />
+            <Route path='/play' element={<Play />} />
+            <Route path='/about' element={<About />} />
+            <Route path='*' element={<NotFound />} />
         </Routes>
 
-        <footer className="bg-dark text-white-50">
-          <div className="container-fluid">
-            <span className="text-reset">Anton Anderson</span>
-              <a className="text-reset" href="https://github.com/Humperdink618/startup">
+        <footer className='bg-dark text-white-50'>
+          <div className='container-fluid'>
+            <span className='text-reset'>Anton Anderson</span>
+              <a className='text-reset' href='https://github.com/Humperdink618/startup'>
                 GitHub
               </a>
           </div>
