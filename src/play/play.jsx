@@ -1,9 +1,13 @@
 import React from 'react';
 
-export function Play() {
+import { Players } from './players';
+import { MainGame } from './mainGame';
+
+export function Play(props) {
   return (
     <main className='bg-secondary'>
-      <div>Vader noButton displayed here</div>
+      <Players userName={props.userName} />
+      <MainGame userName={props.userName} />
     </main>
   );
 }

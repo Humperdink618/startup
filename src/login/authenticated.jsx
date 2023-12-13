@@ -1,14 +1,18 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import { GameEvent, GameNotifier } from '../play/gameNotifier';
 import Button from 'react-bootstrap/Button';
 
 import './authenticated.css';
 
 export function Authenticated(props) {
+  const userName = props.userName;
   const navigate = useNavigate();
 
   function logout() {
+    // Let other players know the game has concluded
+    GameNotifier.broadcastEvent(userName, GameEvent.End, {});
     fetch(`/api/auth/logout`, {
       method: 'delete',
     })
