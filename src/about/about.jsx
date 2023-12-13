@@ -1,6 +1,9 @@
 import React from 'react';
 import './about.css';
 // import 'bootstrap/dist/css/bootstrap.min.css';
+// React router currently isn't working on refreshes. Don't worry about it
+// right now. Focus on working on everything else and then deploy it.
+// If the issue persists, email professor for help.
 
 
 export function About(props) {

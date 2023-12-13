@@ -98,7 +98,7 @@ apiRouter.use(secureApiRouter);
 
 secureApiRouter.use(async (req, res, next) => {
   //console.log("about to call authToken");
-  authToken = req.cookies[authCookieName];
+  const authToken = req.cookies[authCookieName];
   //console.log("got authToken", authToken);
   const user = await DB.getUserByToken(authToken);
   if (user) {

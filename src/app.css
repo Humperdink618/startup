@@ -10,13 +10,13 @@ header {
   flex: 0 80px;
 }
 
-main {
+ main {
   flex: 1 calc(100vh - 110px);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-}
+} 
 
 /* #darthcat {
   width: 27em;
