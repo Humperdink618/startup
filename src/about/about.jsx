@@ -41,7 +41,7 @@ export function About(props) {
   let imgEl = '';
 
   if (imageUrl) {
-    imgEl = <img width="400px" src={imageUrl} alt="https://placekitten.com/400/400"/>
+    imgEl = <img width="400px" src={imageUrl} alt="https://placekitten.com/600/600"/>
   }
 
   return (
