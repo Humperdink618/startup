@@ -13,7 +13,7 @@ export function About(props) {
 
   // We only want this to render the first time the component is created and so we provide an empty dependency list.
   React.useEffect(() => {
-    const size = Math.floor(Math.random() *900) + 300;
+    let size = Math.floor(Math.random() *900) + 300;
     const apiUrl = `https://placekitten.com/${size}/${size}`;
     setImageUrl(apiUrl);
 /*    fetch(`https://picsum.photos/v2/list?page=${random}&limit=1`)
