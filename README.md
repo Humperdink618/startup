@@ -113,4 +113,17 @@ For this deliverable I used webSocket to display user logouts and users starting
 - **Data sent over WebSocket connection** - done!
 - **WebSocket data displayed** - All user logouts and starting new games display in realtime. I'm really proud that this is working. I hope at some point to show players log in in real time as well, though I have no idea how to do that as of yet. What I have right now is sufficient for me right now.
 
+<<<<<<< HEAD
+=======
+
+## React deliverable
+
+For this deliverable I converted the application over to use React. 
+
+- **Bundled and transpiled** - done!
+- **Components** - Login, play, about, and other inner components are all components.
+- **Router** - Routing between login, play, and about components.
+- **Hooks** - Numerous hooks being used by React via useState to track elements such as highscore, score, userName, and others.
+
+>>>>>>> 87a23afd12b882c5d62a84087b8058ecc96f5b32
 
